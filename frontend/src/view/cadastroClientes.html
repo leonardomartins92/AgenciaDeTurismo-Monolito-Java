@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Cliente</title>
+</head>
+<body style="text-align: center;">
+  <p>Cadastro de Cliente</p>
+  <form method="post">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome"><br>
+
+    <label for="cpf">CPF</label>
+    <input type="text" name="cpf" id="cpf"><br>
+
+    <label for="telefone">Telefone</label>
+    <input type="text" name="telefone" id="telefone"><br>
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email"><br>
+    
+    <label for="UF">UF:</label>
+    <select name="UF" id="UF">
+      <option value="mg">MG</option>
+      <option value="rj">RJ</option>
+      <option value="sp">SP</option>
+    </select><br>
+
+    <label for="cidade">Cidade:</label>
+    <select name="cidade" id="cidade">
+      <option value="jf">Juiz de Fora</option>
+      <option value="rj">Rio de Janeiro</option>
+      <option value="sp">São Paulo</option>
+    </select><br>
+
+    
+    <table>
+      <input type="submit" value="Salvar">
+      <button>Cancelar</button>
+    </table>
+  </form>
+</body>
+</html>
