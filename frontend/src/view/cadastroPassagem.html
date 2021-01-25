@@ -10,6 +10,7 @@
   <form method="post">
     <label for="client">Cliente:</label>
     <select name="client" id="client">
+      <option value="">Cliente</option>
       <option value="joao">João</option>
       <option value="maria">Maria</option>
       <option value="jose">José</option>
@@ -17,6 +18,7 @@
 
     <label for="from">Origem:</label>
     <select name="from" id="from">
+      <option value="">Localização</option>
       <option value="jf">Juiz de Fora</option>
       <option value="bh">Belo Horizonte</option>
       <option value="sp">São Paulo</option>
@@ -24,6 +26,7 @@
 
     <label for="to">Destino:</label>
     <select name="to" id="to">
+      <option value="">Localização</option>
       <option value="jf">Juiz de Fora</option>
       <option value="bh">Belo Horizonte</option>
       <option value="sp">São Paulo</option>
@@ -31,10 +34,18 @@
 
     <label for="corp">Empresa:</label>
     <select name="corp" id="corp">
+      <option value="">Empresa</option>
       <option value="azul">Azul</option>
       <option value="gol">Gol</option>
       <option value="latam">Latam</option>
     </select><br>
+
+    <label for="dateGoing">Data de Ida: </label>
+    <input type="date" name="dateGoing" id="date"><br>
+
+    <label for="dateComing">Data de Volta: </label>
+    <input type="date" name="dateComing" id="date"><br>
+
     <table>
       <input type="submit" value="Salvar">
       <button formaction="cadastroDePacote.html">Cancelar</button>
