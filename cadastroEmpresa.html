@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Empresa</title>
+</head>
+<body style="text-align: center;">
+<p>Cadastro de Empresa</p>
+<form method="post">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome"><br>
+
+    <label for="cnpj">CNPJ</label>
+    <input type="text" name="cnpj" id="cnpj"><br>
+
+    <label for="tipo">Tipo:</label>
+    <select name="tipo" id="tipo">
+        <option value="acomodacao">Acomodação</option>
+        <option value="aerea">Aérea</option>
+        <option value="onibus">Ônibus</option>
+        <option value="ferroviaria">Ferroviária</option>
+        <option value="cruzeiro">Cruzeiro</option>
+    </select><br>
+    <table>
+        <input type="submit" value="Salvar">
+        <button>Cancelar</button>
+    </table>
+</form>
+</body>
+</html>
