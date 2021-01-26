@@ -7,6 +7,7 @@ public class Vendedor extends Funcionario {
 
     public Vendedor(String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade, String password) {
         super(name, telefone, email, cpf, logradouro, numero, complemento, uf, cidade, password);
+        listaVendedores.add(this);
     }
 
     public static ArrayList<Vendedor> getListaVendedores() {
@@ -14,6 +15,6 @@ public class Vendedor extends Funcionario {
     }
 
     public static void setListaVendedores(ArrayList<Vendedor> listaVendedores) {
-        Vendedor.listaVendedores = listaVendedores;
+        Vendedor.listaVendedores = (ArrayList<Vendedor>) listaVendedores.clone();
     }
 }
