@@ -16,7 +16,7 @@
 <body style="text-align: center;">
   
     <p>Cadastro de Pacote</p>
-    
+    <p> Pacote número: 1239</p>
     <form method="post" class="header-form">
     <label for="client">Cliente:</label>
     <select name="client" id="client">
@@ -34,11 +34,14 @@
       <option value="jose">José</option>
     </select><br>
 
-    <label for="passage">Passagem</label>
-    <button formaction="cadastroPassagem.html">Cadastrar Passagem</button><br><br>
+    
 
     <table id="div" class="center">
       <th>
+      
+      <label for="passage">Passagem</label>
+      <button formaction="cadastroPassagem.html">Cadastrar Passagem</button><br><br>
+
       <label for="to">Destino:</label>
       <select name="to" id="to">
         <option value="">Destino</option>
@@ -55,8 +58,11 @@
         <option value="latam">Latam</option>
       </select><br>
 
-      <label for="duration">Duração</label>
-      <input type="text" name="duration" id="duration"><br>
+      <label for="dataInicial">Data Inicial</label>
+      <input type="date" name="dataIncial" id="dataIncial"><br>
+      <label for="dataFinal">Data Final</label>
+      <input type="date" name="dataFinal" id="dataFinal"><br>
+
 
       <table>
         <tr>
