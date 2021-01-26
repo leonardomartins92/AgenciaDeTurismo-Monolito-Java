@@ -6,16 +6,16 @@ public class Pacote {
     private int id;
     private int duracao;
     private Cliente cliente;
-    private Vendedor vendedor;
+    private Funcionario funcionario;
     private ArrayList<Passagem> listaPassagens;
     private ArrayList<Empresa> listaEmpresas;
     private ArrayList<Destino> listaDestinos;
 
-    public Pacote(int id, int duracao, Cliente cliente, Vendedor vendedor, ArrayList<Passagem> listaPassagens, ArrayList<Empresa> listaEmpresas, ArrayList<Destino> listaDestinos) {
+    public Pacote(int id, int duracao, Cliente cliente, Funcionario funcionario, ArrayList<Passagem> listaPassagens, ArrayList<Empresa> listaEmpresas, ArrayList<Destino> listaDestinos) {
         this.id = id;
         this.duracao = duracao;
         this.cliente = cliente;
-        this.vendedor = vendedor;
+        this.funcionario = funcionario;
         this.listaPassagens = listaPassagens;
         this.listaEmpresas = listaEmpresas;
         this.listaDestinos = listaDestinos;
@@ -45,12 +45,12 @@ public class Pacote {
         this.cliente = cliente;
     }
 
-    public Vendedor getVendedor() {
-        return vendedor;
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
     public ArrayList<Passagem> getListaPassagens() {
@@ -75,17 +75,5 @@ public class Pacote {
 
     public void setListaDestinos(ArrayList<Destino> listaDestinos) {
         this.listaDestinos = listaDestinos;
-    }
-
-    public void adicionaPassagem(Passagem passagem){
-        this.listaPassagens.add(passagem);
-    }
-
-    public void adicionaEmpresa(Empresa empresa){
-        this.listaEmpresas.add(empresa);
-    }
-
-    public void adicionaDestino(Destino destino){
-        this.listaDestinos.add(destino);
     }
 }
