@@ -5,14 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacotes</title>
     <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        }
     </style>
 </head>
-<body>
+<body style="text-align: center;">
 <table>
+    <label for="filtro">Opções de filtro</label><br>
+
+    <label for="nomeCliente">Nome do Cliente</label>
+    <input type="text" name="nomeCliente" id="nomeCliente">
+
+    <label for="nomeFuncionario">Nome do Funcionário</label>
+    <input type="text" name="nomeFuncionario" id="nomeFuncionario">
+
+    <label for="destino">Destino</label>
+    <input type="text" name="destino" id="destino">
+
+    <label for="estadia">Estadia</label>
+    <input type="text" name="estadia" id="estadia">
+
+    <label for="duracao">Duração</label>
+    <input type="text" name="duracao" id="duracao"><br><br>
     <tr>
         <th>ID</th>
         <th>Cliente</th>
