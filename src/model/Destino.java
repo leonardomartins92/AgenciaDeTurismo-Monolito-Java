@@ -1,3 +1,5 @@
+package model;
+
 public class Destino {
     private String pais;
     private String uf;

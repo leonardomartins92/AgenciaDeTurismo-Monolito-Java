@@ -1,3 +1,5 @@
+package model;
+
 public class Ranking {
     public String listaRanking(){
         return "404 not found";

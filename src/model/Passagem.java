@@ -1,3 +1,5 @@
+package model;
+
 import java.time.LocalDate;
 
 public class Passagem {
@@ -24,7 +26,7 @@ public class Passagem {
 
     @Override
     public String toString() {
-        return "Passagem{" +
+        return "model.Passagem{" +
                 "origem='" + origem + '\'' +
                 ", cliente=" + cliente +
                 '}';

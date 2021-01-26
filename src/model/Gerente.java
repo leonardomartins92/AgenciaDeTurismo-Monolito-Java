@@ -1,3 +1,5 @@
+package model;
+
 public class Gerente extends Pessoa {
 
     private String chaveDeAcesso;
