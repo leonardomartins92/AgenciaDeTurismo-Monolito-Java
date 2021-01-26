@@ -11,10 +11,10 @@ public class Vendedor extends Funcionario {
     }
 
     public static ArrayList<Vendedor> getListaVendedores() {
-        return listaVendedores;
+        return (ArrayList<Vendedor>) listaVendedores.clone();
     }
 
     public static void setListaVendedores(ArrayList<Vendedor> listaVendedores) {
-        Vendedor.listaVendedores = (ArrayList<Vendedor>) listaVendedores.clone();
+        Vendedor.listaVendedores = listaVendedores;
     }
 }
