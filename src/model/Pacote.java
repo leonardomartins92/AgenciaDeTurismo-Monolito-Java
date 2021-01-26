@@ -54,7 +54,7 @@ public class Pacote {
     }
 
     public ArrayList<Passagem> getListaPassagens() {
-        return listaPassagens;
+        return (ArrayList<Passagem>) listaPassagens.clone();
     }
 
     public void setListaPassagens(ArrayList<Passagem> listaPassagens) {
@@ -62,7 +62,7 @@ public class Pacote {
     }
 
     public ArrayList<Empresa> getListaEmpresas() {
-        return listaEmpresas;
+        return (ArrayList<Empresa>) listaEmpresas.clone();
     }
 
     public void setListaEmpresas(ArrayList<Empresa> listaEmpresas) {
@@ -70,7 +70,7 @@ public class Pacote {
     }
 
     public ArrayList<Destino> getListaDestinos() {
-        return listaDestinos;
+        return (ArrayList<Destino>) listaDestinos.clone();
     }
 
     public void setListaDestinos(ArrayList<Destino> listaDestinos) {
