@@ -26,6 +26,14 @@ public class Pacote {
         this.listaDestinos = listaDestinos;
     }
 
+    @Override
+    public String toString() {
+        return "Pacote{" +
+                "id=" + id +
+                ", cliente=" + cliente +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

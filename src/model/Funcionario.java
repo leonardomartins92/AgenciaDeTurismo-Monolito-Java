@@ -8,6 +8,14 @@ public abstract class Funcionario extends Pessoa{
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
+
     public String getPassword() {
         return password;
     }

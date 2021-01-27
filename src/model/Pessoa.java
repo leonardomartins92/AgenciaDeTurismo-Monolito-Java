@@ -23,6 +23,17 @@ public abstract class Pessoa {
         this.cidade = cidade;
     }
 
+    public Pessoa(String name, String telefone, String email, String cpf, String logradouro, String numero, String uf, String cidade) {
+        this.name = name;
+        this.telefone = telefone;
+        this.email = email;
+        this.cpf = cpf;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.uf = uf;
+        this.cidade = cidade;
+    }
+
     @Override
     public String toString() {
         return "model.Pessoa{" +
