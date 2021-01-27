@@ -8,20 +8,23 @@ public class Passagem {
     private LocalDate dataIda;
     private LocalDate dataVolta;
     private Cliente cliente;
+    private Empresa empresa;
 
-    public Passagem(String origem, String destino , LocalDate dataIda, LocalDate dataVolta, Cliente cliente) {
+    public Passagem(String origem, String destino , LocalDate dataIda, LocalDate dataVolta, Cliente cliente, Empresa empresa) {
         this.origem = origem;
         this.destino = destino;
         this.dataIda = dataIda;
         this.dataVolta = dataVolta;
         this.cliente = cliente;
+        this.empresa = empresa;
     }
 
-    public Passagem(String origem, String destino, LocalDate dataIda, Cliente cliente) {
+    public Passagem(String origem, String destino, LocalDate dataIda, Cliente cliente, Empresa empresa) {
         this.origem = origem;
         this.destino= destino;
         this.dataIda = dataIda;
         this.cliente = cliente;
+        this.empresa = empresa;
     }
 
     @Override
@@ -70,5 +73,13 @@ public class Passagem {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }

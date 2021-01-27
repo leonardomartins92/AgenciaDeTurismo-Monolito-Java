@@ -1,19 +1,24 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Pacote {
+    private static int cont=1;
     private int id;
-    private int duracao;
+    private LocalDate dataIda;
+    private LocalDate dataVolta;
     private Cliente cliente;
     private Funcionario funcionario;
     private ArrayList<Passagem> listaPassagens;
     private ArrayList<Empresa> listaEmpresas;
     private ArrayList<Destino> listaDestinos;
 
-    public Pacote(int id, int duracao, Cliente cliente, Funcionario funcionario, ArrayList<Passagem> listaPassagens, ArrayList<Empresa> listaEmpresas, ArrayList<Destino> listaDestinos) {
-        this.id = id;
-        this.duracao = duracao;
+    public Pacote(LocalDate dataIda, LocalDate dataVolta, Cliente cliente, Funcionario funcionario, ArrayList<Passagem> listaPassagens, ArrayList<Empresa> listaEmpresas, ArrayList<Destino> listaDestinos) {
+        this.id=cont;
+        cont++;
+        this.dataIda = dataIda;
+        this.dataVolta = dataVolta;
         this.cliente = cliente;
         this.funcionario = funcionario;
         this.listaPassagens = listaPassagens;
@@ -29,12 +34,20 @@ public class Pacote {
         this.id = id;
     }
 
-    public int getDuracao() {
-        return duracao;
+    public LocalDate getDataIda() {
+        return dataIda;
     }
 
-    public void setDuracao(int duracao) {
-        this.duracao = duracao;
+    public void setDataIda(LocalDate dataIda) {
+        this.dataIda = dataIda;
+    }
+
+    public LocalDate getDataVolta() {
+        return dataVolta;
+    }
+
+    public void setDataVolta(LocalDate dataVolta) {
+        this.dataVolta = dataVolta;
     }
 
     public Cliente getCliente() {
