@@ -1,0 +1,169 @@
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Black.ttf'); 
+  }
+  
+   
+  
+  * {
+      margin: 0px; 
+      padding: 0px; 
+      box-sizing: border-box;
+      overflow: hidden;
+  }
+  
+img{
+position: absolute;
+width: 1070px;
+height: 1016px;
+left: 370px;
+top: 0px;
+
+}
+
+/* Rectangle 1 */
+
+.container{
+position: absolute;
+width: 391px;
+height: 1024px;
+left: -11px;
+top: -8px;
+
+background: #514E4C;
+}
+
+/* Rectangle 2 */
+
+.container2{
+position: absolute;
+width: 270px;
+height: 349px;
+left: 49px;
+top: 99px;
+
+background: #D1CACA;
+}
+
+/* LOGIN */
+
+h1{
+position: absolute;
+width: 108px;
+height: 35px;
+left: 130px;
+top: 122px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+
+color: #342C2C;
+}
+
+
+/* Rectangle 3 */
+
+.username{
+position: absolute;
+width: 199px;
+height: 39px;
+left: 74px;
+top: 201px;
+
+background: #FFFFFF;
+}
+
+/* Rectangle 4 */
+
+.password{
+position: absolute;
+width: 199px;
+height: 39px;
+left: 74px;
+top: 287px;
+
+background: #FFFFFF;
+
+}
+
+
+
+/* Esqueci Minha Senha */
+
+a{
+position: absolute;
+width: 141px;
+height: 31px;
+left: 74px;
+top: 331px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+}
+
+
+/* Rectangle 6 */
+
+.button{
+position: absolute;
+width: 186px;
+height: 42px;
+left: 80px;
+top: 367px;
+
+background: #4B4745;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #FFFFFF;
+}
+
+.cpf{
+position: absolute;
+width: 42px;
+height: 18px;
+left: 76px;
+top: 179px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+
+color: #252323;
+}
+
+
+/* SENHA */
+
+.senha{
+position: absolute;
+width: 65px;
+height: 18px;
+left: 74px;
+top: 265px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+
+color: #252323;
+}
