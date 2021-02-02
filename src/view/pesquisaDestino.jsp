@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>Cliente</title>
+  <title>Destinos</title>
   <style>
     table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      margin-left: auto;
-      margin-right: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
     }
-    </style>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,18 +30,15 @@
       </div>
     </div>
   </nav>
+
 </head>
+
 
 <body style="text-align: center;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-<label for="filtro">Opções de filtro</label><br>
-
-<label for="nome">Nome do Cliente</label>
-<input type="text" name="nome" id="nome">
-
-<label for="CPF">CPF</label>
-<input type="text" name="CPF" id="CPF">
+<label for="pais">País</label>
+<input type="text" name="pais" id="pais">
 
 <label for="UF">UF</label>
 <input type="text" name="UF" id="UF">
@@ -51,33 +48,48 @@
   <table class="table table-striped">
     <tr>
       <th>ID</th>
-      <th>Nome</th>
-      <th>E-mail</th>
-      <th>Telefone</th>
-      <th>CPF</th>
+      <th>País</th>
+      <th>UF</th>
+      <th>Cidade</th>
       <th colspan="2">Ação</th>
-      
     </tr>
     <tr>
       <td>1</td>
-      <td>João</td>
-      <td>joaozinho123@gmail.com</td>
-      <td>+55 (32) 99999-9999</td>
-      <td>00000000000000000</td>
+      <td>Brasil</td>
+      <td>MG</td>
+      <td>Juiz de Fora</td>
       <div class="list-group">
-      <td><a href="manterCliente.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterCliente.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-       
+        <td><a href="manterDestino.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+        <td><a href="manterDestino.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+        </div>
     </tr>
- 
+    <tr>
+      <td>2</td>
+      <td>Estados Unidos</td>
+      <td>Califórnia</td>
+      <td>Los Angeles</td>
+      <div class="list-group">
+        <td><a href="manterDestino.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+        <td><a href="manterDestino.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+        </div>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Inglaterra</td>
+      <td>Leste</td>
+      <td>Essex</td>
+      <div class="list-group">
+        <td><a href="manterDestino.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+        <td><a href="manterDestino.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+        </div>
+    </tr>
+    
   </table>
-  
-  <div class="col-md-2 ">
+<div class="col-md-2 ">
   <div class="list-group">
-    <a href="manterCliente.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+    <a href="manterDestino.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
   </div>
   </div>
-  
+
 </body>
 </html>
