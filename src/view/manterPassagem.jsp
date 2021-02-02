@@ -3,53 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
   <title>Cadastro de Passagem</title>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </head>
-<body style="text-align: center;">
-  <p>Cadastro de Passagem</p>
-  <form method="post">
-    <label for="client">Cliente:</label>
-    <select name="client" id="client">
-      <option value="">Cliente</option>
-      <option value="joao">João</option>
-      <option value="maria">Maria</option>
-      <option value="jose">José</option>
-    </select><br>
+<body style="width:70%;">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col">
 
-    <label for="from">Origem:</label>
-    <select name="from" id="from">
-      <option value="">Localização</option>
-      <option value="jf">Juiz de Fora</option>
-      <option value="bh">Belo Horizonte</option>
-      <option value="sp">São Paulo</option>
-    </select><br>
+    </div>
+    <div class="col">
+      <div class="col">
+        <form class="row g-3">
+          <div class="col-md-12">
+            <label for="inputClient" class="form-label">Cliente</label>
+            <select id="inputClient" class="form-select">
+              <option selected>José</option>
+              <option>Maria</option>
+              <option>Pedro</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label for="inputOrigin" class="form-label">Origem</label>
+            <select id="inputOrigin" class="form-select">
+              <option selected>Brasil</option>
+              <option>México</option>
+              <option>Portugal</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label for="inputDestiny" class="form-label">Destino</label>
+            <select id="inputDestiny" class="form-select">
+              <option selected>Brasil</option>
+              <option>México</option>
+              <option>Portugal</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label for="inputCompany" class="form-label">Empresa</label>
+            <select id="inputCompany" class="form-select">
+              <option selected>GOL</option>
+              <option>LATAM</option>
+              <option>AZUL</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputDateGo" class="form-label">Data de Ida</label>
+            <input type="date" class="form-control" id="inputDateGo">
+          </div>
+          <div class="col-md-6">
+            <label for="inputDateReturn" class="form-label">Data de Ida</label>
+            <input type="date" class="form-control" id="inputDateReturn">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
 
-    <label for="to">Destino:</label>
-    <select name="to" id="to">
-      <option value="">Localização</option>
-      <option value="jf">Juiz de Fora</option>
-      <option value="bh">Belo Horizonte</option>
-      <option value="sp">São Paulo</option>
-    </select><br>
 
-    <label for="corp">Empresa:</label>
-    <select name="corp" id="corp">
-      <option value="">Empresa</option>
-      <option value="azul">Azul</option>
-      <option value="gol">Gol</option>
-      <option value="latam">Latam</option>
-    </select><br>
 
-    <label for="dateGoing">Data de Ida: </label>
-    <input type="date" name="dateGoing" id="date"><br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <label for="dateComing">Data de Volta: </label>
-    <input type="date" name="dateComing" id="date"><br>
 
-    <table>
-      <input type="submit" value="Salvar">
-      <button formaction="cadastroDePacote.html">Cancelar</button>
-    </table>
-  </form>
+
 </body>
 </html>
