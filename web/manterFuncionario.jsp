@@ -38,7 +38,7 @@
     </div>
     <div class="col">
       <form class="row g-3">
-        <h2><span id="acao"></span>Funcion√°rio</h2>
+        <h2><span id="acao"></span> Funcion·rio</h2>
         <div class="col-12">
           <label for="name" class="form-label">Nome</label>
           <input type="text" class="form-control" id="name" placeholder="">
