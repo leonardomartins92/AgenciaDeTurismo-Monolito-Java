@@ -35,6 +35,7 @@
       <div class="col">
         <form class="row g-3">
           <div class="col-md-12">
+            <h2><span id="acao"></span> Passagem</h2>
             <label for="inputClient" class="form-label">Cliente</label>
             <select id="inputClient" class="form-select">
               <option selected>José</option>
@@ -87,6 +88,6 @@
 </div>
 
 
-
+<script src="./Scripts/main.js"></script>
 </body>
 </html>

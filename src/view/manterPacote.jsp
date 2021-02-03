@@ -15,7 +15,7 @@
 </head>
 <body style="text-align: center;">
   
-    <p>Cadastro de Pacote</p>
+    <h2><span id="acao"></span> Pacote</h2>
     <p> Pacote número: 1239</p>
     <form method="post" class="header-form">
     <label for="client">Cliente:</label>
@@ -83,6 +83,6 @@
       <button>Cancelar</button>
     </table>
   </form>
- 
+  <script src="./Scripts/main.js"></script>
 </body>
 </html>
