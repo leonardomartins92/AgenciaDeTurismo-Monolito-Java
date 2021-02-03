@@ -48,8 +48,8 @@
        <h2>Inicial do Gerente</h2>
         <a href="cadastroClientes.html">Cadastro de Clientes</a><br>
         <a href="cadastroEmpresa.html">Cadastro de Empresas</a><br>
-        <a href="cadastroFuncionarios.html">Cadastro de Funcion√°rios</a><br>
-        <a href="cadastroLocalizacao.html">Cadastro de Localiza√ß√£o</a><br>
+        <a href="cadastroFuncionarios.html">Cadastro de Funcion·rios</a><br>
+        <a href="cadastroLocalizacao.html">Cadastro de LocalizaÁ„o</a><br>
         <a href="cadastroPassagem.html">Cadastro de Passagem</a><br>
         <a href="cadastroDePacote.html">Cadastro de Pacote</a><br>
         <a href="consultaCliente">Consultas</a><br>
