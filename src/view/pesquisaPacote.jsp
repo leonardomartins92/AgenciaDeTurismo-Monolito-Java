@@ -14,18 +14,23 @@
         margin-right: auto;
         }
     </style>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
+          <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
+          <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
+          <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
+          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+          <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          
         </div>
       </div>
     </div>
@@ -40,7 +45,7 @@
     <label for="nomeCliente">Nome do Cliente</label>
     <input type="text" name="nomeCliente" id="nomeCliente">
 
-    <label for="nomeFuncionario">Nome do Funcion√°rio</label>
+    <label for="nomeFuncionario">Nome do Funcion·rio</label>
     <input type="text" name="nomeFuncionario" id="nomeFuncionario">
 
     <label for="destino">Destino</label>
@@ -49,20 +54,20 @@
     <label for="estadia">Estadia</label>
     <input type="text" name="estadia" id="estadia">
 
-    <label for="duracao">Dura√ß√£o</label>
+    <label for="duracao">DuraÁ„o</label>
     <input type="text" name="duracao" id="duracao"><br><br>
     <tr>
         <th>ID</th>
         <th>Cliente</th>
-        <th>Funcion√°rio</th>
+        <th>Funcion·rio</th>
         <th>Destino</th>
         <th>Estadia</th>
-        <th>Dura√ß√£o</th>
-        <th colspan="2">A√ß√£o</th>
+        <th>DuraÁ„o</th>
+        <th colspan="2">AÁ„o</th>
     </tr>
     <tr>
         <td>1</td>
-        <td>Jo√£o</td>
+        <td>Jo„o</td>
         <td>Maria</td>
         <td>
             <ul>
@@ -91,18 +96,18 @@
     <tr>
         <td>2</td>
         <td>Maria</td>
-        <td>Jos√©</td>
+        <td>JosÈ</td>
         
         <td>
             <ul>
-                <li>S√£o Paulo</li>
+                <li>S„o Paulo</li>
                 <li>Madrid</li>
             </ul>
         </td>
         <td>
             <ul>
                 <li>IBIS</li>
-                <li>Riu Plaza Espa√±a</li>
+                <li>Riu Plaza Espanha</li>
             </ul>
         </td>
         <td>
@@ -119,8 +124,8 @@
 
     <tr>
         <td>3</td>
-        <td>Jos√©</td>
-        <td>Jo√£o</td>
+        <td>JosÈ</td>
+        <td>Jo„o</td>
         
         <td>
             <ul>
