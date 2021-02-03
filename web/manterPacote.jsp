@@ -20,7 +20,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     function addNewTravel() {
-      $("div #travelBlock").append('<div class="card align-items-center">' +
+      $("div #travelBlock").append(
+        
         '<div class="col-8">' +
         '<a href="manterPassagem.jsp?acao=adicionar"' +
         'class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>' +
@@ -64,7 +65,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -94,17 +95,17 @@
         <div class="col">
           <form class="row g-3">
             <h2><span id="acao"></span> Pacote</h2>
-            <p> Pacote n√∫mero: 1239</p>
+            <p> Pacote n˙mero: 1239</p>
             <div class="col-md-12">
               <label for="inputClient" class="form-label">Cliente</label>
               <select id="inputClient" class="form-select">
-                <option selected>Jos√©</option>
+                <option selected>JosÈ</option>
                 <option>Maria</option>
                 <option>Pedro</option>
               </select>
             </div>
             <div class="col-md-12">
-              <label for="inputStaff" class="form-label">Funcion√°rio</label>
+              <label for="inputStaff" class="form-label">Funcion·rio</label>
               <select id="inputStaff" class="form-select">
                 <option selected>Bruno</option>
                 <option>Leonardo</option>
@@ -132,7 +133,7 @@
                 <select name="to" id="to" class="form-select">
                   <option value="jf">Juiz de Fora</option>
                   <option value="bh">Belo Horizonte</option>
-                  <option value="sp">S√£o Paulo</option>
+                  <option value="sp">S„o Paulo</option>
                 </select>
               </div>
               <div class="col-md-8">
@@ -152,7 +153,7 @@
                 <input type="date" name="dataFinal" id="dataIncial" class="form-control">
               </div>
             </div>
-            <span id="travelBlock"></span>
+            <div id="travelBlock" class="card align-items-center" ></div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary" id="botaoSubmit">Confirmar</button>
             </div>
