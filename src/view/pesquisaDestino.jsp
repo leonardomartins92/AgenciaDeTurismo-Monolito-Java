@@ -14,23 +14,18 @@
     margin-right: auto;
     }
 </style>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
-          <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
-          <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
-          <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
-          <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          
         </div>
       </div>
     </div>
@@ -42,7 +37,7 @@
 <body style="text-align: center;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-<label for="pais">País</label>
+<label for="pais">PaÃ­s</label>
 <input type="text" name="pais" id="pais">
 
 <label for="UF">UF</label>
@@ -53,10 +48,10 @@
   <table class="table table-striped">
     <tr>
       <th>ID</th>
-      <th>País</th>
+      <th>PaÃ­s</th>
       <th>UF</th>
       <th>Cidade</th>
-      <th colspan="2">Ação</th>
+      <th colspan="2">AÃ§Ã£o</th>
     </tr>
     <tr>
       <td>1</td>
@@ -71,7 +66,7 @@
     <tr>
       <td>2</td>
       <td>Estados Unidos</td>
-      <td>Califórnia</td>
+      <td>CalifÃ³rnia</td>
       <td>Los Angeles</td>
       <div class="list-group">
         <td><a href="manterDestino.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>

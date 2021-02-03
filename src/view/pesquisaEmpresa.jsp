@@ -15,23 +15,18 @@
         }
     </style>
 
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
-          <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
-          <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
-          <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
-          <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          
         </div>
       </div>
     </div>
@@ -56,12 +51,12 @@
         <th>ID</th>
         <th>Nome</th>
         <th>Tipo</th>
-        <th colspan="2">AÁ„o</th>
+        <th colspan="2">A√ß√£o</th>
     </tr>
     <tr>
         <td>1</td>
         <td>Gol</td>
-        <td>AÈrea</td>
+        <td>A√©rea</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
@@ -70,7 +65,7 @@
     <tr>
         <td>2</td>
         <td>IBIS</td>
-        <td>AcomodaÁ„o</td>
+        <td>Acomoda√ß√£o</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
@@ -79,7 +74,7 @@
     <tr>
         <td>3</td>
         <td>Cometa</td>
-        <td>‘nibus</td>
+        <td>√înibus</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
@@ -88,7 +83,7 @@
     <tr>
         <td>4</td>
         <td>Vale</td>
-        <td>Ferrovi·ria</td>
+        <td>Ferrovi√°ria</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
