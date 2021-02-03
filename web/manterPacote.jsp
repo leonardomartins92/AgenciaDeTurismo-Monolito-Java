@@ -18,10 +18,29 @@
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script> 
+   var cont = 0;
+   var color = "primary";
+  </script>
   <script>
+   
     function addNewTravel() {
+      cont++;
+      if (cont === 1){
+           color = "success";
+      }  
+      else if (cont === 2){
+           color = "dark";
+      } 
+      else if (cont === 3){
+           color = "warning";
+      }
+      else{
+           color = "primary";
+      }
       $("div #travelBlock").append(
-        
+        '<li class="list-group-item list-group-item-'+color+'">'+
+        '<div class="card align-items-center">'+
         '<div class="col-8">' +
         '<a href="manterPassagem.jsp?acao=adicionar"' +
         'class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>' +
@@ -31,7 +50,7 @@
         '<select name="to" id="to" class="form-select">' +
         '<option value="jf">Juiz de Fora</option>' +
         '<option value="bh">Belo Horizonte</option>' +
-        '<option value="sp">SÃ£o Paulo</option>' +
+        '<option value="sp">São Paulo</option>' +
         '</select>' +
         '</div>' +
         '<div class="col-md-8">' +
@@ -50,7 +69,7 @@
         '<label for="dataFinal">Data Final</label>' +
         '<input type="date" name="dataFinal" id="dataIncial" class="form-control">' +
         '</div>' +
-        '</div><br>');
+        '</div></li><br>');
     }
   </script>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -120,7 +139,8 @@
 
               <a class="list-group-item list-group-item-danger" href=""> - </a>
             </div>
-
+            <ul class="list-group">
+            <li class="list-group-item">
             <div class="card align-items-center">
 
               <div class="col-8">
@@ -152,8 +172,13 @@
                 <label for="dataFinal">Data Final</label>
                 <input type="date" name="dataFinal" id="dataIncial" class="form-control">
               </div>
-            </div>
-            <div id="travelBlock" class="card align-items-center" ></div>
+            </div><br>
+            </li> 
+            
+            
+            <div id="travelBlock"></div>
+            </ul>
+           
             <div class="col-12">
               <button type="submit" class="btn btn-primary" id="botaoSubmit">Confirmar</button>
             </div>
