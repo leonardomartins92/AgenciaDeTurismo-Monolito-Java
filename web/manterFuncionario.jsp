@@ -18,7 +18,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -38,7 +38,7 @@
     </div>
     <div class="col">
       <form class="row g-3">
-        <h2><span id="acao"></span> Funcion·rio</h2>
+        <h2><span id="acao"></span> Funcion√°rio</h2>
         <div class="col-12">
           <label for="name" class="form-label">Nome</label>
           <input type="text" class="form-control" id="name" placeholder="">
