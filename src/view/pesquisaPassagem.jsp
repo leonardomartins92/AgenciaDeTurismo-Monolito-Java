@@ -16,16 +16,21 @@
     </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
+          <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
+          <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
+          <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
+          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+          <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          
         </div>
       </div>
     </div>
@@ -48,10 +53,10 @@
     <label for="empresa">Empresa</label>
     <input type="text" name="empresa" id="empresa">
 
-    <label for="dataSaida">Data de Sa√≠da</label>
+    <label for="dataSaida">Data de SaÌda</label>
     <input type="text" name="dataSaida" id="dataSaida">
 
-    <label for="horaSaida">Hora de Sa√≠da</label>
+    <label for="horaSaida">Hora de SaÌda</label>
     <input type="text" name="horaSaida" id="horaSaida">
 
     <br><br>
@@ -61,13 +66,13 @@
         <th>Origem</th>
         <th>Destino</th>
         <th>Empresa</th>
-        <th>Data de Sa√≠da </th>
-        <th>Hora de Sa√≠da</th>
-        <th colspan="2">A√ß√£o</th>
+        <th>Data de SaÌda </th>
+        <th>Hora de SaÌda</th>
+        <th colspan="2">AÁ„o</th>
     </tr>
     <tr>
         <td>1</td>
-        <td>Jo√£o</td>
+        <td>Jo„o</td>
         <td>Juiz de Fora</td>
         <td>Londres</td>
         <td>Gol</td>
@@ -93,7 +98,7 @@
     </tr>
     <tr>
         <td>3</td>
-        <td>Jos√©</td>
+        <td>JosÈ</td>
         <td>Juiz de Fora</td>
         <td>Tokyo</td>
         <td>Gol</td>
