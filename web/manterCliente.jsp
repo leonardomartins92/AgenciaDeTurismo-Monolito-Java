@@ -26,7 +26,7 @@
     </nav>
 
 </head>
-<body style="width:70%";>
+<body style="width:70%">
 
 
     <div class="container">
