@@ -66,7 +66,7 @@
             </select>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
           </div>
         </form>
       </div>

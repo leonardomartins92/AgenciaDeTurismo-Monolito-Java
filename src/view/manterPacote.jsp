@@ -79,7 +79,7 @@
       </table>
     </table>
     <table><br>
-      <input type="submit" value="Salvar">
+      <input type="submit" value="Salvar" id="botaoSubmit">
       <button>Cancelar</button>
     </table>
   </form>

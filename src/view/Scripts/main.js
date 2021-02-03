@@ -22,14 +22,18 @@ if(action == 'excluir') {
   document.getElementById('acao').innerHTML = 'Excluir';
   document.getElementById('botaoSubmit').innerHTML = 'Excluir';
   document.getElementById('botaoSubmit').style.background = 'red';
-  document.getElementsByTagName("input").disabled = true;
-  var inputs = document.getElementsByTagName("input");
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].disabled = true;
+  
+  if(document.getElementsByTagName("input") != null){
+    var inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].disabled = true;
+    }
   }
-  var select = document.getElementsByTagName("select");
-  for (var i = 0; i < select.length; i++) {
-    select[i].disabled = true;
+  if(document.getElementsByTagName("select") != null){
+    var select = document.getElementsByTagName("select");
+    for (var i = 0; i < select.length; i++) {
+      select[i].disabled = true;
+    }
   }
 }
 if(action == 'adicionar') {
