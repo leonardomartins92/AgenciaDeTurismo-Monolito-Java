@@ -107,6 +107,20 @@ public class ClienteDAO extends DAO{
         return clientes;
     }
     
+    public void deletarCliente(String cpf) throws ClassNotFoundException, SQLException{
+    
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        
+        try {
+            conexao = BD.getInstancia().getConexao();
+            comando = (PreparedStatement) conexao.prepareStatement("delete from cliente where cpfCliente = ?");
+            comando.setString(1, cpf);  
+        } finally{
+            fecharConexao(conexao, comando);
+        }
+    }
+    
     public Cliente instaciarCliente(ResultSet rs) throws SQLException {
     Cliente cliente = new Cliente(rs.getString("nomeCliente"),
             rs.getString("telefoneCliente"),
