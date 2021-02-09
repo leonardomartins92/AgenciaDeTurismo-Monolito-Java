@@ -24,9 +24,9 @@ public class ClienteDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "insert into cliente (nomeCliente, telefoneCliente, emailCliente, "
-                   + "cpfCliente, logradouroCliente, numeroCliente,"
-            + " complementoCliente, ufCliente, cidadeCliente) values(?,?,?,?,?,?,?,?,?)"
+           "insert into cliente (nome, telefone, email, "
+                   + "cpf, logradouro, numero,"
+            + " complemento, uf, cidade) values(?,?,?,?,?,?,?,?,?)"
            );
            comando.setString(1, cliente.getName());
            comando.setString(2, cliente.getTelefone());
@@ -50,10 +50,10 @@ public class ClienteDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "update cliente set (nomeCliente, telefoneCliente, emailCliente, "
-                   + "logradouroCliente, numeroCliente,"
-            + " complementoCliente, ufCliente, cidadeCliente) "
-                   + "values(?,?,?,?,?,?,?,?) where cpfCliente = ?"
+           "update cliente set (nome, telefone, email, "
+                   + "logradouro, numero,"
+            + " complemento, uf, cidade) "
+                   + "values(?,?,?,?,?,?,?,?) where cpf = ?"
            );
            comando.setString(1, cliente.getName());
            comando.setString(2, cliente.getTelefone());
@@ -78,7 +78,7 @@ public class ClienteDAO extends DAO{
         
         try {
             conexao = BD.getInstancia().getConexao();
-            comando = (PreparedStatement) conexao.prepareStatement("select * from cliente where cpfCliente = ?");
+            comando = (PreparedStatement) conexao.prepareStatement("select * from cliente where cpf = ?");
             comando.setString(1, cpf);
             return (Cliente) executeResultSet(comando);  
         } finally{
@@ -114,7 +114,7 @@ public class ClienteDAO extends DAO{
         
         try {
             conexao = BD.getInstancia().getConexao();
-            comando = (PreparedStatement) conexao.prepareStatement("delete from cliente where cpfCliente = ?");
+            comando = (PreparedStatement) conexao.prepareStatement("delete from cliente where cpf = ?");
             comando.setString(1, cpf);  
         } finally{
             fecharConexao(conexao, comando);
@@ -122,15 +122,15 @@ public class ClienteDAO extends DAO{
     }
     
     public Cliente instaciarCliente(ResultSet rs) throws SQLException {
-    Cliente cliente = new Cliente(rs.getString("nomeCliente"),
-            rs.getString("telefoneCliente"),
-            rs.getString("emailCliente"),
-            rs.getString("cpfCliente"),
-            rs.getString("logradouroCliente"),
-            rs.getString("numeroCliente"),
-            rs.getString("complementoCliente"),
-            rs.getString("ufCliente"),
-            rs.getString("cidadeCliente"));
+    Cliente cliente = new Cliente(rs.getString("nome"),
+            rs.getString("telefone"),
+            rs.getString("email"),
+            rs.getString("cpf"),
+            rs.getString("logradouro"),
+            rs.getString("numero"),
+            rs.getString("complemento"),
+            rs.getString("uf"),
+            rs.getString("cidade"));
     
     return cliente;
     }
