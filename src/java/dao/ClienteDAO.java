@@ -1,6 +1,5 @@
 package dao;
 
-
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
@@ -75,12 +74,18 @@ public class ClienteDAO extends DAO{
     
         Connection conexao = null;
         PreparedStatement comando = null;
+        Cliente cliente = null;
         
         try {
             conexao = BD.getInstancia().getConexao();
             comando = (PreparedStatement) conexao.prepareStatement("select * from cliente where cpf = ?");
             comando.setString(1, cpf);
-            return (Cliente) executeResultSet(comando);  
+            
+            ResultSet rs = comando.executeQuery();
+            rs.next();
+           
+            cliente = instanciarCliente(rs);
+            return cliente;  
         } finally{
             fecharConexao(conexao, comando);
         }
@@ -97,7 +102,7 @@ public class ClienteDAO extends DAO{
             comando = (Statement) conexao.createStatement();
             ResultSet rs = comando.executeQuery("select * from cliente");
             while(rs.next()){
-            cliente = instaciarCliente(rs);
+            cliente = instanciarCliente(rs);
             clientes.add(cliente);
             }
         }
@@ -115,13 +120,14 @@ public class ClienteDAO extends DAO{
         try {
             conexao = BD.getInstancia().getConexao();
             comando = (PreparedStatement) conexao.prepareStatement("delete from cliente where cpf = ?");
-            comando.setString(1, cpf);  
+            comando.setString(1, cpf); 
+            comando.executeUpdate();
         } finally{
             fecharConexao(conexao, comando);
         }
     }
     
-    public Cliente instaciarCliente(ResultSet rs) throws SQLException {
+    public Cliente instanciarCliente(ResultSet rs) throws SQLException {
     Cliente cliente = new Cliente(rs.getString("nome"),
             rs.getString("telefone"),
             rs.getString("email"),
@@ -133,14 +139,5 @@ public class ClienteDAO extends DAO{
             rs.getString("cidade"));
     
     return cliente;
-    }
-    
-     private Object executeResultSet(PreparedStatement stmt) {
-        try (ResultSet rs = stmt.getResultSet()) {
-            rs.next();
-            return rs;
-        } finally {
-            return null;
-        }
     }
 }
