@@ -8,22 +8,18 @@
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
   <title>Cadastro de Pacote</title>
-  <style>
-    table,
-    th {
-      border: 1px solid black;
-      border-collapse: collapse;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
   <script> 
    var cont = 0;
    var color = "primary";
-  </script>
-  <script>
    
+   function submeteFormularios(){
+		document.form1.submit();
+		document.form2.submit();
+	}
+  
     function addNewTravel() {
       cont++;
       if (cont === 1){
@@ -39,18 +35,15 @@
            color = "primary";
       }
       $("div #travelBlock").append(
+        '<form class="row g-3">'+     
         '<li class="list-group-item list-group-item-'+color+'">'+
         '<div class="card align-items-center">'+
-        '<div class="col-8">' +
-        '<a href="manterPassagem.jsp?acao=adicionar"' +
-        'class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>' +
-        '</div>' +
         '<div class="col-md-8">' +
         '<label for="to">Destino:</label>' +
         '<select name="to" id="to" class="form-select">' +
         '<option value="jf">Juiz de Fora</option>' +
         '<option value="bh">Belo Horizonte</option>' +
-        '<option value="sp">Sï¿½o Paulo</option>' +
+        '<option value="sp">São Paulo</option>' +
         '</select>' +
         '</div>' +
         '<div class="col-md-8">' +
@@ -68,8 +61,32 @@
         '<div class="col-md-8">' +
         '<label for="dataFinal">Data Final</label>' +
         '<input type="date" name="dataFinal" id="dataIncial" class="form-control">' +
-        '</div>' +
-        '</div></li><br>');
+        '</div>' + '<div class="col-8">' +
+        '<a href="manterPassagem.jsp?acao=adicionar"' +
+        'class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>' +
+        '</div>' + '<table class="table table-striped">' +' <tr>' +
+        '<th>Origem</th>' +
+        '<th>Destino</th>' +
+        '<th>Empresa</th>'+
+        '<th>Data de Saída </th>'+
+        '<th> Selecionar</th>'+
+        '</tr>'+
+        '<tr>'+
+        '<td>Juiz de Fora</td>'+
+        '<td>Londres</td>'+
+        '<td>Gol</td>'+
+        '<td>01/01/2021</td>'+
+        '<td><input type="checkbox" name="passagem"></td>'+
+        '</tr>'+
+        '<tr>'+
+        '<td>Juiz de Fora</td>'+
+        '<td>Madrid</td>'+
+        '<td>Gol</td>'+
+        '<td>01/01/2021</td>'+
+        '<td><input type="checkbox" name="passagem"></td>'+
+        '</tr>'+
+       '</table>'+
+       '</div></li></form><br>');
     }
   </script>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -84,7 +101,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionï¿½rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -94,11 +111,7 @@
       </div>
     </div>
   </nav>
-
-
-
 </head>
-
 
 <body style="width:70%">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -112,19 +125,20 @@
       </div>
       <div class="col">
         <div class="col">
-          <form class="row g-3">
+            
+          <form class="row g-3" onsubmit="myFunction()">
             <h2><span id="acao"></span> Pacote</h2>
-            <p> Pacote nï¿½mero: 1239</p>
+            <p> Pacote número: 1239</p>
             <div class="col-md-12">
               <label for="inputClient" class="form-label">Cliente</label>
               <select id="inputClient" class="form-select">
-                <option selected>Josï¿½</option>
+                <option selected>José</option>
                 <option>Maria</option>
                 <option>Pedro</option>
               </select>
             </div>
             <div class="col-md-12">
-              <label for="inputStaff" class="form-label">Funcionï¿½rio</label>
+              <label for="inputStaff" class="form-label">Funcionário</label>
               <select id="inputStaff" class="form-select">
                 <option selected>Bruno</option>
                 <option>Leonardo</option>
@@ -139,21 +153,19 @@
 
               <a class="list-group-item list-group-item-danger" href=""> - </a>
             </div>
+             
             <ul class="list-group">
+            <form class="row g-3" id="form1">
             <li class="list-group-item">
             <div class="card align-items-center">
 
-              <div class="col-8">
-                <a href="manterPassagem.jsp?acao=adicionar"
-                  class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>
-              </div>
-              <div class="col-md-8">
+               <div class="col-md-8">
 
                 <label for="to">Destino:</label>
                 <select name="to" id="to" class="form-select">
                   <option value="jf">Juiz de Fora</option>
                   <option value="bh">Belo Horizonte</option>
-                  <option value="sp">Sï¿½o Paulo</option>
+                  <option value="sp">São Paulo</option>
                 </select>
               </div>
               <div class="col-md-8">
@@ -172,11 +184,38 @@
                 <label for="dataFinal">Data Final</label>
                 <input type="date" name="dataFinal" id="dataIncial" class="form-control">
               </div>
-            </div>
-            </li><br>
-            
-            
-            <div id="travelBlock"></div>
+                <div class="col-8">
+                <a href="manterPassagem.jsp?acao=adicionar"
+                  class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>
+              </div>
+                <%-- Passagens com cliente igual ao do pacote e com origem ou destino igual ao destino --%>
+                
+            <table class="table table-striped">
+                <tr>
+                    <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Empresa</th>
+                    <th>Data de Saída </th>
+                    <th> Selecionar</th>
+                </tr>
+                <tr>
+                    <td>Juiz de Fora</td>
+                    <td>Londres</td>
+                    <td>Gol</td>
+                    <td>01/01/2021</td>
+                    <td><input type="checkbox" name="passagem"></td>
+                </tr>
+                <tr>
+                    <td>Juiz de Fora</td>
+                    <td>Madrid</td>
+                    <td>Gol</td>
+                    <td>01/01/2021</td>
+                    <td><input type="checkbox" name="passagem"></td>
+                </tr>
+             </table>
+            </div></li></form><br>
+           
+            <div id="travelBlock"></div><br>
             </ul>
            
             <div class="col-12">
