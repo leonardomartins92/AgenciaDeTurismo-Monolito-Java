@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>Consulta de Funcion√°rios</title>
+  <title>Consulta de Funcion·rios</title>
   <style>
     table, th, td {
     border: 1px solid black;
@@ -25,7 +25,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -55,11 +55,11 @@
       <th>Nome</th>
       <th>E-mail</th>
       <th>Telefone</th>
-      <th colspan="2">A√ß√£o</th>
+      <th colspan="2">AAÁ„o</th>
     </tr>
     <tr>
       <td>1</td>
-      <td>Jo√£o</td>
+      <td>Jo„o</td>
       <td>joaozinho123@gmail.com</td>
       <td>+55 (32) 99999-9999</td>
       <div class="list-group">

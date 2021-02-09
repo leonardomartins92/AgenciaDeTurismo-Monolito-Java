@@ -26,7 +26,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -56,12 +56,12 @@
         <th>ID</th>
         <th>Nome</th>
         <th>Tipo</th>
-        <th colspan="2">A√ß√£o</th>
+        <th colspan="2">AÁ„o</th>
     </tr>
     <tr>
         <td>1</td>
         <td>Gol</td>
-        <td>A√©rea</td>
+        <td>¡rea</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
