@@ -25,7 +25,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -41,7 +41,7 @@
 <body style="text-align: center;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-<label for="pais">Pa√≠s</label>
+<label for="pais">PaÌs</label>
 <input type="text" name="pais" id="pais">
 
 <label for="UF">UF</label>
@@ -52,10 +52,10 @@
   <table class="table table-striped">
     <tr>
       <th>ID</th>
-      <th>Pa√≠s</th>
+      <th>PaÌs</th>
       <th>UF</th>
       <th>Cidade</th>
-      <th colspan="2">A√ß√£o</th>
+      <th colspan="2">AÁ„o</th>
     </tr>
     <tr>
       <td>1</td>

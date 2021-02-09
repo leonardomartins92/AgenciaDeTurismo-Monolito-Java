@@ -26,7 +26,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -42,13 +42,13 @@
 
   <table class="table table-striped">
     <tr>
-      <th>Posi√ß√£o</th>
+      <th>PosiÁ„o</th>
       <th>Nome</th>
       <th>Pacotes</th>
     </tr>
     <tr>
       <td>1</td>
-      <td>Jo√£o</td>
+      <td>Jo„o</td>
       <td>500</td>
     </tr>
     <tr>
@@ -58,7 +58,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td>Jos√©</td>
+      <td>JosÈ</td>
       <td>1</td>
     </tr>
   </table>
