@@ -80,7 +80,7 @@
   
   <div class="col-md-2 ">
   <div class="list-group">
-    <a href="manterCliente.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+    <a href="manterCliente.jsp?acao=adicionar&id=null" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
   </div>
   </div>
   

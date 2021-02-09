@@ -50,7 +50,7 @@
         '<select name="to" id="to" class="form-select">' +
         '<option value="jf">Juiz de Fora</option>' +
         '<option value="bh">Belo Horizonte</option>' +
-        '<option value="sp">São Paulo</option>' +
+        '<option value="sp">Sï¿½o Paulo</option>' +
         '</select>' +
         '</div>' +
         '<div class="col-md-8">' +
@@ -84,7 +84,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionï¿½rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -114,17 +114,17 @@
         <div class="col">
           <form class="row g-3">
             <h2><span id="acao"></span> Pacote</h2>
-            <p> Pacote número: 1239</p>
+            <p> Pacote nï¿½mero: 1239</p>
             <div class="col-md-12">
               <label for="inputClient" class="form-label">Cliente</label>
               <select id="inputClient" class="form-select">
-                <option selected>José</option>
+                <option selected>Josï¿½</option>
                 <option>Maria</option>
                 <option>Pedro</option>
               </select>
             </div>
             <div class="col-md-12">
-              <label for="inputStaff" class="form-label">Funcionário</label>
+              <label for="inputStaff" class="form-label">Funcionï¿½rio</label>
               <select id="inputStaff" class="form-select">
                 <option selected>Bruno</option>
                 <option>Leonardo</option>
@@ -153,7 +153,7 @@
                 <select name="to" id="to" class="form-select">
                   <option value="jf">Juiz de Fora</option>
                   <option value="bh">Belo Horizonte</option>
-                  <option value="sp">São Paulo</option>
+                  <option value="sp">Sï¿½o Paulo</option>
                 </select>
               </div>
               <div class="col-md-8">
@@ -172,8 +172,8 @@
                 <label for="dataFinal">Data Final</label>
                 <input type="date" name="dataFinal" id="dataIncial" class="form-control">
               </div>
-            </div><br>
-            </li> 
+            </div>
+            </li><br>
             
             
             <div id="travelBlock"></div>
