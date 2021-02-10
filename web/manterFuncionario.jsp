@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>Cadastro de Funcion√°rios</title>
+  <title>Cadastro de Funcion·rios</title>
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -18,7 +18,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -38,7 +38,7 @@
     </div>
     <div class="col">
       <form class="row g-3">
-        <h2><span id="acao"></span> Funcion√°rio</h2>
+        <h2><span id="acao"></span> Funcion·rio</h2>
         <div class="col-12">
           <label for="name" class="form-label">Nome</label>
           <input type="text" class="form-control" id="name" placeholder="">
@@ -75,7 +75,7 @@
           <input type="text" class="form-control" id="logradouro" placeholder="">
       </div>
       <div class="col-md-4">
-          <label for="numero" class="form-label">N√∫mero</label>
+          <label for="numero" class="form-label">N˙mero</label>
           <input type="text" class="form-control" id="numero" placeholder="">
       </div>
       <div class="col-12">
@@ -87,7 +87,7 @@
           <input type="password" class="form-control" id="inputPassword" placeholder="">
         </div>
         <div class="col-md-4">
-          <label for="inputFunction" class="form-label">Fun√ß√£o</label>
+          <label for="inputFunction" class="form-label">FunÁ„o</label>
           <select id="inputFunction" class="form-select">
             <option selected>Vendedor</option>
             <option>Gerente</option>

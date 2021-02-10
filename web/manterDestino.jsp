@@ -20,7 +20,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -46,7 +46,7 @@
         <form class="row g-3">
           <h1><span id="acao"></span> Destino</h1>
           <div class="col-md-4">
-            <label for="inputCoutry" class="form-label">Pa√≠s</label>
+            <label for="inputCoutry" class="form-label">PaÌs</label>
             <select id="inputCoutry" class="form-select">
               <option selected>Brasil</option>
               <option>Uruguai</option>

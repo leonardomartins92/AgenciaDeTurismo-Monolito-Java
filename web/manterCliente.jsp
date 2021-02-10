@@ -19,7 +19,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">FuncionÃ¡rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -78,7 +78,7 @@
                         <input type="text" class="form-control" id="logradouro" placeholder="">
                     </div>
                     <div class="col-md-4">
-                        <label for="numero" class="form-label">NÃºmero</label>
+                        <label for="numero" class="form-label">Número</label>
                         <input type="text" class="form-control" id="numero" placeholder="">
                     </div>
                     <div class="col-12">
