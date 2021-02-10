@@ -56,36 +56,32 @@
           <label for="inputTelefone" class="form-label">Telefone</label>
           <input type="text" class="form-control" id="inputTelefone">
         </div>
-        <div class="col-md-2">
-          <label for="inputCountry" class="form-label">País</label>
-          <input type="text" class="form-control" id="inputCountry">
-        </div>
         <div class="col-md-4">
-          <label for="inputState" class="form-label">Estado</label>
-          <select id="inputState" class="form-select">
-            <option selected>MG</option>
-            <option>RJ</option>
-            <option>SP</option>
-          </select>
-        </div>
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" class="form-control" id="cep" maxlength="9">
+      </div>
+      <div class="col-md-2">
+          <label for="uf" class="form-label">UF</label>
+          <input type="text" class="form-control" name="uf" id="uf">
+      </div>
 
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
+      <div class="col-md-6">
+          <label for="localidade" class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="localidade">
+      </div>
 
-        <div class="col-md-8">
-          <label for="inputAddress" class="form-label">Logradouro</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="">
-        </div>
-        <div class="col-md-4">
-          <label for="inputNumber" class="form-label">Número</label>
-          <input type="text" class="form-control" id="inputNumber" placeholder="">
-        </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Complemento</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="">
-        </div>
+      <div class="col-md-8">
+          <label for="logradouro" class="form-label">Logradouro</label>
+          <input type="text" class="form-control" id="logradouro" placeholder="">
+      </div>
+      <div class="col-md-4">
+          <label for="numero" class="form-label">Número</label>
+          <input type="text" class="form-control" id="numero" placeholder="">
+      </div>
+      <div class="col-12">
+          <label for="numero2" class="form-label">Complemento</label>
+          <input type="text" class="form-control" id="numero2" placeholder="">
+      </div>
         <div class="col-md-8">
           <label for="inputPassword" class="form-label">Senha</label>
           <input type="password" class="form-control" id="inputPassword" placeholder="">
@@ -99,6 +95,7 @@
         </div>
 
         <div class="col-12">
+          <div class="form-group"><script src="./Scripts/ViaCep.js"></script></div>
           <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
         </div>
       </form>
