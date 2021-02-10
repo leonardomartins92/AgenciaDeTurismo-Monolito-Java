@@ -28,7 +28,7 @@
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
           <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+         
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           
