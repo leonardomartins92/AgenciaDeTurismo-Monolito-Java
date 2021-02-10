@@ -153,7 +153,7 @@
 </table>
 <div class="col-md-2 ">
   <div class="list-group">
-    <a href="manterFuncionario.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+    <a href="manterPacote.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
   </div>
   </div>
 </body>
