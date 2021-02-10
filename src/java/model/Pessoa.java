@@ -10,8 +10,9 @@ public abstract class Pessoa {
     protected String complemento;
     protected String uf;
     protected String cidade;
+    protected String cep;
 
-    public Pessoa(String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade) {
+    public Pessoa(String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade, String cep) {
         this.name = name;
         this.telefone = telefone;
         this.email = email;
@@ -21,17 +22,7 @@ public abstract class Pessoa {
         this.complemento = complemento;
         this.uf = uf;
         this.cidade = cidade;
-    }
-
-    public Pessoa(String name, String telefone, String email, String cpf, String logradouro, String numero, String uf, String cidade) {
-        this.name = name;
-        this.telefone = telefone;
-        this.email = email;
-        this.cpf = cpf;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.uf = uf;
-        this.cidade = cidade;
+        this.cep = cep;
     }
 
     @Override
@@ -112,5 +103,13 @@ public abstract class Pessoa {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+    
+        public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 }

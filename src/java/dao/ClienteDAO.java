@@ -25,7 +25,7 @@ public class ClienteDAO extends DAO{
            comando = (PreparedStatement) conexao.prepareStatement(
            "insert into cliente (nome, telefone, email, "
                    + "cpf, logradouro, numero,"
-            + " complemento, uf, cidade) values(?,?,?,?,?,?,?,?,?)"
+            + " complemento, uf, localidade, cep) values(?,?,?,?,?,?,?,?,?,?)"
            );
            comando.setString(1, cliente.getName());
            comando.setString(2, cliente.getTelefone());
@@ -36,6 +36,7 @@ public class ClienteDAO extends DAO{
            comando.setString(7, cliente.getComplemento());
            comando.setString(8, cliente.getUf());
            comando.setString(9, cliente.getCidade());
+           comando.setString(10, cliente.getCep());
            
            comando.executeUpdate();
        } finally{
@@ -51,7 +52,7 @@ public class ClienteDAO extends DAO{
            comando = (PreparedStatement) conexao.prepareStatement(
            "update cliente set (nome, telefone, email, "
                    + "logradouro, numero,"
-            + " complemento, uf, cidade) "
+            + " complemento, uf, localidade) "
                    + "values(?,?,?,?,?,?,?,?) where cpf = ?"
            );
            comando.setString(1, cliente.getName());
@@ -136,7 +137,8 @@ public class ClienteDAO extends DAO{
             rs.getString("numero"),
             rs.getString("complemento"),
             rs.getString("uf"),
-            rs.getString("cidade"));
+            rs.getString("localidade"),
+            rs.getString("cep"));
     
     return cliente;
     }
