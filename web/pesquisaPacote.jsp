@@ -54,7 +54,7 @@
     <label for="estadia">Estadia</label>
     <input type="text" name="estadia" id="estadia">
 
-    <label for="duracao">DuraÃ§Ã£o</label>
+    <label for="duracao">Duração</label>
     <input type="text" name="duracao" id="duracao"><br><br>
     <tr>
         <th>ID</th>

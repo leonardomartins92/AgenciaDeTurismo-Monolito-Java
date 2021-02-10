@@ -79,7 +79,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td>JosÃ©</td>
+      <td>José</td>
       <td>josezinho123@gmail.com</td>
       <td>+55 (32) 99999-9999</td>
       <div class="list-group">

@@ -87,7 +87,7 @@
                 <div class="col-md-4">
                     <label for="inputType" class="form-label">Tipo</label>
                     <select id="inputType" class="form-select">
-                        <option selected>AcomodaÃ§Ã£o</option>
+                        <option selected>Acomodação</option>
                         <option>Transporte</option>
 
                     </select>
