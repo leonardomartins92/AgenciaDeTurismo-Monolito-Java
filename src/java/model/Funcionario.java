@@ -1,12 +1,12 @@
 package model;
 
 public class Funcionario extends Pessoa{
-    private String password;
+    private String senha;
     private int tipo;
 
-     public Funcionario(String password, int tipo, String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade, String cep) {
+     public Funcionario(String senha, int tipo, String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade, String cep) {
         super(name, telefone, email, cpf, logradouro, numero, complemento, uf, cidade, cep);
-        this.password = password;
+        this.senha = senha;
         this.tipo = tipo;
     }    
 
@@ -17,12 +17,12 @@ public class Funcionario extends Pessoa{
 
     
 
-    public String getPassword() {
-        return password;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public int getTipo() {
