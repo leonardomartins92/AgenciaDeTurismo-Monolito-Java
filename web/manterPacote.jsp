@@ -43,7 +43,7 @@
         '<select name="to" id="to" class="form-select">' +
         '<option value="jf">Juiz de Fora</option>' +
         '<option value="bh">Belo Horizonte</option>' +
-        '<option value="sp">Sï¿½o Paulo</option>' +
+        '<option value="sp">São Paulo</option>' +
         '</select>' +
         '</div>' +
         '<div class="col-md-8">' +
@@ -68,7 +68,7 @@
         '<th>Origem</th>' +
         '<th>Destino</th>' +
         '<th>Empresa</th>'+
-        '<th>Data de Saï¿½da </th>'+
+        '<th>Data de Saída </th>'+
         '<th> Selecionar</th>'+
         '</tr>'+
         '<tr>'+
@@ -128,11 +128,11 @@
             
           <form class="row g-3" onsubmit="myFunction()">
             <h2><span id="acao"></span> Pacote</h2>
-            <p> Pacote nï¿½mero: 1239</p>
+            <p> Pacote número: 1239</p>
             <div class="col-md-12">
               <label for="inputClient" class="form-label">Cliente</label>
               <select id="inputClient" class="form-select">
-                <option selected>Josï¿½</option>
+                <option selected>José</option>
                 <option>Maria</option>
                 <option>Pedro</option>
               </select>
@@ -165,7 +165,7 @@
                 <select name="to" id="to" class="form-select">
                   <option value="jf">Juiz de Fora</option>
                   <option value="bh">Belo Horizonte</option>
-                  <option value="sp">Sï¿½o Paulo</option>
+                  <option value="sp">São Paulo</option>
                 </select>
               </div>
               <div class="col-md-8">
@@ -195,7 +195,7 @@
                     <th>Origem</th>
                     <th>Destino</th>
                     <th>Empresa</th>
-                    <th>Data de Saï¿½da </th>
+                    <th>Data de Saída </th>
                     <th> Selecionar</th>
                 </tr>
                 <tr>
