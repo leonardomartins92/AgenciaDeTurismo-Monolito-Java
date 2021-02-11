@@ -1,10 +1,10 @@
-package controller;
+package exception;
 
 import model.Cliente;
 import dao.ClienteDAO;
 import java.sql.SQLException;
 
-public class Test {
+public class TestCliente {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
        Cliente cliente = new Cliente("Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
        //ClienteDAO.getInstancia().gravar(cliente);

@@ -7,7 +7,7 @@ public class Ranking {
     private void atualizaRanking(){
 
     }
-    public int consultaPosicao(Vendedor vendedor){
+    public int consultaPosicao(){
         return 0;
     }
 }

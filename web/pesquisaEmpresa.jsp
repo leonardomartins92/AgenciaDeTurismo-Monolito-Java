@@ -28,7 +28,7 @@
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
           <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+         
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           
@@ -70,7 +70,7 @@
     <tr>
         <td>2</td>
         <td>IBIS</td>
-        <td>Acomoda√ß√£o</td>
+        <td>AcomodaÁ„o</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
@@ -79,7 +79,7 @@
     <tr>
         <td>3</td>
         <td>Cometa</td>
-        <td>√înibus</td>
+        <td>‘nibus</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
@@ -88,7 +88,7 @@
     <tr>
         <td>4</td>
         <td>Vale</td>
-        <td>Ferrovi√°ria</td>
+        <td>Ferrovi·ria</td>
         <div class="list-group">
       <td><a href="manterEmpresa.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
       <td><a href="manterEmpresa.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>

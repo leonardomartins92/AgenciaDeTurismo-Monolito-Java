@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>Cliente</title>
+  <title>Clientes</title>
   <style>
     table, th, td {
       border: 1px solid black;
@@ -27,7 +27,7 @@
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
           <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+        
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           

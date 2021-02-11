@@ -27,7 +27,7 @@
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
           <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+         
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           
@@ -45,7 +45,7 @@
     <label for="nomeCliente">Nome do Cliente</label>
     <input type="text" name="nomeCliente" id="nomeCliente">
 
-    <label for="nomeFuncionario">Nome do Funcion√°rio</label>
+    <label for="nomeFuncionario">Nome do Funcion·rio</label>
     <input type="text" name="nomeFuncionario" id="nomeFuncionario">
 
     <label for="destino">Destino</label>
@@ -54,20 +54,20 @@
     <label for="estadia">Estadia</label>
     <input type="text" name="estadia" id="estadia">
 
-    <label for="duracao">Dura√ß√£o</label>
+    <label for="duracao">DuraÁ„o</label>
     <input type="text" name="duracao" id="duracao"><br><br>
     <tr>
         <th>ID</th>
         <th>Cliente</th>
-        <th>Funcion√°rio</th>
+        <th>Funcion·rio</th>
         <th>Destino</th>
         <th>Estadia</th>
-        <th>Dura√ß√£o</th>
-        <th colspan="2">A√ß√£o</th>
+        <th>DuraÁ„o</th>
+        <th colspan="2">AÁ„o</th>
     </tr>
     <tr>
         <td>1</td>
-        <td>Jo√£o</td>
+        <td>Jo„o</td>
         <td>Maria</td>
         <td>
             <ul>
@@ -96,18 +96,18 @@
     <tr>
         <td>2</td>
         <td>Maria</td>
-        <td>Jos√©</td>
+        <td>JosÈ</td>
         
         <td>
             <ul>
-                <li>S√£o Paulo</li>
+                <li>S„o Paulo</li>
                 <li>Madrid</li>
             </ul>
         </td>
         <td>
             <ul>
                 <li>IBIS</li>
-                <li>Riu Plaza Espa√±a</li>
+                <li>Riu Plaza Espanha</li>
             </ul>
         </td>
         <td>
@@ -124,8 +124,8 @@
 
     <tr>
         <td>3</td>
-        <td>Jos√©</td>
-        <td>Jo√£o</td>
+        <td>JosÈ</td>
+        <td>Jo„o</td>
         
         <td>
             <ul>
@@ -153,7 +153,7 @@
 </table>
 <div class="col-md-2 ">
   <div class="list-group">
-    <a href="manterFuncionario.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+    <a href="manterPacote.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
   </div>
   </div>
 </body>

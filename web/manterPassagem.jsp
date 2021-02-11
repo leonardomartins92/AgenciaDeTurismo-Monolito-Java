@@ -18,9 +18,9 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaDestino.jsp">Destinos</a>
+       
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           
@@ -43,7 +43,7 @@
             <h2><span id="acao"></span> Passagem</h2>
             <label for="inputClient" class="form-label">Cliente</label>
             <select id="inputClient" class="form-select">
-              <option selected>Jos√©</option>
+              <option selected>JosÈ</option>
               <option>Maria</option>
               <option>Pedro</option>
             </select>
@@ -52,7 +52,7 @@
             <label for="inputOrigin" class="form-label">Origem</label>
             <select id="inputOrigin" class="form-select">
               <option selected>Brasil</option>
-              <option>M√©xico</option>
+              <option>MÈxico</option>
               <option>Portugal</option>
             </select>
           </div>
@@ -60,7 +60,7 @@
             <label for="inputDestiny" class="form-label">Destino</label>
             <select id="inputDestiny" class="form-select">
               <option selected>Brasil</option>
-              <option>M√©xico</option>
+              <option>MÈxico</option>
               <option>Portugal</option>
             </select>
           </div>
