@@ -101,7 +101,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionï¿½rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
     
           <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
@@ -138,7 +138,7 @@
               </select>
             </div>
             <div class="col-md-12">
-              <label for="inputStaff" class="form-label">Funcionï¿½rio</label>
+              <label for="inputStaff" class="form-label">Funcionários</label>
               <select id="inputStaff" class="form-select">
                 <option selected>Bruno</option>
                 <option>Leonardo</option>
