@@ -55,7 +55,7 @@
       <th>Nome</th>
       <th>E-mail</th>
       <th>Telefone</th>
-      <th colspan="2">AAção</th>
+      <th colspan="2">Ação</th>
     </tr>
     <tr>
       <td>1</td>
