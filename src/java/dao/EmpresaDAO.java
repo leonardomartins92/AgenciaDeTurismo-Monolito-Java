@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Empresa;
-import model.Tipo;
+import model.TipoEmpresa;
 
 public class EmpresaDAO extends DAO{
     private static EmpresaDAO instancia = new EmpresaDAO();
@@ -140,7 +140,7 @@ public class EmpresaDAO extends DAO{
                 rs.getString("complemento"),
                 rs.getString("uf"),
                 rs.getString("localidade"),
-                Tipo.valueOf(rs.getString("tipo")),
+                TipoEmpresa.valueOf(rs.getString("tipo")),
                 rs.getString("cep"));
     
     return empresa;

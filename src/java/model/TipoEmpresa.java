@@ -1,5 +1,5 @@
 package model;
 
-public enum Tipo {
+public enum TipoEmpresa {
     AEREA, ACOMODACAO, ONIBUS, FERROVIARIA, CRUZEIRO;
 }

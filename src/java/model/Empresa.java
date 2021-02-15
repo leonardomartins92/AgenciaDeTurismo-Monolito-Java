@@ -10,10 +10,10 @@ public class Empresa {
     private String complemento;
     private String uf;
     private String localidade;
-    private Tipo tipo;
+    private TipoEmpresa tipo;
     private String cep;
 
-    public Empresa(String cnpj, String nome, String email, String telefone, String logradouro, String numero, String complemento, String uf, String localidade, Tipo tipo, String cep) {
+    public Empresa(String cnpj, String nome, String email, String telefone, String logradouro, String numero, String complemento, String uf, String localidade, TipoEmpresa tipo, String cep) {
         this.cnpj = cnpj;
         this.nome = nome;
         this.email = email;
@@ -99,11 +99,11 @@ public class Empresa {
         this.localidade = localidade;
     }
 
-    public Tipo getTipo() {
+    public TipoEmpresa getTipo() {
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
+    public void setTipo(TipoEmpresa tipo) {
         this.tipo = tipo;
     }
 
