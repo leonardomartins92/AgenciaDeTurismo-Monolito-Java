@@ -1,4 +1,4 @@
-package exception;
+package controller;
 
 import model.Funcionario;
 import dao.FuncionarioDAO;

@@ -9,10 +9,11 @@ public class Empresa {
     private String numero;
     private String complemento;
     private String uf;
-    private String cidade;
+    private String localidade;
     private Tipo tipo;
+    private String cep;
 
-    public Empresa(String cnpj, String nome, String email, String telefone, String logradouro, String numero, String complemento, String uf, String cidade, Tipo tipo) {
+    public Empresa(String cnpj, String nome, String email, String telefone, String logradouro, String numero, String complemento, String uf, String localidade, Tipo tipo, String cep) {
         this.cnpj = cnpj;
         this.nome = nome;
         this.email = email;
@@ -21,8 +22,9 @@ public class Empresa {
         this.numero = numero;
         this.complemento = complemento;
         this.uf = uf;
-        this.cidade = cidade;
+        this.localidade = localidade;
         this.tipo = tipo;
+        this.cep = cep;
     }
 
     public String getCnpj() {
@@ -89,12 +91,12 @@ public class Empresa {
         this.uf = uf;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getLocalidade() {
+        return localidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
     public Tipo getTipo() {
@@ -103,5 +105,18 @@ public class Empresa {
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" + "nome=" + nome + ", tipo=" + tipo + '}';
     }
 }
