@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Funcionario;
+import model.TipoFuncionario;
 
 public class FuncionarioDAO extends DAO{
     private static FuncionarioDAO instancia = new FuncionarioDAO();
@@ -38,7 +39,7 @@ public class FuncionarioDAO extends DAO{
            comando.setString(9, funcionario.getCidade());
            comando.setString(10, funcionario.getCep());
            comando.setString(11, funcionario.getSenha());
-           comando.setInt(12, funcionario.getTipo());
+           comando.setString(12, funcionario.getTipo().name());
            
            comando.executeUpdate();
        } finally{
@@ -68,7 +69,7 @@ public class FuncionarioDAO extends DAO{
            comando.setString(9, funcionario.getCep());
            comando.setString(10, funcionario.getCpf());
            comando.setString(11, funcionario.getSenha());
-           comando.setInt(12, funcionario.getTipo());
+           comando.setString(12, funcionario.getTipo().name());
            comando.executeUpdate();
        } finally{
            fecharConexao(conexao, comando);
@@ -134,7 +135,7 @@ public class FuncionarioDAO extends DAO{
     
     public Funcionario instanciarFuncionario(ResultSet rs) throws SQLException {
     Funcionario funcionario = new Funcionario(rs.getString("senha"),
-            rs.getInt("tipo"),
+            TipoFuncionario.valueOf(rs.getString("tipo")),
             rs.getString("nome"),
             rs.getString("telefone"),
             rs.getString("email"),

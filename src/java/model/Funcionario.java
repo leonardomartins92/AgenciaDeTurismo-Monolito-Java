@@ -2,9 +2,9 @@ package model;
 
 public class Funcionario extends Pessoa{
     private String senha;
-    private int tipo;
+    private TipoFuncionario tipo;
 
-     public Funcionario(String senha, int tipo, String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade, String cep) {
+     public Funcionario(String senha, TipoFuncionario tipo, String name, String telefone, String email, String cpf, String logradouro, String numero, String complemento, String uf, String cidade, String cep) {
         super(name, telefone, email, cpf, logradouro, numero, complemento, uf, cidade, cep);
         this.senha = senha;
         this.tipo = tipo;
@@ -25,11 +25,11 @@ public class Funcionario extends Pessoa{
         this.senha = senha;
     }
 
-    public int getTipo() {
+    public TipoFuncionario getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(TipoFuncionario tipo) {
         this.tipo = tipo;
     }
     
