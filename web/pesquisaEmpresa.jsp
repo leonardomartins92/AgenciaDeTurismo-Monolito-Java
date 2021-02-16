@@ -43,7 +43,7 @@
 <table class="table table-striped">
  
 
-    <label for="nome">Nome do Cliente</label>
+    <label for="nome">Nome da Empresa</label>
     <input type="text" name="nome" id="nome">
 
     <label for="CNPJ">CNPJ</label>

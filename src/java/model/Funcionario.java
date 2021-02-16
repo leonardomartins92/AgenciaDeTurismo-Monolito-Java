@@ -15,8 +15,6 @@ public class Funcionario extends Pessoa{
         return "Funcionario{" + "tipo=" + tipo + " nome="+name+'}';
     }
 
-    
-
     public String getSenha() {
         return senha;
     }

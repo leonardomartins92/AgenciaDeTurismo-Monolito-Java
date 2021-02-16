@@ -1,37 +1,51 @@
 package model;
 
+
 import java.time.LocalDate;
 
+
 public class Passagem {
+    private static int cont=1;
+   
     private String origem;
     private String destino;
-    private LocalDate dataIda;
-    private LocalDate dataVolta;
-    private Cliente cliente;
+    private String dataIda;
+    private String dataVolta;
+    private Pacote pacote;
     private Empresa empresa;
+    
+    private final int id;
+    private String cnpjEmpresa;
+    private int idPacote;
 
-    public Passagem(String origem, String destino , LocalDate dataIda, LocalDate dataVolta, Cliente cliente, Empresa empresa) {
+    public Passagem(String origem, String destino , String dataIda, String dataVolta, Pacote pacote, Empresa empresa) {
+        this.id=cont;
+        cont++;
         this.origem = origem;
         this.destino = destino;
         this.dataIda = dataIda;
         this.dataVolta = dataVolta;
-        this.cliente = cliente;
+        this.pacote= pacote;
         this.empresa = empresa;
+        
     }
 
-    public Passagem(String origem, String destino, LocalDate dataIda, Cliente cliente, Empresa empresa) {
+    public Passagem(String origem, String destino, String dataIda,Pacote pacote, Empresa empresa) {
+        this.id=cont;
+        cont++;
         this.origem = origem;
         this.destino= destino;
         this.dataIda = dataIda;
-        this.cliente = cliente;
+        this.pacote= pacote;
         this.empresa = empresa;
+        
     }
 
     @Override
     public String toString() {
         return "model.Passagem{" +
                 "origem='" + origem + '\'' +
-                ", cliente=" + cliente +
+                ", destino=" + destino +
                 '}';
     }
 
@@ -51,28 +65,29 @@ public class Passagem {
         this.destino = destino;
     }
 
-    public LocalDate getDataIda() {
+    public String getDataIda() {
         return dataIda;
     }
 
-    public void setDataIda(LocalDate dataIda) {
+    public void setDataIda(String dataIda) {
         this.dataIda = dataIda;
     }
 
-    public LocalDate getDataVolta() {
+    public String getDataVolta() {
         return dataVolta;
     }
 
-    public void setDataVolta(LocalDate dataVolta) {
+    public void setDataVolta(String dataVolta) {
         this.dataVolta = dataVolta;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Pacote getPacote() {
+        return pacote;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setPacote(Pacote pacote) {
+        this.setIdPacote(pacote.getId());
+        this.pacote = pacote;
     }
 
     public Empresa getEmpresa() {
@@ -82,4 +97,25 @@ public class Passagem {
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getCnpjEmpresa() {
+        return cnpjEmpresa;
+    }
+
+    public void setCnpjEmpresa(String cnpjEmpresa) {
+        this.cnpjEmpresa = cnpjEmpresa;
+    }
+
+    public int getIdPacote() {
+        return idPacote;
+    }
+
+    public void setIdPacote(int idPacote) {
+        this.idPacote = idPacote;
+    }
+    
 }

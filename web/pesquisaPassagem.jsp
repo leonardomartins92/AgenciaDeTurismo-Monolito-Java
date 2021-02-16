@@ -41,8 +41,8 @@
 
 <table class="table table-striped">
 
-    <label for="nome">Nome do Cliente</label>
-    <input type="text" name="nome" id="nome">
+    <label for="pacote">Número do Pacote</label>
+    <input type="text" name="pacote" id="pacote">
 
     <label for="origem">Origem</label>
     <input type="text" name="origem" id="origem">
@@ -62,7 +62,7 @@
     <br><br>
     <tr>
         <th>ID</th>
-        <th>Cliente</th>
+        <th>Pacote</th>
         <th>Origem</th>
         <th>Destino</th>
         <th>Empresa</th>
@@ -72,7 +72,7 @@
     </tr>
     <tr>
         <td>1</td>
-        <td>João</td>
+        <td>1</td>
         <td>Juiz de Fora</td>
         <td>Londres</td>
         <td>Gol</td>
@@ -85,7 +85,7 @@
     </tr>
     <tr>
         <td>2</td>
-        <td>Maria</td>
+        <td>2</td>
         <td>Juiz de Fora</td>
         <td>Madrid</td>
         <td>Gol</td>
@@ -98,7 +98,7 @@
     </tr>
     <tr>
         <td>3</td>
-        <td>José</td>
+        <td>3</td>
         <td>Juiz de Fora</td>
         <td>Tokyo</td>
         <td>Gol</td>
