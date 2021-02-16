@@ -64,28 +64,7 @@
         '</div>' + '<div class="col-8">' +
         '<a href="manterPassagem.jsp?acao=adicionar"' +
         'class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>' +
-        '</div>' + '<table class="table table-striped">' +' <tr>' +
-        '<th>Origem</th>' +
-        '<th>Destino</th>' +
-        '<th>Empresa</th>'+
-        '<th>Data de Saída </th>'+
-        '<th> Selecionar</th>'+
-        '</tr>'+
-        '<tr>'+
-        '<td>Juiz de Fora</td>'+
-        '<td>Londres</td>'+
-        '<td>Gol</td>'+
-        '<td>01/01/2021</td>'+
-        '<td><input type="checkbox" name="passagem"></td>'+
-        '</tr>'+
-        '<tr>'+
-        '<td>Juiz de Fora</td>'+
-        '<td>Madrid</td>'+
-        '<td>Gol</td>'+
-        '<td>01/01/2021</td>'+
-        '<td><input type="checkbox" name="passagem"></td>'+
-        '</tr>'+
-       '</table>'+
+        '</div>' + 
        '</div></li></form><br>');
     }
   </script>
@@ -188,31 +167,7 @@
                 <a href="manterPassagem.jsp?acao=adicionar"
                   class="list-group-item list-group-item-action list-group-item-primary">Cadastrar Passagem</a>
               </div>
-                <!-- Passagens com cliente igual ao do pacote e com origem ou destino igual ao destino -->
-                
-            <table class="table table-striped">
-                <tr>
-                    <th>Origem</th>
-                    <th>Destino</th>
-                    <th>Empresa</th>
-                    <th>Data de Saída </th>
-                    <th> Selecionar</th>
-                </tr>
-                <tr>
-                    <td>Juiz de Fora</td>
-                    <td>Londres</td>
-                    <td>Gol</td>
-                    <td>01/01/2021</td>
-                    <td><input type="checkbox" name="passagem"></td>
-                </tr>
-                <tr>
-                    <td>Juiz de Fora</td>
-                    <td>Madrid</td>
-                    <td>Gol</td>
-                    <td>01/01/2021</td>
-                    <td><input type="checkbox" name="passagem"></td>
-                </tr>
-             </table>
+               
             </div></li></form><br>
            
             <div id="travelBlock"></div><br>

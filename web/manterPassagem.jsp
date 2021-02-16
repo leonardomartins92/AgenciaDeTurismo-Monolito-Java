@@ -41,11 +41,11 @@
         <form class="row g-3">
           <div class="col-md-12">
             <h2><span id="acao"></span> Passagem</h2>
-            <label for="inputClient" class="form-label">Cliente</label>
-            <select id="inputClient" class="form-select">
-              <option selected>José</option>
-              <option>Maria</option>
-              <option>Pedro</option>
+            <label for="inputPacote" class="form-label">Pacote</label>
+            <select id="inputPacote" class="form-select">
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
             </select>
           </div>
           <div class="col-md-12">
