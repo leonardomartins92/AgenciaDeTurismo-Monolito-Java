@@ -12,13 +12,17 @@ package model;
 public class Destino {
     private static int cont=1;
     private final int id;
-    private  String dataInicio;
+    private  String dataInicial;
     private String dataFinal;
     private  Pacote pacote;
     private  Empresa empresa;
+    
+    private String cnpjEmpresa;
+    private int idPacote;
+    
 
-    public Destino(String dataInicio, String dataFinal, Pacote pacote, Empresa empresa) {
-        this.dataInicio = dataInicio;
+    public Destino(String dataInicial, String dataFinal, Pacote pacote, Empresa empresa) {
+        this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
         this.pacote = pacote;
         this.empresa = empresa;
@@ -26,12 +30,12 @@ public class Destino {
         cont++;
     }
 
-    public String getDataInicio() {
-        return dataInicio;
+    public String getDataInicial() {
+        return dataInicial;
     }
 
-    public void setDataInicio(String dataInicio) {
-        this.dataInicio = dataInicio;
+    public void setDataInicial(String dataInicio) {
+        this.dataInicial = dataInicial;
     }
 
     public String getDataFinal() {
@@ -47,6 +51,7 @@ public class Destino {
     }
 
     public void setPacote(Pacote pacote) {
+        this.setIdPacote(pacote.getId());
         this.pacote = pacote;
     }
 
@@ -55,6 +60,7 @@ public class Destino {
     }
 
     public void setEmpresa(Empresa empresa) {
+        this.setCnpjEmpresa(empresa.getCnpj());
         this.empresa = empresa;
     }
 
@@ -62,9 +68,19 @@ public class Destino {
         return id;
     }
     
-    
-    
-    
-    
-    
+    public String getCnpjEmpresa() {
+        return cnpjEmpresa;
+    }
+
+    public void setCnpjEmpresa(String cnpjEmpresa) {
+        this.cnpjEmpresa = cnpjEmpresa;
+    }
+
+    public int getIdPacote() {
+        return idPacote;
+    }
+
+    public void setIdPacote(int idPacote) {
+        this.idPacote = idPacote;
+    }   
 }

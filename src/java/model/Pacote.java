@@ -6,19 +6,22 @@ public class Pacote {
     private Cliente cliente;
     private Funcionario funcionario;
     
+    private String cpfFuncionario;
+    private String cpfCliente;
+  
+    
       public Pacote(Cliente cliente, Funcionario funcionario) {
         this.id=cont;
         cont++;
         this.cliente = cliente;
-        this.funcionario = funcionario;
-        
+        this.funcionario = funcionario;       
     }
 
     @Override
     public String toString() {
         return "Pacote{" +
                 "id=" + id +
-                ", cliente=" + cliente +
+                ", cliente=" + getCliente() +
                 '}';
     }
 
@@ -31,6 +34,7 @@ public class Pacote {
     }
 
     public void setCliente(Cliente cliente) {
+        this.setCpfCliente(cliente.getCpf());
         this.cliente = cliente;
     }
 
@@ -39,7 +43,23 @@ public class Pacote {
     }
 
     public void setFuncionario(Funcionario funcionario) {
+        this.setCpfFuncionario(funcionario.getCpf());
         this.funcionario = funcionario;
     }
-      
+
+    public String getCpfFuncionario() {
+        return cpfFuncionario;
+    }
+
+    public void setCpfFuncionario(String cpfFuncionario) {
+        this.cpfFuncionario = cpfFuncionario;
+    }
+
+    public String getCpfCliente() {
+        return cpfCliente;
+    }
+
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;
+    }
 }
