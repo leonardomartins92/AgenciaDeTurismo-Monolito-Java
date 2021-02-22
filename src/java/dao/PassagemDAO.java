@@ -26,12 +26,14 @@ public class PassagemDAO extends DAO{
     public void gravar(Passagem passagem) throws SQLException, ClassNotFoundException{
        Connection conexao = null;
        PreparedStatement comando = null;
+       ResultSet rs;
+       
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
            "insert into passagem (idPassagem, origem, destino, dataIda, "
                    + "dataVolta, Pacote_idPacote, Empresa_cnpj)"
-            + "values(?,?,?,?,?,?,?)"
+            + "values(?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS
            );
            comando.setInt(1, passagem.getId());
            comando.setString(2, passagem.getOrigem());
@@ -42,6 +44,11 @@ public class PassagemDAO extends DAO{
            comando.setString(7, passagem.getEmpresa().getCnpj());
                    
            comando.executeUpdate();
+           
+           rs = comando.getGeneratedKeys();
+           if (rs.next()) {
+           passagem.setId(rs.getInt(1));
+        }
        } finally{
            fecharConexao(conexao, comando);
        }

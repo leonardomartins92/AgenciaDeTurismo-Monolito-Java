@@ -19,12 +19,13 @@ import model.TipoFuncionario;
  */
 public class TestPacote {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Cliente cliente = new Cliente("Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
+        Cliente cliente = new Cliente("Mario","123","leo@","1018","R ABC", "100","nada","MG","JF","a");
         Funcionario funcionario = new Funcionario("12345",TipoFuncionario.VENDEDOR,"Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
         Pacote pacote = new Pacote (cliente,funcionario);
-        //PacoteDAO.getInstancia().gravar(pacote);
+        PacoteDAO.getInstancia().gravar(pacote);
+        
        //System.out.println(PacoteDAO.getInstancia().obterPacotes());
        //System.out.println(PacoteDAO.getInstancia().obterPacote(1));
-       PacoteDAO.getInstancia().deletarPacote(2);
+       //PacoteDAO.getInstancia().deletarPacote(2);
     }
 }

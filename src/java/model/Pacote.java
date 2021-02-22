@@ -1,33 +1,36 @@
 package model;
 
 public class Pacote {
-    private static int cont=1;
-    private final int id;
+
     private Cliente cliente;
     private Funcionario funcionario;
-    
+    private int id;
     private String cpfFuncionario;
     private String cpfCliente;
   
     
       public Pacote(Cliente cliente, Funcionario funcionario) {
-        this.id=cont;
-        cont++;
+     
         this.cliente = cliente;
         this.funcionario = funcionario;       
     }
 
     @Override
     public String toString() {
-        return "Pacote{" +
-                "id=" + id +
-                ", cliente=" + getCliente() +
-                '}';
+        return "Pacote{" + "cliente=" + cliente + ", id=" + id + '}';
     }
+
+    
+      
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     
     public Cliente getCliente() {
         return cliente;

@@ -10,13 +10,12 @@ package model;
  * @author Leo
  */
 public class Destino {
-    private static int cont=1;
-    private final int id;
+    
     private  String dataInicial;
     private String dataFinal;
     private  Pacote pacote;
     private  Empresa empresa;
-    
+    private int id;
     private String cnpjEmpresa;
     private int idPacote;
     
@@ -26,10 +25,25 @@ public class Destino {
         this.dataFinal = dataFinal;
         this.pacote = pacote;
         this.empresa = empresa;
-        this.id=cont;
-        cont++;
+        
     }
 
+    @Override
+    public String toString() {
+        return "Destino{" + "id=" + id + ", idPacote=" + idPacote + '}';
+    }
+    
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+   
+    
     public String getDataInicial() {
         return dataInicial;
     }
@@ -64,10 +78,7 @@ public class Destino {
         this.empresa = empresa;
     }
 
-    public int getId() {
-        return id;
-    }
-    
+       
     public String getCnpjEmpresa() {
         return cnpjEmpresa;
     }

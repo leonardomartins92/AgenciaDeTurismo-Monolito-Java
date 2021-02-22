@@ -1,12 +1,8 @@
 package model;
 
-
-import java.time.LocalDate;
-
-
 public class Passagem {
-    private static int cont=1;
-   
+    
+    private int id;
     private String origem;
     private String destino;
     private String dataIda;
@@ -14,13 +10,12 @@ public class Passagem {
     private Pacote pacote;
     private Empresa empresa;
     
-    private final int id;
+  
     private String cnpjEmpresa;
     private int idPacote;
 
     public Passagem(String origem, String destino , String dataIda, String dataVolta, Pacote pacote, Empresa empresa) {
-        this.id=cont;
-        cont++;
+       
         this.origem = origem;
         this.destino = destino;
         this.dataIda = dataIda;
@@ -31,8 +26,7 @@ public class Passagem {
     }
 
     public Passagem(String origem, String destino, String dataIda,Pacote pacote, Empresa empresa) {
-        this.id=cont;
-        cont++;
+       
         this.origem = origem;
         this.destino= destino;
         this.dataIda = dataIda;
@@ -44,7 +38,7 @@ public class Passagem {
     @Override
     public String toString() {
         return "model.Passagem{" +
-                "id=" + id + '\'' +
+                
                 "origem='" + origem + '\'' +
                 ", destino=" + destino +
                 '}';
@@ -86,11 +80,7 @@ public class Passagem {
         return pacote;
     }
 
-    public void setPacote(Pacote pacote) {
-        this.setIdPacote(pacote.getId());
-        this.pacote = pacote;
-    }
-
+   
     public Empresa getEmpresa() {
         return empresa;
     }
@@ -99,10 +89,7 @@ public class Passagem {
         this.empresa = empresa;
     }
 
-    public int getId() {
-        return id;
-    }
-
+   
     public String getCnpjEmpresa() {
         return cnpjEmpresa;
     }
@@ -118,5 +105,14 @@ public class Passagem {
     public void setIdPacote(int idPacote) {
         this.idPacote = idPacote;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     
 }

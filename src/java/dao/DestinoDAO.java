@@ -20,18 +20,24 @@ public class DestinoDAO extends DAO {
     
     public void gravar(Destino destino) throws SQLException, ClassNotFoundException{
         Connection conexao = null;
-       PreparedStatement comando = null;
+        PreparedStatement comando = null;
+        ResultSet rs;
        try {
             conexao = BD.getInstancia().getConexao();
             comando = (PreparedStatement) conexao.prepareStatement(
-                "insert into destino (dataInicial, dataFinal, Pacote_idPacote, Empresa_cnpj"
-                + " values(?,?,?,?)");
+                "insert into destino(dataInicial, dataFinal, Pacote_idPacote, Empresa_cnpj)" +
+                 " values(?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             comando.setString(1, destino.getDataInicial());
             comando.setString(2, destino.getDataFinal());
             comando.setInt(3, destino.getPacote().getId());
             comando.setString(4, destino.getEmpresa().getCnpj());
             
             comando.executeUpdate();
+            
+            rs = comando.getGeneratedKeys();
+            if (rs.next()) {
+           destino.setId(rs.getInt(1));
+           }
        }finally{
            fecharConexao(conexao, comando);
        }

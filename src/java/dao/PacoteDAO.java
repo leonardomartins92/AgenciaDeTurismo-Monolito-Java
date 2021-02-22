@@ -17,18 +17,27 @@ public class PacoteDAO extends DAO{
     private PacoteDAO(){}
     
     public void gravar(Pacote pacote) throws SQLException, ClassNotFoundException{
-        Connection conexao = null;
-        PreparedStatement comando = null;
+     
+        Connection conexao=null;
+        PreparedStatement comando=null;
+        ResultSet rs ;
+        
         try{
             conexao = BD.getInstancia().getConexao();
-            comando = (PreparedStatement) conexao.prepareStatement( 
-                    "insert into pacote (idPacote, Cliente_cpf, Funcionario_cpf) values (?, ?, ?)");
-            comando.setInt(1, pacote.getId());
-            comando.setString(2, pacote.getCliente().getCpf());
-            comando.setString(3, pacote.getFuncionario().getCpf());
+            comando = (PreparedStatement) conexao.prepareStatement( "insert into pacote (Cliente_cpf, Funcionario_cpf) values (?, ?)"
+            ,Statement.RETURN_GENERATED_KEYS);
+            
+            comando.setString(1, pacote.getCliente().getCpf());
+            comando.setString(2, pacote.getFuncionario().getCpf());
             
             comando.executeUpdate();
-        }finally{
+            
+           rs = comando.getGeneratedKeys();
+           if (rs.next()) {
+           pacote.setId(rs.getInt(1));
+           }
+        }
+           finally{
         fecharConexao(conexao, comando);
         }   
     }

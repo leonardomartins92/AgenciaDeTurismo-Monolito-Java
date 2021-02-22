@@ -6,6 +6,7 @@
 package test;
 
 import dao.DestinoDAO;
+import dao.PacoteDAO;
 import java.sql.SQLException;
 import model.Cliente;
 import model.Destino;
@@ -22,11 +23,16 @@ import model.TipoFuncionario;
 public class TestDestino {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Empresa empresa = new Empresa("1012", "Azul", "azul@gmail.com", "123", "Rua da Azul", "0", null, "MG", "Juiz de Fora", TipoEmpresa.AEREA, "36080001");
-        Cliente cliente = new Cliente("Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
+        Cliente cliente = new Cliente("Mario","123","leo@","1018","R ABC", "100","nada","MG","JF","a");
         Funcionario funcionario = new Funcionario("12345",TipoFuncionario.VENDEDOR,"Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
         Pacote pacote = new Pacote (cliente,funcionario);
-        Destino destino = new Destino("janeiro","fevereiro", pacote,empresa);
+        PacoteDAO.getInstancia().gravar(pacote);
+        Destino destino = new Destino("2021-02-10","2021-02-10", pacote,empresa);
         DestinoDAO.getInstancia().gravar(destino);
+        System.out.println(destino);
+       //System.out.println(DestinoDAO.getInstancia().obterDestinos());
+      // System.out.println(DestinoDAO.getInstancia().obterDestino(1));
+      // DestinoDAO.getInstancia().deletarDestino(2);
         
     }
 }
