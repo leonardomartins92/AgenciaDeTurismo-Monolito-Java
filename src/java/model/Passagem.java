@@ -44,6 +44,7 @@ public class Passagem {
     @Override
     public String toString() {
         return "model.Passagem{" +
+                "id=" + id + '\'' +
                 "origem='" + origem + '\'' +
                 ", destino=" + destino +
                 '}';

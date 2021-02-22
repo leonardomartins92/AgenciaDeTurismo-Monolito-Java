@@ -58,7 +58,7 @@ public class PacoteDAO extends DAO{
     public Pacote obterPacote(int id) throws ClassNotFoundException, SQLException{
         Connection conexao = null;
         PreparedStatement comando = null;
-        Pacote pacote = null;
+        Pacote pacote;
         try {
             conexao = BD.getInstancia().getConexao();
             comando = (PreparedStatement) conexao.prepareStatement("select * from pacote where idPacote = ?");
@@ -78,8 +78,8 @@ public class PacoteDAO extends DAO{
     public List<Pacote> obterPacotes() throws ClassNotFoundException, SQLException{
        Connection conexao = null;
         Statement comando = null;
-        List<Pacote> pacotes = new ArrayList<Pacote>();
-        Pacote pacote = null; 
+        List<Pacote> pacotes = new ArrayList();
+        Pacote pacote; 
         
         try{
             conexao = BD.getInstancia().getConexao();

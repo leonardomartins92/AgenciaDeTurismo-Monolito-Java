@@ -1,4 +1,4 @@
-package controller;
+package test;
 
 import dao.EmpresaDAO;
 import java.sql.SQLException;

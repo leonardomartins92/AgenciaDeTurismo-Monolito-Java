@@ -35,7 +35,7 @@ public class Destino {
     }
 
     public void setDataInicial(String dataInicio) {
-        this.dataInicial = dataInicial;
+        this.dataInicial = dataInicio;
     }
 
     public String getDataFinal() {

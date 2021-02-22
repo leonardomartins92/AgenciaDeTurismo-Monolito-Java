@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package test;
 
 
 
@@ -31,10 +31,10 @@ public class TestPassagem {
     Funcionario funcionario = new Funcionario("12345",TipoFuncionario.VENDEDOR,"Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
     Pacote pacote = new Pacote(cliente,funcionario);   
     Passagem passagem = new Passagem("São Paulo","Londres","janeiro","fevereiro",pacote,empresa);
-    //PassagemDAO.getInstancia().gravar(passagem);
-    //System.out.println(PassagemDAO.getInstancia().obterPassagens());
+   //PassagemDAO.getInstancia().gravar(passagem);
+   System.out.println(PassagemDAO.getInstancia().obterPassagens());
     //System.out.println(PassagemDAO.getInstancia().obterPassagem(1));
-    PassagemDAO.getInstancia().deletarPassagem(1);
+   // PassagemDAO.getInstancia().deletarPassagem(1);
     
        
     }

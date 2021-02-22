@@ -1,4 +1,4 @@
-package controller;
+package test;
 
 import model.Funcionario;
 import dao.FuncionarioDAO;

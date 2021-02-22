@@ -24,7 +24,7 @@ public class DestinoDAO extends DAO {
        try {
             conexao = BD.getInstancia().getConexao();
             comando = (PreparedStatement) conexao.prepareStatement(
-                "insert into destino (dataInicial, dataFinal, pacote, empresa"
+                "insert into destino (dataInicial, dataFinal, Pacote_idPacote, Empresa_cnpj"
                 + " values(?,?,?,?)");
             comando.setString(1, destino.getDataInicial());
             comando.setString(2, destino.getDataFinal());
@@ -65,7 +65,7 @@ public class DestinoDAO extends DAO {
         public Destino obterDestino(int id) throws ClassNotFoundException, SQLException{
             Connection conexao = null;
             PreparedStatement comando = null;
-            Destino destino = null;
+            Destino destino;
             
             try {
                 conexao = BD.getInstancia().getConexao();
@@ -89,8 +89,8 @@ public class DestinoDAO extends DAO {
         public List<Destino> obterDestinos() throws ClassNotFoundException, SQLException{
             Connection conexao = null;
             Statement comando = null;
-            List<Destino> destinos = new ArrayList<Destino>();
-            Destino destino = null;
+            List<Destino> destinos = new ArrayList();
+            Destino destino;
             try{
                 conexao = BD.getInstancia().getConexao();
                 comando = (Statement) conexao.createStatement();

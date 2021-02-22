@@ -3,7 +3,6 @@ package dao;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
-import dao.DAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -75,7 +74,7 @@ public class ClienteDAO extends DAO{
     
         Connection conexao = null;
         PreparedStatement comando = null;
-        Cliente cliente = null;
+        Cliente cliente ;
         
         try {
             conexao = BD.getInstancia().getConexao();
@@ -95,8 +94,8 @@ public class ClienteDAO extends DAO{
     public List<Cliente> obterClientes() throws ClassNotFoundException, SQLException{
         Connection conexao = null;
         Statement comando = null;
-        List<Cliente> clientes = new ArrayList<Cliente>();
-        Cliente cliente = null;
+        List<Cliente> clientes = new ArrayList();
+        Cliente cliente;
         
         try{
             conexao = BD.getInstancia().getConexao();
