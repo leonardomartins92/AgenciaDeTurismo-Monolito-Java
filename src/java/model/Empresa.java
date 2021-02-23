@@ -1,5 +1,15 @@
 package model;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+import dao.BD;
+import dao.EmpresaDAO;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Empresa {
     private String cnpj;
     private String nome;
@@ -115,6 +125,27 @@ public class Empresa {
         this.cep = cep;
     }
 
+    public void gravar(Empresa empresa) throws SQLException, ClassNotFoundException{
+       EmpresaDAO.getInstancia().gravar(empresa);
+    }
+    
+    public void alterar(Empresa empresa) throws SQLException, ClassNotFoundException{
+     EmpresaDAO.getInstancia().alterar(empresa);
+    }
+    
+    public Empresa obterEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
+    return EmpresaDAO.getInstancia().obterEmpresa(cnpj);
+       
+    }
+    
+    public List<Empresa> obterEmpresas() throws ClassNotFoundException, SQLException{
+      return EmpresaDAO.getInstancia().obterEmpresas();
+    }
+    
+    public void deletarEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
+     EmpresaDAO.getInstancia().deletarEmpresa(cnpj);
+        
+    }
       
 
     @Override

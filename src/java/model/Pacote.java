@@ -1,5 +1,15 @@
 package model;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+import dao.BD;
+import dao.PacoteDAO;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pacote {
 
     private Cliente cliente;
@@ -19,9 +29,6 @@ public class Pacote {
     public String toString() {
         return "Pacote{" + "cliente=" + cliente + ", id=" + id + '}';
     }
-
-    
-      
 
     public int getId() {
         return id;
@@ -64,5 +71,25 @@ public class Pacote {
 
     public void setCpfCliente(String cpfCliente) {
         this.cpfCliente = cpfCliente;
+    }
+    
+     public void gravar(Pacote pacote) throws SQLException, ClassNotFoundException{
+     PacoteDAO.getInstancia().gravar(pacote);       
+    }
+    
+    public void alterar(Pacote pacote) throws SQLException, ClassNotFoundException{
+       PacoteDAO.getInstancia().alterar(pacote);
+    }
+    
+    public Pacote obterPacote(int id) throws ClassNotFoundException, SQLException{
+     return PacoteDAO.getInstancia().obterPacote(id);
+    }
+    
+    public List<Pacote> obterPacotes() throws ClassNotFoundException, SQLException{
+     return PacoteDAO.getInstancia().obterPacotes();
+    }
+        
+    public void deletarPacote(int id) throws ClassNotFoundException, SQLException{
+        PacoteDAO.getInstancia().deletarPacote(id);
     }
 }

@@ -1,5 +1,16 @@
 package model;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+import dao.BD;
+import dao.PassagemDAO;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Passagem {
     
     private int id;
@@ -114,5 +125,25 @@ public class Passagem {
         this.id = id;
     }
     
+    public void gravar(Passagem passagem) throws SQLException, ClassNotFoundException{
+       PassagemDAO.getInstancia().gravar(passagem);
+    }
+    
+    public void alterar(Passagem passagem) throws SQLException, ClassNotFoundException{
+       PassagemDAO.getInstancia().alterar(passagem);
+    }
+    
+    public Passagem obterPassagem(int id) throws ClassNotFoundException, SQLException{
+    return PassagemDAO.getInstancia().obterPassagem(id);
+       
+    }
+    
+    public List<Passagem> obterPassagens() throws ClassNotFoundException, SQLException{
+        return PassagemDAO.getInstancia().obterPassagens();
+    }
+    
+    public void deletarPassagem(int id) throws ClassNotFoundException, SQLException{
+    PassagemDAO.getInstancia().deletarPassagem(id);
+    }
     
 }
