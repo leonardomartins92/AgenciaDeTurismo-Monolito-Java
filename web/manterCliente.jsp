@@ -27,17 +27,14 @@
           <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
        
-          <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="pesquisaRanking.jsp" aria-disabled="true">Ranking</a>
+         
           
         </div>
       </div>
     </div>
   </nav>
-    
-    
-
-
+        
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
