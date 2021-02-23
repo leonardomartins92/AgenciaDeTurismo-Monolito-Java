@@ -125,24 +125,24 @@ public class Passagem {
         this.id = id;
     }
     
-    public void gravar(Passagem passagem) throws SQLException, ClassNotFoundException{
+    public static void gravar(Passagem passagem) throws SQLException, ClassNotFoundException{
        PassagemDAO.getInstancia().gravar(passagem);
     }
     
-    public void alterar(Passagem passagem) throws SQLException, ClassNotFoundException{
+    public static void alterar(Passagem passagem) throws SQLException, ClassNotFoundException{
        PassagemDAO.getInstancia().alterar(passagem);
     }
     
-    public Passagem obterPassagem(int id) throws ClassNotFoundException, SQLException{
+    public static Passagem obterPassagem(int id) throws ClassNotFoundException, SQLException{
     return PassagemDAO.getInstancia().obterPassagem(id);
        
     }
     
-    public List<Passagem> obterPassagens() throws ClassNotFoundException, SQLException{
+    public static List<Passagem> obterPassagens() throws ClassNotFoundException, SQLException{
         return PassagemDAO.getInstancia().obterPassagens();
     }
     
-    public void deletarPassagem(int id) throws ClassNotFoundException, SQLException{
+    public static void deletarPassagem(int id) throws ClassNotFoundException, SQLException{
     PassagemDAO.getInstancia().deletarPassagem(id);
     }
     

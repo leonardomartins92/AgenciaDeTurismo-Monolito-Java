@@ -125,24 +125,24 @@ public class Empresa {
         this.cep = cep;
     }
 
-    public void gravar(Empresa empresa) throws SQLException, ClassNotFoundException{
+    public static void gravar(Empresa empresa) throws SQLException, ClassNotFoundException{
        EmpresaDAO.getInstancia().gravar(empresa);
     }
     
-    public void alterar(Empresa empresa) throws SQLException, ClassNotFoundException{
+    public static void alterar(Empresa empresa) throws SQLException, ClassNotFoundException{
      EmpresaDAO.getInstancia().alterar(empresa);
     }
     
-    public Empresa obterEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
+    public static Empresa obterEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
     return EmpresaDAO.getInstancia().obterEmpresa(cnpj);
        
     }
     
-    public List<Empresa> obterEmpresas() throws ClassNotFoundException, SQLException{
+    public static List<Empresa> obterEmpresas() throws ClassNotFoundException, SQLException{
       return EmpresaDAO.getInstancia().obterEmpresas();
     }
     
-    public void deletarEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
+    public static void deletarEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
      EmpresaDAO.getInstancia().deletarEmpresa(cnpj);
         
     }

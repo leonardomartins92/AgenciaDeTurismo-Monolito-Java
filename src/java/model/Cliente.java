@@ -16,24 +16,24 @@ public class Cliente extends Pessoa{
         super(name, telefone, email, cpf, logradouro, numero, complemento, uf, cidade, cep);
     }
     
-    public void gravar(Cliente cliente) throws SQLException, ClassNotFoundException{
+    public static void gravar(Cliente cliente) throws SQLException, ClassNotFoundException{
        ClienteDAO.getInstancia().gravar(cliente);
     }
     
-    public void alterar(Cliente cliente) throws SQLException, ClassNotFoundException{
+    public static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException{
        ClienteDAO.getInstancia().alterar(cliente);
     }
     
-    public Cliente obterCliente(String cpf) throws ClassNotFoundException, SQLException{
+    public static Cliente obterCliente(String cpf) throws ClassNotFoundException, SQLException{
     return ClienteDAO.getInstancia().obterCliente(cpf);
         
     }
     
-    public List<Cliente> obterClientes() throws ClassNotFoundException, SQLException{
+    public static List<Cliente> obterClientes() throws ClassNotFoundException, SQLException{
         return ClienteDAO.getInstancia().obterClientes();
     }
     
-    public void deletarCliente(String cpf) throws ClassNotFoundException, SQLException{
+    public static void deletarCliente(String cpf) throws ClassNotFoundException, SQLException{
        ClienteDAO.getInstancia().deletarCliente(cpf);
         
     }

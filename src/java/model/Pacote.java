@@ -73,23 +73,23 @@ public class Pacote {
         this.cpfCliente = cpfCliente;
     }
     
-     public void gravar(Pacote pacote) throws SQLException, ClassNotFoundException{
+     public static void gravar(Pacote pacote) throws SQLException, ClassNotFoundException{
      PacoteDAO.getInstancia().gravar(pacote);       
     }
     
-    public void alterar(Pacote pacote) throws SQLException, ClassNotFoundException{
+    public static void alterar(Pacote pacote) throws SQLException, ClassNotFoundException{
        PacoteDAO.getInstancia().alterar(pacote);
     }
     
-    public Pacote obterPacote(int id) throws ClassNotFoundException, SQLException{
+    public static Pacote obterPacote(int id) throws ClassNotFoundException, SQLException{
      return PacoteDAO.getInstancia().obterPacote(id);
     }
     
-    public List<Pacote> obterPacotes() throws ClassNotFoundException, SQLException{
+    public static List<Pacote> obterPacotes() throws ClassNotFoundException, SQLException{
      return PacoteDAO.getInstancia().obterPacotes();
     }
         
-    public void deletarPacote(int id) throws ClassNotFoundException, SQLException{
+    public static void deletarPacote(int id) throws ClassNotFoundException, SQLException{
         PacoteDAO.getInstancia().deletarPacote(id);
     }
 }

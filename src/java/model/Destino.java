@@ -98,24 +98,24 @@ public class Destino {
     public void setIdPacote(int idPacote) {
         this.idPacote = idPacote;
     }   
-    public void gravar(Destino destino) throws SQLException, ClassNotFoundException{
+    public static void gravar(Destino destino) throws SQLException, ClassNotFoundException{
        DestinoDAO.getInstancia().gravar(destino);
     }
     
-    public void alterar(Destino destino) throws SQLException, ClassNotFoundException{
+    public static void alterar(Destino destino) throws SQLException, ClassNotFoundException{
        DestinoDAO.getInstancia().alterar(destino);
     }
     
-    public Destino obterDestino(int id) throws ClassNotFoundException, SQLException{
+    public static Destino obterDestino(int id) throws ClassNotFoundException, SQLException{
     return DestinoDAO.getInstancia().obterDestino(id);
         
     }
     
-    public List<Destino> obterDestinos() throws ClassNotFoundException, SQLException{
+    public static List<Destino> obterDestinos() throws ClassNotFoundException, SQLException{
         return DestinoDAO.getInstancia().obterDestinos();
     }
     
-    public void deletarDestino(int id) throws ClassNotFoundException, SQLException{
+    public  static void deletarDestino(int id) throws ClassNotFoundException, SQLException{
        DestinoDAO.getInstancia().deletarDestino(id);
         
     }
