@@ -6,8 +6,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
   <title>Cadastro de Funcionários</title>
+  
+</head>
+<body style="width: 70%;">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,17 +24,14 @@
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
           <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-    
-          <a class="nav-link" href="pesquisaRanking.jsp">Ranking</a>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="pesquisaRanking.jsp" aria-disabled="true">Ranking</a>
+          
           
         </div>
       </div>
     </div>
   </nav>
-</head>
-<body style="width: 70%;">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 <div class="container">
   <div class="row align-items-start">
     <div class="col">
