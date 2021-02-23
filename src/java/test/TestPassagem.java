@@ -27,12 +27,12 @@ public class TestPassagem {
     Empresa empresa = new Empresa("1012", "Azul", "azul@gmail.com", "123", "Rua da Azul", "0", null, "MG", "Juiz de Fora", TipoEmpresa.AEREA, "36080001");
     Cliente cliente = new Cliente("Mario","123","leo@","1018","R ABC", "100","nada","MG","JF","a");
     Funcionario funcionario = new Funcionario("12345",TipoFuncionario.VENDEDOR,"Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
-    Pacote pacote = new Pacote(cliente,funcionario); 
+    Pacote pacote = new Pacote(9,cliente,funcionario); 
     PacoteDAO.getInstancia().gravar(pacote);
-    Passagem passagem = new Passagem("São Paulo","Londres","janeiro","fevereiro",pacote,empresa);
+    Passagem passagem = new Passagem(50,"Mexico","Barcelona","janeiro","fevereiro",pacote,empresa);
      
-    PassagemDAO.getInstancia().gravar(passagem);
-    //System.out.println(PassagemDAO.getInstancia().obterPassagens());
+   PassagemDAO.getInstancia().gravar(passagem);
+    System.out.println(PassagemDAO.getInstancia().obterPassagens());
     //System.out.println(PassagemDAO.getInstancia().obterPassagem(1));
    // PassagemDAO.getInstancia().deletarPassagem(1);
     

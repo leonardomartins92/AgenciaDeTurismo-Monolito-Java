@@ -31,17 +31,16 @@ public class PassagemDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "insert into passagem (idPassagem, origem, destino, dataIda, "
+           "insert into passagem (origem, destino, dataIda, "
                    + "dataVolta, Pacote_idPacote, Empresa_cnpj)"
-            + "values(?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS
+            + "values(?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS
            );
-           comando.setInt(1, passagem.getId());
-           comando.setString(2, passagem.getOrigem());
-           comando.setString(3, passagem.getDestino());
-           comando.setString(4, passagem.getDataIda());
-           comando.setString(5, passagem.getDataVolta());
-           comando.setInt(6, passagem.getPacote().getId());
-           comando.setString(7, passagem.getEmpresa().getCnpj());
+           comando.setString(1, passagem.getOrigem());
+           comando.setString(2, passagem.getDestino());
+           comando.setString(3, passagem.getDataIda());
+           comando.setString(4, passagem.getDataVolta());
+           comando.setInt(5, passagem.getPacote().getId());
+           comando.setString(6, passagem.getEmpresa().getCnpj());
                    
            comando.executeUpdate();
            
@@ -87,7 +86,7 @@ public class PassagemDAO extends DAO{
     
         Connection conexao = null;
         PreparedStatement comando = null;
-        Passagem passagem = null;
+        Passagem passagem;
         
         try {
             conexao = BD.getInstancia().getConexao();
@@ -107,8 +106,8 @@ public class PassagemDAO extends DAO{
     public List<Passagem> obterPassagens() throws ClassNotFoundException, SQLException{
         Connection conexao = null;
         Statement comando = null;
-        List<Passagem> passagens = new ArrayList<Passagem>();
-        Passagem passagem = null;
+        List<Passagem> passagens = new ArrayList();
+        Passagem passagem;
         
         try{
             conexao = BD.getInstancia().getConexao();
@@ -141,7 +140,8 @@ public class PassagemDAO extends DAO{
     }
     
     public Passagem instanciarPassagem(ResultSet rs) throws SQLException {
-    Passagem passagem = new Passagem(rs.getString("origem"),
+    Passagem passagem = new Passagem(rs.getInt("idPassagem"),
+            rs.getString("origem"),
             rs.getString("destino"),
             rs.getString("dataIda"),
             rs.getString("dataVolta"),

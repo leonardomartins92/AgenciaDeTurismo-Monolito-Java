@@ -119,7 +119,7 @@ public class PacoteDAO extends DAO{
     }
     
     public Pacote instanciarPacote(ResultSet rs) throws SQLException {
-        Pacote pacote = new Pacote(null, null);
+        Pacote pacote = new Pacote(rs.getInt("idPacote"),null, null);
         pacote.setCpfCliente(rs.getString("Cliente_cpf"));
         pacote.setCpfFuncionario(rs.getString("Funcionario_cpf"));
 

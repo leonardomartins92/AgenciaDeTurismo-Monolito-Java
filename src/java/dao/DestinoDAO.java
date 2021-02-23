@@ -126,7 +126,8 @@ public class DestinoDAO extends DAO {
         }
         
         public Destino instanciarDestino(ResultSet rs) throws SQLException {
-            Destino destino = new Destino(rs.getString("dataInicial"),
+            Destino destino = new Destino(rs.getInt("idDestino"),
+                rs.getString("dataInicial"),
                 rs.getString("dataFinal"),
                 null,
                 null);

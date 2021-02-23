@@ -24,7 +24,8 @@ public class Destino {
     private int idPacote;
     
 
-    public Destino(String dataInicial, String dataFinal, Pacote pacote, Empresa empresa) {
+    public Destino(int id, String dataInicial, String dataFinal, Pacote pacote, Empresa empresa) {
+        this.id = id;
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
         this.pacote = pacote;

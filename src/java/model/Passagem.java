@@ -1,14 +1,8 @@
 package model;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
-import dao.BD;
+
 import dao.PassagemDAO;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Passagem {
@@ -25,8 +19,8 @@ public class Passagem {
     private String cnpjEmpresa;
     private int idPacote;
 
-    public Passagem(String origem, String destino , String dataIda, String dataVolta, Pacote pacote, Empresa empresa) {
-       
+    public Passagem(int id,String origem, String destino , String dataIda, String dataVolta, Pacote pacote, Empresa empresa) {
+        this.id=id;
         this.origem = origem;
         this.destino = destino;
         this.dataIda = dataIda;
@@ -49,7 +43,7 @@ public class Passagem {
     @Override
     public String toString() {
         return "model.Passagem{" +
-                
+                "id="+ id + '\'' +
                 "origem='" + origem + '\'' +
                 ", destino=" + destino +
                 '}';

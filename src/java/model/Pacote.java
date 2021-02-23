@@ -19,8 +19,8 @@ public class Pacote {
     private String cpfCliente;
   
     
-      public Pacote(Cliente cliente, Funcionario funcionario) {
-     
+      public Pacote(int id, Cliente cliente, Funcionario funcionario) {
+        this.id= id;
         this.cliente = cliente;
         this.funcionario = funcionario;       
     }
