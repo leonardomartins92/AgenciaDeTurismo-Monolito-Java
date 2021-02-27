@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>    
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>Funcion·rios</title>
+  <title>Funcion√°rios</title>
   <style>
     table, th, td {
     border: 1px solid black;
@@ -31,7 +34,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaRanking.jsp" aria-disabled="true">Ranking</a>
          
@@ -41,56 +44,49 @@
     </div>
   </nav>
 
-
-<label for="nome">Nome do Cliente</label>
-<input type="text" name="nome" id="nome">
-
-<label for="CPF">CPF</label>
-<input type="text" name="CPF" id="CPF"><br><br>
-
+<div class="container">
+    <div class="row align-items-start">
+    <div class="col">
+     <select class="form-select" aria-label="Default select example">
+       <option value="1">Nome do Funcion√°rio</option>
+       <option value="1">CPF</option>
+     </select>
+    </div>
+    <div class="col">
+     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+    </div>
+    <div class="col">
+     <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </div>
+    </div>
+               
   <table class="table table-striped">
+    <thead>  
     <tr>
-      <th>ID</th>
       <th>Nome</th>
-      <th>E-mail</th>
-      <th>Telefone</th>
-      <th colspan="2">AÁ„o</th>
+      <th>CPF</th>
+      <th colspan="2">A√ß√£o</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>Jo„o</td>
-      <td>joaozinho123@gmail.com</td>
-      <td>+55 (32) 99999-9999</td>
-      <div class="list-group">
-      <td><a href="manterFuncionario.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterFuncionario.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Maria</td>
-      <td>mariazinha123@gmail.com</td>
-      <td>+55 (32) 99999-9999</td>
-      <div class="list-group">
-      <td><a href="manterFuncionario.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterFuncionario.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>JosÈ</td>
-      <td>josezinho123@gmail.com</td>
-      <td>+55 (32) 99999-9999</td>
-      <div class="list-group">
-      <td><a href="manterFuncionario.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterFuncionario.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-    </tr>
-  </table>
+    </thead> 
+   <tbody>
+     
+    <c:forEach items="${funcionarios}" var="funcionario">
+       <tr> 
+        <td><c:out value="${funcionario.name}" /></td> 
+        <td><c:out value="${funcionario.cpf}" /></td>  
+        <td><a href="manterPassagem.jsp?acao=editar&cod=<c:out value="${funcionario.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+        <td><a href="manterPassagem.jsp?acao=excluir&cod=<c:out value="${funcionario.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+       </tr>  
+    </c:forEach>
+  </tbody>      
+     
+</table>
+<form action="ManterFuncionarioController?acao=adicionar"  
   <div class="col-md-2 ">
   <div class="list-group">
-    <a href="manterFuncionario.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+    <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">
   </div>
   </div>
+</form>     
 </body>
 </html>

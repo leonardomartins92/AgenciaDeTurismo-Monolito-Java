@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,93 +33,60 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcionários</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">FuncionÃ¡rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaRanking.jsp" aria-disabled="true">Ranking</a>
-         
-          
+       
         </div>
       </div>
     </div>
   </nav>
 
-
+    <div class="container">
+    <div class="row align-items-start">
+    <div class="col">
+     <select class="form-select" aria-label="Default select example">
+       <option value="1">Id da Passagem</option>
+       <option value="1">Id do Pacote</option>
+       <option value="2">Origem</option>
+  
+    </select>
+    </div>
+    <div class="col">
+     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+    </div>
+    <div class="col">
+     <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </div>
+    </div>
+               
+       
 <table class="table table-striped">
-
-    <label for="pacote">Número do Pacote</label>
-    <input type="text" name="pacote" id="pacote">
-
-    <label for="origem">Origem</label>
-    <input type="text" name="origem" id="origem">
-
-    <label for="destino">Destino</label>
-    <input type="text" name="destino" id="destino"><br>
-
-    <label for="empresa">Empresa</label>
-    <input type="text" name="empresa" id="empresa">
-
-    <label for="dataSaida">Data de Saída</label>
-    <input type="text" name="dataSaida" id="dataSaida">
-
-    <label for="horaSaida">Hora de Saída</label>
-    <input type="text" name="horaSaida" id="horaSaida">
-
-    <br><br>
+    <thead>
     <tr>
         <th>ID</th>
         <th>Pacote</th>
         <th>Origem</th>
-        <th>Destino</th>
-        <th>Empresa</th>
-        <th>Data de Saída </th>
-        <th>Hora de Saída</th>
-        <th colspan="2">Ação</th>
+        <th colspan="2">AÃ§Ã£o</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>Juiz de Fora</td>
-        <td>Londres</td>
-        <td>Gol</td>
-        <td>01/01/2021</td>
-        <td>13:30</td>
-        <div class="list-group">
-      <td><a href="manterPassagem.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterPassagem.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>2</td>
-        <td>Juiz de Fora</td>
-        <td>Madrid</td>
-        <td>Gol</td>
-        <td>01/01/2021</td>
-        <td>13:30</td>
-        <div class="list-group">
-      <td><a href="manterPassagem.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterPassagem.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>3</td>
-        <td>Juiz de Fora</td>
-        <td>Tokyo</td>
-        <td>Gol</td>
-        <td>01/01/2021</td>
-        <td>13:30</td>
-        <div class="list-group">
-      <td><a href="manterPassagem.jsp?acao=editar" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-      <td><a href="manterPassagem.jsp?acao=excluir" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-      </div>
-    </tr>
-
+    </thead>
+    <tbody>
+        <c:forEach items="${passagens}" var="passagem">
+         <tr>  
+            <td><c:out value="${passagem.id}" /></td>
+            <td><c:out value="${passagem.idPacote}" /></td>
+            <td><c:out value="${passagem.origem}" /></td>
+            <td><a href="manterPassagem.jsp?acao=editar&cod=<c:out value="${passagem.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+            <td><a href="manterPassagem.jsp?acao=excluir&cod=<c:out value="${passagem.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+         </tr>   
+        </c:forEach>
+    </tbody>
 </table>
+<form action="ManterPassagemController?acao=a" method="post">        
 <div class="col-md-2 ">
   <div class="list-group">
-    <a href="manterPassagem.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+    <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">
   </div>
   </div>
+</form>          
 </body>
 </html>

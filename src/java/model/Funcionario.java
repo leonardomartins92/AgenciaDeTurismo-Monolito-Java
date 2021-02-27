@@ -40,24 +40,24 @@ public class Funcionario extends Pessoa{
     public void setTipo(TipoFuncionario tipo) {
         this.tipo = tipo;
     }
-     public void gravar(Funcionario funcionario) throws SQLException, ClassNotFoundException{
+     public static void gravar(Funcionario funcionario) throws SQLException, ClassNotFoundException{
        FuncionarioDAO.getInstancia().gravar(funcionario);
     }
     
-    public void alterar(Funcionario funcionario) throws SQLException, ClassNotFoundException{
+    public static void alterar(Funcionario funcionario) throws SQLException, ClassNotFoundException{
       FuncionarioDAO.getInstancia().alterar(funcionario);
     }
     
-    public Funcionario obterFuncionario(String cpf) throws ClassNotFoundException, SQLException{
+    public static Funcionario obterFuncionario(String cpf) throws ClassNotFoundException, SQLException{
     return FuncionarioDAO.getInstancia().obterFuncionario(cpf);
        
     }
     
-    public List<Funcionario> obterFuncionarios() throws ClassNotFoundException, SQLException{
+    public static List<Funcionario> obterFuncionarios() throws ClassNotFoundException, SQLException{
         return FuncionarioDAO.getInstancia().obterFuncionarios();
     }
     
-    public void deletarFuncionario(String cpf) throws ClassNotFoundException, SQLException{
+    public static void deletarFuncionario(String cpf) throws ClassNotFoundException, SQLException{
     FuncionarioDAO.getInstancia().deletarFuncionario(cpf);
         
     }

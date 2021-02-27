@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +27,7 @@
           <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
           <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
           <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion·rios</a>
+          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
           <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
           <a class="nav-link" href="pesquisaRanking.jsp" aria-disabled="true">Ranking</a>
         
@@ -56,7 +60,7 @@
             <label for="inputOrigin" class="form-label">Origem</label>
             <select id="inputOrigin" class="form-select">
               <option selected>Brasil</option>
-              <option>MÈxico</option>
+              <option>M√©xico</option>
               <option>Portugal</option>
             </select>
           </div>
@@ -64,7 +68,7 @@
             <label for="inputDestiny" class="form-label">Destino</label>
             <select id="inputDestiny" class="form-select">
               <option selected>Brasil</option>
-              <option>MÈxico</option>
+              <option>M√©xico</option>
               <option>Portugal</option>
             </select>
           </div>
