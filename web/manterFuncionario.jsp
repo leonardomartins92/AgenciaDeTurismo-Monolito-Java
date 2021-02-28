@@ -1,111 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+    <head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    
-  <title>Cadastro de Funcion√°rios</title>
-  
-</head>
-<body style="width: 70%;">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <title>Cadastro de Funcion·rios</title>
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="pesquisaPacote.jsp">Pacotes</a>
-          <a class="nav-link" href="pesquisaPassagem.jsp">Passagens</a>
-          <a class="nav-link" href="pesquisaCliente.jsp">Clientes</a>
-          <a class="nav-link" href="pesquisaFuncionario.jsp">Funcion√°rios</a>
-          <a class="nav-link" href="pesquisaEmpresa.jsp">Empresas</a>
-          <a class="nav-link" href="pesquisaRanking.jsp" aria-disabled="true">Ranking</a>
-          
-          
-        </div>
-      </div>
-    </div>
-  </nav>
-
-<div class="container">
-  <div class="row align-items-start">
+        <%@ include file = "header.jsp" %>
     <div class="col">
+        <form class="row g-3">
+            <h2><span id="acao"></span> Funcion·rio</h2>
+            <div class="col-12">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" placeholder="">
+            </div>
+            <div class="col-12">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="">
+            </div>
 
+            <div class="col-md-6 ">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputTelefone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="inputTelefone">
+            </div>
+            <div class="col-md-4">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" maxlength="9">
+            </div>
+            <div class="col-md-2">
+                <label for="uf" class="form-label">UF</label>
+                <input type="text" class="form-control" name="uf" id="uf">
+            </div>
+
+            <div class="col-md-6">
+                <label for="localidade" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="localidade">
+            </div>
+
+            <div class="col-md-8">
+                <label for="logradouro" class="form-label">Logradouro</label>
+                <input type="text" class="form-control" id="logradouro" placeholder="">
+            </div>
+            <div class="col-md-4">
+                <label for="numero" class="form-label">N˙mero</label>
+                <input type="text" class="form-control" id="numero" placeholder="">
+            </div>
+            <div class="col-12">
+                <label for="numero2" class="form-label">Complemento</label>
+                <input type="text" class="form-control" id="numero2" placeholder="">
+            </div>
+            <div class="col-md-8">
+                <label for="inputPassword" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="">
+            </div>
+            <div class="col-md-4">
+                <label for="inputFunction" class="form-label">FunÁ„o</label>
+                <select id="inputFunction" class="form-select">
+                    <option selected>Vendedor</option>
+                    <option>Gerente</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group"><script src="./Scripts/ViaCep.js"></script></div>
+                <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
+            </div>
+        </form>
     </div>
-    <div class="col">
-      <form class="row g-3">
-        <h2><span id="acao"></span> Funcion√°rio</h2>
-        <div class="col-12">
-          <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="name" placeholder="">
-        </div>
-        <div class="col-12">
-          <label for="cpf" class="form-label">CPF</label>
-          <input type="text" class="form-control" id="cpf" placeholder="">
-        </div>
-
-        <div class="col-md-6 ">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-          <label for="inputTelefone" class="form-label">Telefone</label>
-          <input type="text" class="form-control" id="inputTelefone">
-        </div>
-        <div class="col-md-4">
-          <label for="cep" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="cep" maxlength="9">
-      </div>
-      <div class="col-md-2">
-          <label for="uf" class="form-label">UF</label>
-          <input type="text" class="form-control" name="uf" id="uf">
-      </div>
-
-      <div class="col-md-6">
-          <label for="localidade" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="localidade">
-      </div>
-
-      <div class="col-md-8">
-          <label for="logradouro" class="form-label">Logradouro</label>
-          <input type="text" class="form-control" id="logradouro" placeholder="">
-      </div>
-      <div class="col-md-4">
-          <label for="numero" class="form-label">N√∫mero</label>
-          <input type="text" class="form-control" id="numero" placeholder="">
-      </div>
-      <div class="col-12">
-          <label for="numero2" class="form-label">Complemento</label>
-          <input type="text" class="form-control" id="numero2" placeholder="">
-      </div>
-        <div class="col-md-8">
-          <label for="inputPassword" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="inputPassword" placeholder="">
-        </div>
-        <div class="col-md-4">
-          <label for="inputFunction" class="form-label">Fun√ß√£o</label>
-          <select id="inputFunction" class="form-select">
-            <option selected>Vendedor</option>
-            <option>Gerente</option>
-          </select>
-        </div>
-
-        <div class="col-12">
-          <div class="form-group"><script src="./Scripts/ViaCep.js"></script></div>
-          <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
-        </div>
-      </form>
-    </div>
-  </div>
+</div>
 </div>
 <script src="./Scripts/main.js"></script>
 </body>

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
+
     private String cnpj;
     private String nome;
     private String email;
@@ -125,28 +126,27 @@ public class Empresa {
         this.cep = cep;
     }
 
-    public static void gravar(Empresa empresa) throws SQLException, ClassNotFoundException{
-       EmpresaDAO.getInstancia().gravar(empresa);
+    public static void gravar(Empresa empresa) throws SQLException, ClassNotFoundException {
+        EmpresaDAO.getInstancia().gravar(empresa);
     }
-    
-    public static void alterar(Empresa empresa) throws SQLException, ClassNotFoundException{
-     EmpresaDAO.getInstancia().alterar(empresa);
+
+    public static void alterar(Empresa empresa) throws SQLException, ClassNotFoundException {
+        EmpresaDAO.getInstancia().alterar(empresa);
     }
-    
-    public static Empresa obterEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
-    return EmpresaDAO.getInstancia().obterEmpresa(cnpj);
-       
+
+    public static Empresa obterEmpresa(String cnpj) throws ClassNotFoundException, SQLException {
+        return EmpresaDAO.getInstancia().obterEmpresa(cnpj);
+
     }
-    
-    public static List<Empresa> obterEmpresas() throws ClassNotFoundException, SQLException{
-      return EmpresaDAO.getInstancia().obterEmpresas();
+
+    public static List<Empresa> obterEmpresas() throws ClassNotFoundException, SQLException {
+        return EmpresaDAO.getInstancia().obterEmpresas();
     }
-    
-    public static void deletarEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
-     EmpresaDAO.getInstancia().deletarEmpresa(cnpj);
-        
+
+    public static void deletarEmpresa(String cnpj) throws ClassNotFoundException, SQLException {
+        EmpresaDAO.getInstancia().deletarEmpresa(cnpj);
+
     }
-      
 
     @Override
     public String toString() {

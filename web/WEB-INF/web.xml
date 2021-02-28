@@ -44,6 +44,14 @@
         <servlet-name>PesquisaRankingController</servlet-name>
         <servlet-class>controller.PesquisaRankingController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterDestinoController</servlet-name>
+        <servlet-class>controller.ManterDestinoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PesquisaDestinoController</servlet-name>
+        <servlet-class>controller.PesquisaDestinoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManterClienteController</servlet-name>
         <url-pattern>/ManterClienteController</url-pattern>
@@ -87,6 +95,14 @@
     <servlet-mapping>
         <servlet-name>PesquisaRankingController</servlet-name>
         <url-pattern>/PesquisaRankingController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterDestinoController</servlet-name>
+        <url-pattern>/ManterDestinoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaDestinoController</servlet-name>
+        <url-pattern>/PesquisaDestinoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

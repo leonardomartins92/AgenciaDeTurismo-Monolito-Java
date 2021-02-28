@@ -7,10 +7,13 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
 
 /**
  *
@@ -35,10 +38,10 @@ public class ManterClienteController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ManterClienteController</title>");            
+            out.println("<title>Servlet ManterPacoteController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ManterClienteController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ManterPacoteController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
