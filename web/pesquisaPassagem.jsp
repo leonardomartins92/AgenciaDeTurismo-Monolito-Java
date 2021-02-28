@@ -18,8 +18,8 @@
             <div class="col">
                 <select class="form-select" aria-label="Default select example">
                     <option value="1">Id da Passagem</option>
-                    <option value="1">Id do Pacote</option>
-                    <option value="2">Origem</option>
+                    <option value="2">Id do Pacote</option>
+                    <option value="3">Origem</option>
 
                 </select>
             </div>

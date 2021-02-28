@@ -27,7 +27,7 @@
                     <a class="nav-link" href="PesquisaFuncionarioController">Funcionários</a>
                     <a class="nav-link" href="PesquisaEmpresaController">Empresas</a>
                     <a class="nav-link" href="PesquisaDestinoController">Destinos</a>
-                    <a class="nav-link" href="PesquisaRankingController" aria-disabled="true">Ranking</a>
+                   
 
 
                 </div>
