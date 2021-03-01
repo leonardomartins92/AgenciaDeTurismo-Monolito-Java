@@ -62,6 +62,9 @@ public class Funcionario extends Pessoa{
         
     }
     
+    public static Funcionario autenticarFuncionario(String cpf, String senha) throws ClassNotFoundException, SQLException{
+    return FuncionarioDAO.getInstancia().autenticarFuncionario(cpf, senha);
+    }
     
     
 }

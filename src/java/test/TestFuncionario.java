@@ -11,6 +11,7 @@ public class TestFuncionario {
        FuncionarioDAO.getInstancia().gravar(funcionario);
       // System.out.println(FuncionarioDAO.getInstancia().obterFuncionarios());
        //System.out.println(FuncionarioDAO.getInstancia().obterFuncionario("1012"));
+       // System.out.println(FuncionarioDAO.getInstancia().autenticarFuncionario("1012","12345"));
        //FuncionarioDAO.getInstancia().deletarFuncionario("1012");
     }
 }
