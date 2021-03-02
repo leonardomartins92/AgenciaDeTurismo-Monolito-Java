@@ -15,9 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Cliente;
 
+
 /**
  *
- * @author fabri
+ * @author Leo
  */
 public class ManterClienteController extends HttpServlet {
 
@@ -32,18 +33,18 @@ public class ManterClienteController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ManterPacoteController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ManterPacoteController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+       try{
+            String acao = request.getParameter("acao");
+            request.setAttribute("acao", acao);
+            
+            String cpf = request.getParameter("cod");
+            request.setAttribute("cliente", Cliente.obterCliente(cpf));
+            
+            RequestDispatcher view = 
+                    request.getRequestDispatcher("/manterCliente.jsp");
+            view.forward(request, response);
+        } catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
         }
     }
 

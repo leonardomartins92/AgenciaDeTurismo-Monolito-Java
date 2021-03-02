@@ -42,8 +42,8 @@
                     <tr> 
                         <td><c:out value="${pacote.cpfCliente}" /></td> 
                         <td><c:out value="${pacote.cpfFuncionario}" /></td>  
-                        <td><a href="manterPacoteController.jsp?acao=editar&cod=<c:out value="${pacote.id}" />" class="list-group-item lisCt-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="manterPacoteController.jsp?acao=excluir&cod=<c:out value="${pacote.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><a href="ManterPacoteController?acao=editar&cod=<c:out value="${pacote.id}" />" class="list-group-item lisCt-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="ManterPacoteController?acao=excluir&cod=<c:out value="${pacote.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                     </tr>  
                 </c:forEach>
             </tbody> 

@@ -76,7 +76,7 @@ public class FuncionarioDAO extends DAO{
        }
     }
     
-    public Funcionario autenticarFuncionario(String cpf, String senha) throws ClassNotFoundException, SQLException{
+    public boolean autenticarFuncionario(String cpf, String senha) throws ClassNotFoundException, SQLException{
     
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -92,8 +92,16 @@ public class FuncionarioDAO extends DAO{
             rs.next();
            
             funcionario = instanciarFuncionario(rs);
-            return funcionario;  
-        } finally{
+            
+        return true ; 
+            
+        }
+        catch(Exception e){
+            return false;
+                
+        }  
+        
+        finally{
             fecharConexao(conexao, comando);
         }
     }

@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
 import model.Funcionario;
 import model.Passagem;
 
@@ -33,6 +34,31 @@ public class IndexController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+      try{
+            if(request.getParameter("cpf") != null && request.getParameter("senha") != null ) {       
+            String cpf = request.getParameter("cpf");
+            String senha = request.getParameter("senha"); 
+            
+                if(Funcionario.autenticarFuncionario(cpf,senha)){
+                    RequestDispatcher view = 
+                        request.getRequestDispatcher("/homeFuncionario.jsp");
+                view.forward(request, response);
+                }
+                else{
+                    RequestDispatcher view = 
+                        request.getRequestDispatcher("/index.jsp");
+                view.forward(request, response);
+              }
+            
+            }
+            
+            
+            
+            
+        } catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
+        } 
+        
         
     }
 

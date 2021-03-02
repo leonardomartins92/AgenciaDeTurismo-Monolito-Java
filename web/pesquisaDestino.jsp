@@ -45,8 +45,8 @@
                         <td><c:out value="${destino.dataInicial}" /></td> 
                         <td><c:out value="${destino.dataFinal}" /></td>  
                         <td><c:out value="${destino.cnpjEmpresa}" /></td>
-                        <td><a href="manterDestinoController?acao=editar&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="manterDestinoController?acao=excluir&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><a href="ManterDestinoController?acao=editar&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="ManterDestinoController?acao=excluir&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                         
                     </tr>  
                 </c:forEach>

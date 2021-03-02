@@ -39,8 +39,8 @@
                 <tr> 
                     <td><c:out value="${empresa.nome}" /></td>
                     <td><c:out value="${empresa.tipo}" /></td>
-                    <td><a href="manterPassagemController?acao=editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                    <td><a href="manterPassagemController?acao=excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                    <td><a href="ManterPassagemController?acao=editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                    <td><a href="ManterPassagemController?acao=excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                 </tr>  
             </c:forEach>
         </tbody>

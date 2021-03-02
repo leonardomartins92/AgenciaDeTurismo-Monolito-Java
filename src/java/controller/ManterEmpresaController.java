@@ -7,14 +7,18 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Empresa;
+import model.Passagem;
 
 /**
  *
- * @author fabri
+ * @author Leo
  */
 public class ManterEmpresaController extends HttpServlet {
 
@@ -29,18 +33,18 @@ public class ManterEmpresaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ManterEmpresaController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ManterEmpresaController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try{
+            String cnpj = request.getParameter("cod");
+            String acao = request.getParameter("acao");
+            
+            request.setAttribute("acao", acao);
+            request.setAttribute("empresa", Empresa.obterEmpresa(cnpj));
+            
+            RequestDispatcher view = 
+                    request.getRequestDispatcher("/manterEmpresa.jsp");
+            view.forward(request, response);
+        } catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
         }
     }
 
