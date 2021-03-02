@@ -44,10 +44,10 @@
                     <tr> 
                         <td><c:out value="${destino.dataInicial}" /></td> 
                         <td><c:out value="${destino.dataFinal}" /></td>  
-                        <td><c:out value="${destino.Empresa_cnpj}" /></td>
-                        <td><a href="manterDestino.jsp?acao=editar&cod=<c:out value="${destino.dataInicial}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="manterDestino.jsp?acao=excluir&cod=<c:out value="${destino.dataFinal}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
-                        <td><a href="manterDestino.jsp?acao=excluir&cod=<c:out value="${destino.Empresa_cnpj}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><c:out value="${destino.cnpjEmpresa}" /></td>
+                        <td><a href="manterDestino.jsp?acao=editar&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="manterDestino.jsp?acao=excluir&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        
                     </tr>  
                 </c:forEach>
             </tbody> 

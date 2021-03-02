@@ -40,10 +40,10 @@
             <tbody>
                 <c:forEach items="${pacotes}" var="pacote">
                     <tr> 
-                        <td><c:out value="${pacote.Cliente_cpf}" /></td> 
-                        <td><c:out value="${pacote.Funcionario_cpf}" /></td>  
-                        <td><a href="manterPacote.jsp?acao=editar&cod=<c:out value="${pacote.Cliente_cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="manterPacote.jsp?acao=excluir&cod=<c:out value="${pacote.Funcionario_cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><c:out value="${pacote.cpfCliente}" /></td> 
+                        <td><c:out value="${pacote.cpfFuncionario}" /></td>  
+                        <td><a href="manterPacote.jsp?acao=editar&cod=<c:out value="${pacote.id}" />" class="list-group-item lisCt-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="manterPacote.jsp?acao=excluir&cod=<c:out value="${pacote.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                     </tr>  
                 </c:forEach>
             </tbody> 
