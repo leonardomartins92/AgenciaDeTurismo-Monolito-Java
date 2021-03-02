@@ -36,9 +36,9 @@ public class ManterPassagemController extends HttpServlet {
             throws ServletException, IOException {
         try{
             int id = Integer.parseInt(request.getParameter("cod"));
-            String acao = request.getParameter("acao");
+            String operacao = request.getParameter("operacao");
             
-            request.setAttribute("acao", acao);
+            request.setAttribute("operacao", operacao);
             request.setAttribute("passagem", Passagem.obterPassagem(id));
             
             RequestDispatcher view = 

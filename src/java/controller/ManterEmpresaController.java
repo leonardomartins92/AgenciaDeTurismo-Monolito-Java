@@ -35,9 +35,9 @@ public class ManterEmpresaController extends HttpServlet {
             throws ServletException, IOException {
         try{
             String cnpj = request.getParameter("cod");
-            String acao = request.getParameter("acao");
+            String operacao = request.getParameter("operacao");
             
-            request.setAttribute("acao", acao);
+            request.setAttribute("operacao", operacao);
             request.setAttribute("empresa", Empresa.obterEmpresa(cnpj));
             
             RequestDispatcher view = 

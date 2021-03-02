@@ -35,9 +35,9 @@ public class ManterFuncionarioController extends HttpServlet {
             throws ServletException, IOException {
        try{
             String cpf = request.getParameter("cod");
-            String acao = request.getParameter("acao");
+            String operacao = request.getParameter("operacao");
             
-            request.setAttribute("acao", acao);
+            request.setAttribute("operacao", operacao);
             request.setAttribute("funcionario", Funcionario.obterFuncionario(cpf));
             
             RequestDispatcher view = 

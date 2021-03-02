@@ -34,8 +34,8 @@ public class ManterClienteController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        try{
-            String acao = request.getParameter("acao");
-            request.setAttribute("acao", acao);
+            String operacao = request.getParameter("operacao");
+            request.setAttribute("operacao", operacao);
             
             String cpf = request.getParameter("cod");
             request.setAttribute("cliente", Cliente.obterCliente(cpf));
