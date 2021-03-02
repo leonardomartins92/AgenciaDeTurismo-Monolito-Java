@@ -39,8 +39,8 @@
                 <tr> 
                     <td><c:out value="${empresa.nome}" /></td>
                     <td><c:out value="${empresa.tipo}" /></td>
-                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${empresa.cnpj}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${empresa.cnpj}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                 </tr>  
             </c:forEach>
         </tbody>
