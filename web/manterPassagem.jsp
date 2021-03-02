@@ -12,7 +12,7 @@
         <div class="col">
             <form class="row g-3">
                 <div class="col-md-12">
-                    <h2><span id="acao"></span> Passagem</h2>
+                    <h2><span id="operacao"></span> Passagem</h2>
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
                         <option> 1 </option>

@@ -47,13 +47,13 @@
                         <td><c:out value="${passagem.id}" /></td>
                         <td><c:out value="${passagem.idPacote}" /></td>
                         <td><c:out value="${passagem.origem}" /></td>
-                        <td><a href="ManterPassagemController?acao=editar&cod=<c:out value="${passagem.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="ManterPassagemController?acao=excluir&cod=<c:out value="${passagem.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><a href="ManterPassagemController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${passagem.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="ManterPassagemController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${passagem.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                     </tr>   
             </c:forEach>
             </tbody>
         </table>
-        <form action="ManterPassagemController?acao=a" method="post">        
+        <form action="ManterPassagemController?acao=preparaOperacao&operacao=Adicionar" method="post">        
             <div class="col-md-2 ">
                 <div class="list-group">
                     <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">

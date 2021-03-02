@@ -45,15 +45,15 @@
                         <td><c:out value="${destino.dataInicial}" /></td> 
                         <td><c:out value="${destino.dataFinal}" /></td>  
                         <td><c:out value="${destino.cnpjEmpresa}" /></td>
-                        <td><a href="ManterDestinoController?acao=editar&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="ManterDestinoController?acao=excluir&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><a href="ManterDestinoController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="ManterDestinoController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${destino.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                         
                     </tr>  
                 </c:forEach>
             </tbody> 
         </table>
         
-        <form action="ManterDestinoController?acao=adicionar">
+        <form action="ManterDestinoController?acao=preparaOperacao&operacao=Adicionar">
             <div class="col-md-2 ">
                 <div class="list-group">
                     <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">

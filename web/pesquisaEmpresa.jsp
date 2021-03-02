@@ -39,8 +39,8 @@
                 <tr> 
                     <td><c:out value="${empresa.nome}" /></td>
                     <td><c:out value="${empresa.tipo}" /></td>
-                    <td><a href="ManterPassagemController?acao=editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                    <td><a href="ManterPassagemController?acao=excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                 </tr>  
             </c:forEach>
         </tbody>
@@ -48,7 +48,7 @@
     </table>
     <div class="col-md-2 ">
         <div class="list-group">
-            <a href="manterEmpresa.jsp?acao=adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+            <a href="ManterEmpresaController?acao=preparaOperacao&operacao=Adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
         </div>
     </div>
 </body>
