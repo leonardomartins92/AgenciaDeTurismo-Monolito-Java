@@ -33,7 +33,20 @@ public class ManterDestinoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{
+        String acao = request.getParameter("acao");
+            
+            if(acao.equals("preparaOperacao")){
+            prepararOperacao(request,response);
+            }
+            else if(acao.equals("confirmaOperacao")){
+            prepararOperacao(request,response);
+            }
+        
+    }
+    
+     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    try{
             int id = Integer.parseInt(request.getParameter("cod"));
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
@@ -48,11 +61,6 @@ public class ManterDestinoController extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }
-    }
-    
-     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    
     
     
     }

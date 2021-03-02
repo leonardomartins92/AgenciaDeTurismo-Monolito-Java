@@ -33,7 +33,21 @@ public class ManterFuncionarioController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       try{
+      
+       String acao = request.getParameter("acao");
+            
+            if(acao.equals("preparaOperacao")){
+            prepararOperacao(request,response);
+            }
+            else if(acao.equals("confirmaOperacao")){
+            prepararOperacao(request,response);
+            }
+    }
+
+     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+         try{
             String cpf = request.getParameter("cod");
             String operacao = request.getParameter("operacao");
             
@@ -46,13 +60,13 @@ public class ManterFuncionarioController extends HttpServlet {
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterFuncionario.jsp");
             view.forward(request, response);
-        } catch (ClassNotFoundException | SQLException e){
+         }
+         catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }
-        
     }
-
-     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+     
+     public void confirmaOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
     
