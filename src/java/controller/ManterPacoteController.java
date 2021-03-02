@@ -39,7 +39,7 @@ public class ManterPacoteController extends HttpServlet {
             
             request.setAttribute("operacao", operacao);
             
-            if(operacao == "editar" || operacao == "excluir" ){
+            if(!operacao.equals("Adicionar")){
              request.setAttribute("pacote", Pacote.obterPacote(id));
             }
             
@@ -51,6 +51,13 @@ public class ManterPacoteController extends HttpServlet {
         }
     }
 
+     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+    
+    
+    }
+     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

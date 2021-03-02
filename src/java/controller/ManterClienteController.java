@@ -34,11 +34,12 @@ public class ManterClienteController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        try{
+                     
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
             String cpf = request.getParameter("cod");
             
-            if(operacao == "editar" || operacao == "excluir" ){
+            if(!operacao.equals("Adicionar")){
             request.setAttribute("cliente", Cliente.obterCliente(cpf));
             }
             
@@ -50,6 +51,14 @@ public class ManterClienteController extends HttpServlet {
         }
     }
 
+     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+    
+    
+    }
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

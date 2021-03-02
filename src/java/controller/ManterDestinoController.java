@@ -38,7 +38,7 @@ public class ManterDestinoController extends HttpServlet {
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
                         
-            if(operacao == "editar" || operacao == "excluir" ){
+            if(!operacao.equals("Adicionar")){
             request.setAttribute("destino", Destino.obterDestino(id));
             }
             
@@ -48,6 +48,13 @@ public class ManterDestinoController extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }
+    }
+    
+     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+    
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
