@@ -15,7 +15,7 @@ public class BD {
     public Connection getConexao() throws ClassNotFoundException, SQLException {
     Connection conexao = null;
     Class.forName("com.mysql.jdbc.Driver");
-    conexao = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/vlpt", "root", "");
+    conexao = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/vlpt", "root", "root");
     return conexao;
     }
 }

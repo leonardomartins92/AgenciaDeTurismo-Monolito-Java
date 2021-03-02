@@ -5,7 +5,7 @@
         <%@ include file = "header.jsp" %>
     <div class="col">
         <form class="row g-3">
-            <h2><span id="acao"></span>Pacote</h2>
+            <h2><span id="acao"></span> Pacote</h2>
             
             <div class="col-12">
                 <label for="name" class="form-label">CPF do Cliente</label>
