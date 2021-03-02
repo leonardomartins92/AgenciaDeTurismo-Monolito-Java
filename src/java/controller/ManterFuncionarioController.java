@@ -38,8 +38,11 @@ public class ManterFuncionarioController extends HttpServlet {
             String operacao = request.getParameter("operacao");
             
             request.setAttribute("operacao", operacao);
-            request.setAttribute("funcionario", Funcionario.obterFuncionario(cpf));
             
+            if(operacao == "editar" || operacao == "excluir" ){
+             request.setAttribute("funcionario", Funcionario.obterFuncionario(cpf));
+            }
+                       
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterFuncionario.jsp");
             view.forward(request, response);

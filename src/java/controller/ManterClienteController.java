@@ -36,9 +36,11 @@ public class ManterClienteController extends HttpServlet {
        try{
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            
             String cpf = request.getParameter("cod");
+            
+            if(operacao == "editar" || operacao == "excluir" ){
             request.setAttribute("cliente", Cliente.obterCliente(cpf));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterCliente.jsp");

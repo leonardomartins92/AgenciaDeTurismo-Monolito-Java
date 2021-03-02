@@ -36,9 +36,11 @@ public class ManterDestinoController extends HttpServlet {
         try{
             int id = Integer.parseInt(request.getParameter("cod"));
             String operacao = request.getParameter("operacao");
-            
             request.setAttribute("operacao", operacao);
+                        
+            if(operacao == "editar" || operacao == "excluir" ){
             request.setAttribute("destino", Destino.obterDestino(id));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterDestino.jsp");

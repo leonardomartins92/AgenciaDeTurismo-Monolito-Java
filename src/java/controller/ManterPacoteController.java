@@ -38,7 +38,10 @@ public class ManterPacoteController extends HttpServlet {
             String operacao = request.getParameter("operacao");
             
             request.setAttribute("operacao", operacao);
-            request.setAttribute("pacote", Pacote.obterPacote(id));
+            
+            if(operacao == "editar" || operacao == "excluir" ){
+             request.setAttribute("pacote", Pacote.obterPacote(id));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterPacote.jsp");

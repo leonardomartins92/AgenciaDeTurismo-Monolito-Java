@@ -37,9 +37,11 @@ public class ManterPassagemController extends HttpServlet {
         try{
             int id = Integer.parseInt(request.getParameter("cod"));
             String operacao = request.getParameter("operacao");
-            
             request.setAttribute("operacao", operacao);
+            
+            if(operacao == "editar" || operacao == "excluir" ){
             request.setAttribute("passagem", Passagem.obterPassagem(id));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterPassagem.jsp");

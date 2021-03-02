@@ -38,7 +38,10 @@ public class ManterEmpresaController extends HttpServlet {
             String operacao = request.getParameter("operacao");
             
             request.setAttribute("operacao", operacao);
+            
+            if(operacao == "editar" || operacao == "excluir" ){
             request.setAttribute("empresa", Empresa.obterEmpresa(cnpj));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterEmpresa.jsp");
