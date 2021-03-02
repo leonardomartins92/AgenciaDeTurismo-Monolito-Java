@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Pacotes</title>
+        <title>Destinos</title>
         <style>
             table, th, td {
                 border: 1px solid black;
@@ -17,8 +17,9 @@
         <div class="row align-items-start">
             <div class="col">
                 <select class="form-select" aria-label="Default select example">
-                    <option value="1">CPF do Funcionário</option>
-                    <option value="1">CPF do Cliente</option>
+                    <option value="1">Data Inicial</option>
+                    <option value="1">Data Final</option>
+                    <option value="1">CNPJ da Empresa</option>
                 </select>
             </div>
             <div class="col">
@@ -32,24 +33,27 @@
         <table class="table table-striped">
             <thead>  
                 <tr>
-                    <th>CPF do Funcionário</th>
-                    <th>CPF do Cliente</th>
-                    <th colspan="2">Ação</th>
+                    <th>Data Inicial</th>
+                    <th>Data Final</th>
+                    <th>CNPJ da Empresa</th>
+                    <th colspan="3">Ação</th>
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${pacotes}" var="pacote">
+                <c:forEach items="${destinos}" var="destino">
                     <tr> 
-                        <td><c:out value="${pacote.Cliente_cpf}" /></td> 
-                        <td><c:out value="${pacote.Funcionario_cpf}" /></td>  
-                        <td><a href="manterPacote.jsp?acao=editar&cod=<c:out value="${pacote.Cliente_cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="manterPacote.jsp?acao=excluir&cod=<c:out value="${pacote.Funcionario_cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><c:out value="${destino.dataInicial}" /></td> 
+                        <td><c:out value="${destino.dataFinal}" /></td>  
+                        <td><c:out value="${destino.Empresa_cnpj}" /></td>
+                        <td><a href="manterDestino.jsp?acao=editar&cod=<c:out value="${destino.dataInicial}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="manterDestino.jsp?acao=excluir&cod=<c:out value="${destino.dataFinal}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><a href="manterDestino.jsp?acao=excluir&cod=<c:out value="${destino.Empresa_cnpj}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                     </tr>  
                 </c:forEach>
             </tbody> 
         </table>
         
-        <form action="ManterPacoteController?acao=adicionar">
+        <form action="ManterDestinoController?acao=adicionar">
             <div class="col-md-2 ">
                 <div class="list-group">
                     <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">
