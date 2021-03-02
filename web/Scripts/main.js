@@ -13,13 +13,13 @@ var getUrlParameter = function getUrlParameter(sParam) {
   }
 };
 
-var action = getUrlParameter('acao');
+var action = getUrlParameter('operacao');
 
 if(action === 'editar') {
-  document.getElementById('acao').innerHTML = 'Editar';
+  document.getElementById('operacao').innerHTML = 'Editar';
 }
 if(action === 'excluir') {
-  document.getElementById('acao').innerHTML = 'Excluir';
+  document.getElementById('operacao').innerHTML = 'Excluir';
   document.getElementById('botaoSubmit').innerHTML = 'Excluir';
   document.getElementById('botaoSubmit').style.background = 'red';
   
@@ -37,6 +37,6 @@ if(action === 'excluir') {
   }
 }
 if(action === 'adicionar') {
-  document.getElementById('acao').innerHTML = 'Cadastrar';
+  document.getElementById('operacao').innerHTML = 'Cadastrar';
   
 }

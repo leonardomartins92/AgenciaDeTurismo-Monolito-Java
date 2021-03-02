@@ -84,5 +84,4 @@ nb-configuration.xml
 ##############################
 ## Banco de Dados
 ##############################
-nbproject/project.properties
 /src/java/dao/BD.java

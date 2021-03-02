@@ -62,7 +62,7 @@
         <div class="col">
 
             <form class="row g-3" onsubmit="myFunction()">
-                <h2><span id="acao"></span> Pacote</h2>
+                <h2><span id="operacao"></span> Pacote</h2>
                 <div class="col-md-12">
                     <label for="inputClient" class="form-label">Cliente</label>
                     <select id="inputClient" class="form-select">

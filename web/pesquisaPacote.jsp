@@ -42,14 +42,14 @@
                     <tr> 
                         <td><c:out value="${pacote.cpfCliente}" /></td> 
                         <td><c:out value="${pacote.cpfFuncionario}" /></td>  
-                        <td><a href="ManterPacoteController?acao=editar&cod=<c:out value="${pacote.id}" />" class="list-group-item lisCt-group-item-action list-group-item-primary">Editar</a></td>
-                        <td><a href="ManterPacoteController?acao=excluir&cod=<c:out value="${pacote.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                        <td><a href="ManterPacoteController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${pacote.id}" />" class="list-group-item lisCt-group-item-action list-group-item-primary">Editar</a></td>
+                        <td><a href="ManterPacoteController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${pacote.id}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                     </tr>  
                 </c:forEach>
             </tbody> 
         </table>
         
-        <form action="ManterPacoteController?acao=adicionar">
+        <form action="ManterPacoteController?acao=preparaOperacao&operacao=Adicionar">
             <div class="col-md-2 ">
                 <div class="list-group">
                     <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">

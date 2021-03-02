@@ -44,8 +44,8 @@
                     <td><c:out value="${cliente.email}" /></td>
                     <td><c:out value="${cliente.telefone}" /></td>
                     <td><c:out value="${cliente.cpf}" /></td>
-                    <td><a href="ManterClienteController?acao=editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                    <td><a href="ManterClienteController?acao=excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                    <td><a href="ManterClienteController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
+                    <td><a href="ManterClienteController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${cliente.cpf}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
                 </tr>  
             </c:forEach>
         </tbody>
@@ -54,7 +54,7 @@
 
     <div class="col-md-2 ">
         <div class="list-group">
-            <a href="ManterClienteController?acao=adicionar&id=null" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+            <a href="ManterClienteController?acao=preparaOperacao&operacao=Adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
         </div>
     </div>
 
