@@ -26,9 +26,7 @@
                     <a class="nav-link" href="PesquisaClienteController">Clientes</a>
                     <a class="nav-link" href="PesquisaFuncionarioController">Funcionários</a>
                     <a class="nav-link" href="PesquisaEmpresaController">Empresas</a>
-                    <a class="nav-link" href="PesquisaDestinoController">Destinos</a>
-                   
-
+                        
 
                 </div>
             </div>

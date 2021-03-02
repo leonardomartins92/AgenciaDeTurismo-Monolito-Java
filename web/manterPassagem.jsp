@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Cadastro de Passagem</title>
+        <title>Passagem</title>
 
 
         <%@ include file = "header.jsp" %>
@@ -14,27 +14,19 @@
                 <div class="col-md-12">
                     <h2><span id="acao"></span> Passagem</h2>
                     <label for="inputPacote" class="form-label">Pacote</label>
-                    <select id="inputPacote" class="form-select">
-                        <option selected>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                    <select class="form-select" name="idPacote" id="idPacote">
+                        <option> 1 </option>
+                        <option> 2 </option>
                     </select>
+                    
                 </div>
                 <div class="col-md-12">
                     <label for="inputOrigin" class="form-label">Origem</label>
-                    <select id="inputOrigin" class="form-select">
-                        <option selected>Brasil</option>
-                        <option>México</option>
-                        <option>Portugal</option>
-                    </select>
+                    <input type="text" name="origin" id="inputOrigin" class="form-control">
                 </div>
                 <div class="col-md-12">
                     <label for="inputDestiny" class="form-label">Destino</label>
-                    <select id="inputDestiny" class="form-select">
-                        <option selected>Brasil</option>
-                        <option>México</option>
-                        <option>Portugal</option>
-                    </select>
+                    <input type="text" name="destiny" id="inputDestiny" class="form-control">
                 </div>
                 <div class="col-md-12">
                     <label for="inputCompany" class="form-label">Empresa</label>
