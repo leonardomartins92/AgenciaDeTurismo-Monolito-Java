@@ -43,4 +43,5 @@
             </div>
         </div>
     </div>
+    <script src="./Scripts/main.js"></script>
 </html>

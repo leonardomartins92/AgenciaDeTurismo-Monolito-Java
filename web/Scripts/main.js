@@ -15,10 +15,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 var action = getUrlParameter('operacao');
 
-if(action === 'editar') {
+if(action === 'Editar') {
   document.getElementById('operacao').innerHTML = 'Editar';
 }
-if(action === 'excluir') {
+if(action === 'Excluir') {
   document.getElementById('operacao').innerHTML = 'Excluir';
   document.getElementById('botaoSubmit').innerHTML = 'Excluir';
   document.getElementById('botaoSubmit').style.background = 'red';
@@ -36,7 +36,7 @@ if(action === 'excluir') {
     }
   }
 }
-if(action === 'adicionar') {
+if(action === 'Adicionar') {
   document.getElementById('operacao').innerHTML = 'Cadastrar';
   
 }

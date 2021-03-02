@@ -45,7 +45,7 @@
                     <input type="date" class="form-control" id="inputDateReturn">
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
                 </div>
 
 
