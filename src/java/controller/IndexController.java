@@ -35,7 +35,7 @@ public class IndexController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       try{
-            if(request.getParameter("cpf") != null && request.getParameter("senha") != null ) {       
+                 
             String cpf = request.getParameter("cpf");
             String senha = request.getParameter("senha"); 
             
@@ -48,7 +48,7 @@ public class IndexController extends HttpServlet {
                     RequestDispatcher view = 
                         request.getRequestDispatcher("/index.jsp");
                 view.forward(request, response);
-              }
+              
             
             }
             
