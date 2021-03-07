@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Empresa;
-import model.Passagem;
+import model.TipoEmpresa;
 
 /**
  *
@@ -33,12 +33,27 @@ public class ManterEmpresaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String acao = request.getParameter("acao");
+        switch (acao) {
+            case "confirmarOperacao":
+                break;
+            case "preparaOperacao":
+                prepararOperacao(request, response);
+                break; 
+        }
+    }
+    
+    void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try{
             String cnpj = request.getParameter("cod");
             String operacao = request.getParameter("operacao");
+            request.setAttribute("tipos", TipoEmpresa.values());
             
             request.setAttribute("operacao", operacao);
-            request.setAttribute("empresa", Empresa.obterEmpresa(cnpj));
+            if(!operacao.equals("Adicionar")){
+                request.setAttribute("empresa", Empresa.obterEmpresa(cnpj));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterEmpresa.jsp");
