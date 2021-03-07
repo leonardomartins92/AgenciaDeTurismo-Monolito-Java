@@ -33,12 +33,28 @@ public class ManterPacoteController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{
+        String acao = request.getParameter("acao");
+            
+            if(acao.equals("preparaOperacao")){
+            prepararOperacao(request,response);
+            }
+            else if(acao.equals("confirmaOperacao")){
+            prepararOperacao(request,response);
+            }
+        
+    }
+
+     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    try{
             int id = Integer.parseInt(request.getParameter("cod"));
             String operacao = request.getParameter("operacao");
             
             request.setAttribute("operacao", operacao);
-            request.setAttribute("pacote", Pacote.obterPacote(id));
+            
+            if(!operacao.equals("Adicionar")){
+             request.setAttribute("pacote", Pacote.obterPacote(id));
+            }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterPacote.jsp");
@@ -46,8 +62,10 @@ public class ManterPacoteController extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }
+    
+    
     }
-
+     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

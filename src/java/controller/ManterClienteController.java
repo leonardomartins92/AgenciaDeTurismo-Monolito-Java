@@ -46,10 +46,11 @@ public class ManterClienteController extends HttpServlet {
     void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
     try{
+
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            
             String cpf = request.getParameter("cod");
+
             if(!operacao.equals("Adicionar")){
                 request.setAttribute("cliente", Cliente.obterCliente(cpf));
             }
@@ -60,8 +61,10 @@ public class ManterClienteController extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }
+    
     }
-
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
