@@ -53,12 +53,12 @@
             </c:forEach>
             </tbody>
         </table>
-        <form action="ManterPassagemController?acao=preparaOperacao&operacao=Adicionar" method="post">        
+             
             <div class="col-md-2 ">
                 <div class="list-group">
-                    <input class="list-group-item list-group-item-action list-group-item-success" type="submit" name="btnIncluir" value="Incluir">
+                     <a href="ManterPassagemController?acao=preparaOperacao&operacao=Adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
                 </div>
             </div>
-        </form>          
+             
     </body>
 </html>
