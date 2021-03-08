@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Funcionario;
-import model.Passagem;
+
 
 /**
  *
@@ -40,7 +40,7 @@ public class ManterFuncionarioController extends HttpServlet {
             prepararOperacao(request,response);
             }
             else if(acao.equals("confirmaOperacao")){
-            prepararOperacao(request,response);
+           confirmaOperacao(request,response);
             }
     }
 
@@ -48,12 +48,12 @@ public class ManterFuncionarioController extends HttpServlet {
             throws ServletException, IOException {
        
          try{
-            String cpf = request.getParameter("cod");
-            String operacao = request.getParameter("operacao");
             
+            String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
             
             if(!operacao.equals("Adicionar")){
+             String cpf = request.getParameter("cod");   
              request.setAttribute("funcionario", Funcionario.obterFuncionario(cpf));
             }
                        

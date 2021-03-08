@@ -119,6 +119,10 @@ public class Passagem {
         this.id = id;
     }
     
+    public static String nomeEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
+     return Empresa.obterEmpresa(cnpj).getNome();
+    }
+    
     public static void gravar(Passagem passagem) throws SQLException, ClassNotFoundException{
        PassagemDAO.getInstancia().gravar(passagem);
     }

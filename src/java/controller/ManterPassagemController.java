@@ -13,6 +13,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Empresa;
+import model.Pacote;
 
 import model.Passagem;
 
@@ -41,7 +43,7 @@ public class ManterPassagemController extends HttpServlet {
             prepararOperacao(request,response);
             }
             else if(acao.equals("confirmaOperacao")){
-            prepararOperacao(request,response);
+            confirmaOperacao(request,response);
             }
             
     }
@@ -49,13 +51,18 @@ public class ManterPassagemController extends HttpServlet {
     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     try{
-            int id = Integer.parseInt(request.getParameter("cod"));
+           
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            
+                        
             if(!operacao.equals("Adicionar")){
-            request.setAttribute("passagem", Passagem.obterPassagem(id));
+                int id = Integer.parseInt(request.getParameter("cod")); 
+                request.setAttribute("passagem", Passagem.obterPassagem(id));
+                request.setAttribute("nomeEmpresa",Passagem.nomeEmpresa(Passagem.obterPassagem(id).getCnpjEmpresa()));
+                
             }
+            request.setAttribute("pacotes", Pacote.obterPacotes());
+            request.setAttribute("empresas", Empresa.obterEmpresas());
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterPassagem.jsp");
@@ -70,9 +77,13 @@ public class ManterPassagemController extends HttpServlet {
     public void confirmaOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-    
-    
+           
     }
+    
+    
+    
+    
+    
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
