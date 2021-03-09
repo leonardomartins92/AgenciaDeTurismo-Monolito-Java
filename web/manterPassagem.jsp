@@ -13,6 +13,11 @@
         <div class="col">
             <form class="row g-3 justify-content-center" action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
                 <div class="col-md-1">
+                    <label for="inputCod" class="form-label">Código</label>
+                    <input type="text" name="id" id="inputCod" class="form-control" value="<c:out value="${passagem.id}"/>" disabled >
+                </div>
+                
+                <div class="col-md-1">
                    
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
@@ -22,17 +27,8 @@
                         </c:forEach>
                         
                     </select>
-                    
-                </div>
-                <div class="col-md-3">
-                    <label for="inputOrigin" class="form-label">Origem</label>
-                    <input type="text" name="origin" id="inputOrigin" class="form-control" value="<c:out value="${passagem.origem}"/>"  >
-                </div>
-                <div class="col-md-3">
-                    <label for="inputDestiny" class="form-label">Destino</label>
-                    <input type="text" name="destino" id="inputDestiny" class="form-control" value="<c:out value="${passagem.destino}"/>" >
-                </div>
-                <div class="row g-3 justify-content-md-center">
+               </div>
+                        
                 <div class="col-md-2">
                     <label for="inputCompany" class="form-label">Empresa</label>
                     <select id="inputCompany" class="form-select" name="nomeEmpresa">
@@ -40,8 +36,22 @@
                         <c:forEach items="${empresas}" var="empresa">
                            <option> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
-                    </select>
+                    </select>        
                 </div>
+                <div class="row g-3 justify-content-md-center">
+                    <div class="col-md-2">
+                    <label for="inputOrigin" class="form-label">Origem</label>
+                    <input type="text" name="origin" id="inputOrigin" class="form-control" value="<c:out value="${passagem.origem}"/>"  >
+                </div>
+                <div class="col-md-2">
+                    <label for="inputDestiny" class="form-label">Destino</label>
+                    <input type="text" name="destino" id="inputDestiny" class="form-control" value="<c:out value="${passagem.destino}"/>" >
+                </div>
+                    
+                    
+                </div>
+                <div class="row g-3 justify-content-md-center">
+                
                 <div class="col-md-2">
                     <label for="inputDateGo" class="form-label">Data de Ida</label>
                     <input type="text" class="form-control" name="dataIda" id="inputDateGo" value="<c:out value="${passagem.dataIda}"/>"  >
