@@ -61,22 +61,24 @@
     <div class="col">
         <div class="col">
 
-            <form class="row g-3" onsubmit="myFunction()">
+            <form class="row g-3" action="ManterPacoteController?acao=confirmaOperacao&operacao=${operacao}" method="post">
                 <h2><span id="operacao"></span> Pacote</h2>
                 <div class="col-md-12">
                     <label for="inputClient" class="form-label">Cliente</label>
-                    <select id="inputClient" class="form-select">
-                        <option selected>José</option>
-                        <option>Maria</option>
-                        <option>Pedro</option>
+                    <select class="form-select" name="cpfCliente" id="cpfCliente">
+                        <option> <c:out value="${pacote.cpfCliente}"/> </option>
+                        <c:forEach items="${clientes}" var="pacote">
+                           <option> <c:out value="${cliente.cpf}"/> </option> 
+                        </c:forEach>
                     </select>
                 </div>
                 <div class="col-md-12">
-                    <label for="inputStaff" class="form-label">Funcionários</label>
-                    <select id="inputStaff" class="form-select">
-                        <option selected>Bruno</option>
-                        <option>Leonardo</option>
-                        <option>Paulo</option>
+                    <label for="inputClient" class="form-label">Funcionários</label>
+                    <select class="form-select" name="cpfFuncionario" id="cpfFuncionario">
+                        <option> <c:out value="${pacote.cpfFuncionario}"/> </option>
+                        <c:forEach items="${funcionarios}" var="pacote">
+                           <option> <c:out value="${funcionario.cpf}"/> </option> 
+                        </c:forEach>
                     </select>
                 </div>
                 <div class="col-md-2" style="text-align: center;">
