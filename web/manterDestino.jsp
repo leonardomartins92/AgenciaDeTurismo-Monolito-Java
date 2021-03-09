@@ -35,15 +35,15 @@
                 <div class="col-md-12">
                     <label for="inputCompany" class="form-label">Empresa</label>
                     <select id="inputCompany" class="form-select" name="nomeEmpresa">
-                        <option selected><c:out value="${nomeEmpresa}"/></option>
+                        
                         <c:forEach items="${empresas}" var="empresa">
-                           <option> <c:out value="${empresa.nome}"/> </option> 
+                           <option <c:if test = "${nomeEmpresa == empresa}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
                     </select>
                 </div>
                 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary" >Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
                 </div>
         </form>
     </div>

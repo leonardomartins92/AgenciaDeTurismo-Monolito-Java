@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dao.EmpresaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -57,6 +58,7 @@ public class ManterDestinoController extends HttpServlet {
          if(!operacao.equals("Adicionar")){                 
                  request.setAttribute("destino", Destino.obterDestino(id));
                  request.setAttribute("nomeEmpresa",Destino.nomeEmpresa(Destino.obterDestino(id).getCnpjEmpresa()));
+                 request.setAttribute("empresas", EmpresaDAO.getInstancia().obterEmpresas());
          }
          
          
