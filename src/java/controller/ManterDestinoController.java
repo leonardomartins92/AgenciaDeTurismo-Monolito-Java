@@ -8,6 +8,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -46,21 +48,27 @@ public class ManterDestinoController extends HttpServlet {
     
      public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    try{
-            int id = Integer.parseInt(request.getParameter("cod"));
-            String operacao = request.getParameter("operacao");
-            request.setAttribute("operacao", operacao);
-                        
-            if(!operacao.equals("Adicionar")){
-            request.setAttribute("destino", Destino.obterDestino(id));
-            }
-            
-            RequestDispatcher view = 
+         try{
+    
+         String operacao = request.getParameter("operacao");
+         request.setAttribute("operacao", operacao);
+         int id = Integer.parseInt(request.getParameter("cod"));
+         
+         if(!operacao.equals("Adicionar")){                 
+                 request.setAttribute("destino", Destino.obterDestino(id));
+                 request.setAttribute("nomeEmpresa",Destino.nomeEmpresa(Destino.obterDestino(id).getCnpjEmpresa()));
+         }
+         
+         
+         
+         RequestDispatcher view = 
                     request.getRequestDispatcher("/manterDestino.jsp");
             view.forward(request, response);
-        } catch (ClassNotFoundException | SQLException e){
+                      
+         }catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }
+         
     
     
     }

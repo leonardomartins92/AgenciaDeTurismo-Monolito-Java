@@ -73,6 +73,14 @@ public class Pacote {
         this.cpfCliente = cpfCliente;
     }
     
+    public static String nomeCliente(String cpf) throws ClassNotFoundException, SQLException{
+     return Cliente.obterCliente(cpf).getName();
+    }
+    
+    public static String nomeFuncionario(String cpf) throws ClassNotFoundException, SQLException{
+     return Funcionario.obterFuncionario(cpf).getName();
+    }
+    
      public static void gravar(Pacote pacote) throws SQLException, ClassNotFoundException{
      PacoteDAO.getInstancia().gravar(pacote);       
     }

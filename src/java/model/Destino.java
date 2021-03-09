@@ -98,7 +98,13 @@ public class Destino {
 
     public void setIdPacote(int idPacote) {
         this.idPacote = idPacote;
-    }   
+    }  
+    
+    public static String nomeEmpresa(String cnpj) throws ClassNotFoundException, SQLException{
+     return Empresa.obterEmpresa(cnpj).getNome();
+    }
+    
+      
     public static void gravar(Destino destino) throws SQLException, ClassNotFoundException{
        DestinoDAO.getInstancia().gravar(destino);
     }

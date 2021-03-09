@@ -34,31 +34,35 @@ public class ManterPacoteController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acao = request.getParameter("acao");
-            
-            if(acao.equals("preparaOperacao")){
-            prepararOperacao(request,response);
-            }
-            else if(acao.equals("confirmaOperacao")){
-            prepararOperacao(request,response);
-            }
+        switch (acao) {
+            case "confirmarOperacao":
+                break;
+            case "preparaOperacao":
+                prepararOperacao(request, response);
+                break; 
+        }
         
     }
 
      public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     try{
-            int id = Integer.parseInt(request.getParameter("cod"));
+        
             String operacao = request.getParameter("operacao");
-            
             request.setAttribute("operacao", operacao);
-            
+                        
             if(!operacao.equals("Adicionar")){
-             request.setAttribute("pacote", Pacote.obterPacote(id));
+                int id = Integer.parseInt(request.getParameter("cod"));
+                request.setAttribute("pacote", Pacote.obterPacote(id));
+                request.setAttribute("nomeCliente",Pacote.nomeCliente(Pacote.obterPacote(id).getCpfCliente()));
+                request.setAttribute("nomeFuncionario",Pacote.nomeFuncionario(Pacote.obterPacote(id).getCpfFuncionario()));                
             }
             
             RequestDispatcher view = 
                     request.getRequestDispatcher("/manterPacote.jsp");
             view.forward(request, response);
+            
+           
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
         }

@@ -13,7 +13,7 @@
 
         <%@ include file = "header.jsp" %>
         
-    <div class="container">
+   
         <div class="row align-items-start">
             <div class="col">
                 <select class="form-select" aria-label="Default select example">
