@@ -62,7 +62,7 @@
 
 
     <form action="ManterPacoteController?acao=confirmaOperacao&operacao=${operacao}" method="post">
-        <div class="row g-3">
+        <div class="row g-3 justify-content-md-center">
         <h2><span id="operacao"></span> Pacote</h2>
 
         <div class="col-md-4">
