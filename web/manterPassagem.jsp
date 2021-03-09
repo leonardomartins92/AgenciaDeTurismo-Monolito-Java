@@ -11,8 +11,8 @@
     
         <div class="col">
         <div class="col">
-            <form class="row g-3" action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
-                <div class="col-md-2">
+            <form class="row g-3 justify-content-center" action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+                <div class="col-md-1">
                    
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
@@ -24,15 +24,15 @@
                     </select>
                     
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="inputOrigin" class="form-label">Origem</label>
                     <input type="text" name="origin" id="inputOrigin" class="form-control" value="<c:out value="${passagem.origem}"/>"  >
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="inputDestiny" class="form-label">Destino</label>
                     <input type="text" name="destino" id="inputDestiny" class="form-control" value="<c:out value="${passagem.destino}"/>" >
                 </div>
-                <div class="row g-3">
+                <div class="row g-3 justify-content-md-center">
                 <div class="col-md-2">
                     <label for="inputCompany" class="form-label">Empresa</label>
                     <select id="inputCompany" class="form-select" name="nomeEmpresa">
