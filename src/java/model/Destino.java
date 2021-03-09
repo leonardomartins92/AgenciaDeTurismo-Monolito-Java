@@ -127,4 +127,8 @@ public class Destino {
         
     }
     
+    public static List<Destino> destinosPacote(int idPacote) throws ClassNotFoundException, SQLException{
+    return DestinoDAO.getInstancia().destinosPacote(idPacote);
+    }   
+    
 }

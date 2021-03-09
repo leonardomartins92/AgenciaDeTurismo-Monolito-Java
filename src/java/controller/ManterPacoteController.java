@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Destino;
 import model.Pacote;
 
 
@@ -55,7 +56,8 @@ public class ManterPacoteController extends HttpServlet {
                 int id = Integer.parseInt(request.getParameter("cod"));
                 request.setAttribute("pacote", Pacote.obterPacote(id));
                 request.setAttribute("nomeCliente",Pacote.nomeCliente(Pacote.obterPacote(id).getCpfCliente()));
-                request.setAttribute("nomeFuncionario",Pacote.nomeFuncionario(Pacote.obterPacote(id).getCpfFuncionario()));                
+                request.setAttribute("nomeFuncionario",Pacote.nomeFuncionario(Pacote.obterPacote(id).getCpfFuncionario()));
+                request.setAttribute("destinos",Destino.destinosPacote(id));
             }
             
             RequestDispatcher view = 
