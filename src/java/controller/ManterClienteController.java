@@ -33,7 +33,7 @@ public class ManterClienteController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String acao = request.getParameter("acao");
+        String acao = request.getParameter("acao");
         switch (acao) {
             case "confirmarOperacao":
                 break;

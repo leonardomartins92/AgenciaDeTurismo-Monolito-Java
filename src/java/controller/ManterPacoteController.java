@@ -51,9 +51,9 @@ public class ManterPacoteController extends HttpServlet {
         
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
+            int id = Integer.parseInt(request.getParameter("cod"));
                         
             if(!operacao.equals("Adicionar")){
-                int id = Integer.parseInt(request.getParameter("cod"));
                 request.setAttribute("pacote", Pacote.obterPacote(id));
                 request.setAttribute("nomeCliente",Pacote.nomeCliente(Pacote.obterPacote(id).getCpfCliente()));
                 request.setAttribute("nomeFuncionario",Pacote.nomeFuncionario(Pacote.obterPacote(id).getCpfFuncionario()));
