@@ -33,7 +33,7 @@
                         '<div class="card align-items-center">' +
                         '<div class="col-md-8">' +
                         '<label for="to">Destino:</label>' +
-                        '<input type="text" name="destino" id="to" class="form-control">'+
+                        '<input type="text" name="destino" id="to" class="form-control">' +
                         '</div>' +
                         '<div class="col-md-8">' +
                         '<label for="corp">Estadia:</label>' +
@@ -58,71 +58,41 @@
 
         <%@ include file = "header.jsp" %>
 
-    <div class="col">
-        <div class="col">
 
-            <form class="row g-3" action="ManterPacoteController?acao=confirmaOperacao&operacao=${operacao}" method="post">
-                <h2><span id="operacao"></span> Pacote</h2>
-                <div class="col-md-12">
-                    <label for="inputClient" class="form-label">Cliente</label>
-                    <select class="form-select" name="cpfCliente" id="cpfCliente">
-                        <option> <c:out value="${pacote.cpfCliente}"/> </option>
-                        <c:forEach items="${clientes}" var="pacote">
-                           <option> <c:out value="${cliente.cpf}"/> </option> 
-                        </c:forEach>
-                    </select>
-                </div>
-                <div class="col-md-12">
-                    <label for="inputClient" class="form-label">Funcionários</label>
-                    <select class="form-select" name="cpfFuncionario" id="cpfFuncionario">
-                        <option> <c:out value="${pacote.cpfFuncionario}"/> </option>
-                        <c:forEach items="${funcionarios}" var="pacote">
-                           <option> <c:out value="${funcionario.cpf}"/> </option> 
-                        </c:forEach>
-                    </select>
-                </div>
-                <div class="col-md-2" style="text-align: center;">
-                    <a class="list-group-item list-group-item-success" onclick="addNewTravel()"> + </a>
 
-                </div>
-                <div class="col-md-2" style="text-align: center;">
 
-                    <a class="list-group-item list-group-item-danger" href=""> - </a>
-                </div>
-                
-                <div class="col-md-12" style="text-align: center;">    
-                <ul class="list-group align-items-center">
-                    
-                        <li class="list-group-item ">
-                      
-                            <label for="to">Destino:</label>
-                                    <input type="text" name="destino" id="to" class="form-control">
-                               
-                                    <label for="corp">Estadia:</label>
-                                    <select name="corp" id="corp" class="form-select">
-                                        <option value="azul">Hotel A</option>
-                                        <option value="gol">Hotel B</option>
-                                        <option value="latam">Hostel A</option>
-                                    </select>
-                               
-                                    <label for="dataInicial">Data Inicial</label>
-                                    <input type="date" name="dataIncial" id="dataIncial" class="form-control">
-                                
-                                    <label for="dataFinal">Data Final</label>
-                                    <input type="date" name="dataFinal" id="dataIncial" class="form-control">
-          
-                            </li><br>
+    <form action="ManterPacoteController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+        <div class="row g-3">
+        <h2><span id="operacao"></span> Pacote</h2>
 
-                    <div id="travelBlock"></div><br>
-                </ul>
-                </div>
-                
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary" id="botaoSubmit">Confirmar</button>
-                </div>
-            </form>
+        <div class="col-md-4">
+            <label for="inputClient" class="form-label">Cliente</label>
+            <select class="form-select" name="cpfCliente" id="cpfCliente">
+                <option> <c:out value="${pacote.cpfCliente}"/> </option>
+                <c:forEach items="${clientes}" var="pacote">
+                    <option> <c:out value="${cliente.cpf}"/> </option> 
+                </c:forEach>
+            </select>
         </div>
+
+        <div class="col-md-4">
+            <label for="inputClient" class="form-label">Funcionários</label>
+            <select class="form-select" name="cpfFuncionario" id="cpfFuncionario">
+                <option> <c:out value="${pacote.cpfFuncionario}"/> </option>
+                <c:forEach items="${funcionarios}" var="pacote">
+                    <option> <c:out value="${funcionario.cpf}"/> </option> 
+                </c:forEach>
+            </select>
+        </div>
+        </div>        
+        <div class="col-4">
+            <button type="submit" class="btn btn-primary" id="botaoSubmit">Confirmar</button>
+        </div>      
+
+    </form>
+
+
     <script src="./Scripts/main.js"></script>
-            
+
 </body>
 </html>       

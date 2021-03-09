@@ -118,9 +118,10 @@ public class DestinoDAO extends DAO {
             Destino destino;
             try{
                 conexao = BD.getInstancia().getConexao();
-                comando = (PreparedStatement) conexao.createStatement();
-                ResultSet rs = comando.executeQuery("select * from destino where Pacote_idPacote = ?");
+                comando = (PreparedStatement) conexao.prepareStatement("select * from destino where Pacote_idPacote = ?");
                 comando.setInt(1, idPacote);
+                ResultSet rs = comando.executeQuery();
+                
                 while(rs.next()){
                     destino = instanciarDestino(rs);
                     destinos.add(destino);

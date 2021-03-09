@@ -17,15 +17,6 @@
     <table class="table table-striped">
 
 
-        <label for="nome">Nome da Empresa</label>
-        <input type="text" name="nome" id="nome">
-
-        <label for="CNPJ">CNPJ</label>
-        <input type="text" name="CNPJ" id="CNPJ">
-
-        <label for="tipo">Tipo</label>
-        <input type="text" name="tipo" id="tipo">
-
         <thead>
             <tr>
                 <th>Nome</th>
@@ -39,8 +30,8 @@
                 <tr> 
                     <td><c:out value="${empresa.nome}" /></td>
                     <td><c:out value="${empresa.tipo}" /></td>
-                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${empresa.cnpj}" />" class="list-group-item list-group-item-action list-group-item-primary">Editar</a></td>
-                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${empresa.cnpj}" />" class="list-group-item list-group-item-action list-group-item-danger">Excluir</a></td>
+                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Editar&cod=<c:out value="${empresa.cnpj}" />" class="btn btn-primary btn-sm">Editar</a></td>
+                    <td><a href="ManterEmpresaController?acao=preparaOperacao&operacao=Excluir&cod=<c:out value="${empresa.cnpj}" />" class="btn btn-danger btn-sm">Excluir</a></td>
                 </tr>  
             </c:forEach>
         </tbody>
@@ -48,7 +39,7 @@
     </table>
     <div class="col-md-2 ">
         <div class="list-group">
-            <a href="ManterEmpresaController?acao=preparaOperacao&operacao=Adicionar" class="list-group-item list-group-item-action list-group-item-success">Adicionar</a>
+            <a href="ManterEmpresaController?acao=preparaOperacao&operacao=Adicionar" class="btn btn-success ">Adicionar</a>
         </div>
     </div>
 </body>
