@@ -8,9 +8,8 @@
 
         <%@ include file = "header.jsp" %>
 
-    <div class="col">
         <div class="col">
-            <form class="row g-3" action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+            <form class="row g-3" action="ManterDestinoController?acao=confirmaOperacao&operacao=${operacao}" method="post">
                 <div class="col-md-12">
                     <h2><span id="operacao"></span> Destino</h2>
                     <label for="inputPacote" class="form-label">Pacote</label>

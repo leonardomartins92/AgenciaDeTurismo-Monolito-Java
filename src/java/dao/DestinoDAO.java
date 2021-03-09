@@ -111,6 +111,28 @@ public class DestinoDAO extends DAO {
             return destinos;
         }
         
+         public List<Destino> destinosPacote(int idPacote) throws ClassNotFoundException, SQLException{
+            Connection conexao = null;
+            PreparedStatement comando = null;
+            List<Destino> destinos = new ArrayList();
+            Destino destino;
+            try{
+                conexao = BD.getInstancia().getConexao();
+                comando = (PreparedStatement) conexao.createStatement();
+                ResultSet rs = comando.executeQuery("select * from destino where Pacote_idPacote = ?");
+                comando.setInt(1, idPacote);
+                while(rs.next()){
+                    destino = instanciarDestino(rs);
+                    destinos.add(destino);
+                }
+            }finally{
+                fecharConexao(conexao, comando); 
+            }
+            return destinos;
+        }
+        
+        
+        
         public void deletarDestino(int id) throws ClassNotFoundException, SQLException{
             Connection conexao = null;
             PreparedStatement comando = null;
