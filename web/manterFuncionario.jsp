@@ -58,8 +58,10 @@
             <div class="col-md-4">
                 <label for="inputFunction" class="form-label">Função</label>
                 <select id="inputFunction" class="form-select">
-                    <option value="Vendedor" <c:if test="${funcionario.tipo == 'VENDEDOR'}">selected</c:if>>Vendedor</option>
-                   <option value="Gerente" <c:if test="${funcionario.tipo == 'GERENTE'}">selected</c:if>>Gerente</option>
+                    <c:forEach items="${tipos}" var="tipo">
+                    <option <c:if test = "${funcionario.tipo == tipo}">selected</c:if>><c:out value="${tipo}" /></option>
+                </c:forEach>
+
                 </select>
             </div>
 

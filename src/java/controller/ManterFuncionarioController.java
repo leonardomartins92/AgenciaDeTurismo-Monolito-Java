@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Funcionario;
+import model.TipoFuncionario;
 
 
 /**
@@ -51,6 +52,7 @@ public class ManterFuncionarioController extends HttpServlet {
             
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
+             request.setAttribute("tipos", TipoFuncionario.values());
             
             if(!operacao.equals("Adicionar")){
              String cpf = request.getParameter("cod");   
