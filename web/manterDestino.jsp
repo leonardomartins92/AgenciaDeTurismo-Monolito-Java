@@ -7,11 +7,13 @@
 
 
         <%@ include file = "header.jsp" %>
-
+        <h2><span id="operacao"></span> Destino</h2>    
+        
         <div class="col">
-            <form class="row g-3 justify-content-md-center" action="ManterDestinoController?acao=confirmaOperacao&operacao=${operacao}" method="post">
-                <div class="col-md-12">
-                    <h2><span id="operacao"></span> Destino</h2>
+            <form  action="ManterDestinoController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+               <div class="row g-3 justify-content-md-center">
+                <div class="col-md-3">
+                    
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
                         <option> <c:out value="${destino.idPacote}"/> </option>
@@ -21,17 +23,18 @@
                     </select>   
                 </div>
                         
-                <div class="col-md-12">
+                <div class="col-md-3">
                     <label for="inputOrigin" class="form-label">Data Inicial</label>
                     <input type="text" name="origin" id="inputOrigin" class="form-control" value="<c:out value="${destino.dataInicial}"/>"  >
                 </div>
-                
-                <div class="col-md-12">
+               </div>
+                <div class="row g-3 justify-content-md-center">
+                <div class="col-md-3">
                     <label for="inputDestiny" class="form-label">Data Final</label>
                     <input type="text" name="destino" id="inputDestiny" class="form-control" value="<c:out value="${destino.dataFinal}"/>" >
                 </div>
                 
-                <div class="col-md-12">
+                <div class="col-md-3">
                     <label for="inputCompany" class="form-label">Empresa</label>
                     <select id="inputCompany" class="form-select" name="nomeEmpresa">
                         
@@ -41,6 +44,7 @@
                     </select>
                 </div>
                 
+                </div><br>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
                 </div>

@@ -57,14 +57,11 @@
         </script>
 
         <%@ include file = "header.jsp" %>
-
-
-
+        <h2><span id="operacao"></span> Pacote</h2>
 
     <form action="ManterPacoteController?acao=confirmaOperacao&operacao=${operacao}" method="post">
         <div class="row g-3 justify-content-md-center">
-        <h2><span id="operacao"></span> Pacote</h2>
-
+        
         <div class="col-md-4">
             <label for="inputClient" class="form-label">Cliente</label>
             <select class="form-select" name="cpfCliente" id="cpfCliente">
@@ -84,7 +81,7 @@
                 </c:forEach>
             </select>
         </div>
-        </div>        
+        </div><br>        
         <div class="col-4">
             <button type="submit" class="btn btn-primary" id="botaoSubmit">Confirmar</button>
         </div>      
