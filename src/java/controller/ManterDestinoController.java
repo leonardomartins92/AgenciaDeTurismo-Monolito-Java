@@ -53,9 +53,10 @@ public class ManterDestinoController extends HttpServlet {
     
          String operacao = request.getParameter("operacao");
          request.setAttribute("operacao", operacao);
-         int id = Integer.parseInt(request.getParameter("cod"));
+        
          
-         if(!operacao.equals("Adicionar")){                 
+         if(!operacao.equals("Adicionar")){          
+                 int id = Integer.parseInt(request.getParameter("cod"));
                  request.setAttribute("destino", Destino.obterDestino(id));
                  request.setAttribute("nomeEmpresa",Destino.nomeEmpresa(Destino.obterDestino(id).getCnpjEmpresa()));
                  request.setAttribute("empresas", EmpresaDAO.getInstancia().obterEmpresas());
