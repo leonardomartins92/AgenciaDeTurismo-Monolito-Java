@@ -67,9 +67,9 @@ public class FuncionarioDAO extends DAO{
            comando.setString(7, funcionario.getUf());
            comando.setString(8, funcionario.getCidade());
            comando.setString(9, funcionario.getCep());
-           comando.setString(10, funcionario.getCpf());
-           comando.setString(11, funcionario.getSenha());
-           comando.setString(12, funcionario.getTipo().name());
+           comando.setString(10, funcionario.getSenha());
+           comando.setString(11, funcionario.getTipo().name());
+           comando.setString(12, funcionario.getCpf());
            comando.executeUpdate();
        } finally{
            fecharConexao(conexao, comando);
