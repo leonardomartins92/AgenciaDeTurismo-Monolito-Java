@@ -84,13 +84,13 @@ public class ManterEmpresaController extends HttpServlet {
             String tipo = request.getParameter("tipo");
             TipoEmpresa tipoEmpresa = TipoEmpresa.valueOf(tipo);
             String cep = request.getParameter("cep");
-            
+                        
             Empresa empresa = new Empresa(cnpj, nome, email, telefone, logradouro, numero, complemento, uf, localidade, tipoEmpresa, cep);
             
             switch(operacao){
                 case "Adicionar":
                     Empresa.gravar(empresa);
-                case "Alterar":
+                case "Edita":
                     Empresa.alterar(empresa);
                 case "Excluir":
                     cnpj = empresa.getCnpj();
@@ -116,7 +116,13 @@ public class ManterEmpresaController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterEmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterEmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -130,7 +136,13 @@ public class ManterEmpresaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterEmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterEmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

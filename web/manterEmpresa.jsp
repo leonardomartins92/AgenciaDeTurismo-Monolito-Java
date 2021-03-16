@@ -10,8 +10,8 @@
         <form  action="ManterEmpresaController?acao=confirmaOperacao&operacao=${operacao}" method="post">
             <div class="row g-3 justify-content-md-center">
             <div class="col-3">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder=""  value="${empresa.nome}">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder=""  value="${empresa.nome}">
             </div>
             <div class="col-3">
                 <label for="cnpj" class="form-label">CNPJ</label>
