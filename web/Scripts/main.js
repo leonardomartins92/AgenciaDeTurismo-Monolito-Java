@@ -26,13 +26,13 @@ if(action === 'Excluir') {
   if(document.getElementsByTagName("input") !== null){
     var inputs = document.getElementsByTagName("input");
     for (var i = 0; i < inputs.length; i++) {
-      inputs[i].readonly = true;
+      inputs[i].readOnly = true;
     }
   }
   if(document.getElementsByTagName("select") !== null){
     var select = document.getElementsByTagName("select");
     for (var i = 0; i < select.length; i++) {
-      select[i].readonly = true;
+      select[i].disabled = true;
     }
   }
 }
