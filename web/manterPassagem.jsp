@@ -9,17 +9,17 @@
         <%@ include file = "header.jsp" %>
         <h2><span id="operacao"></span> Passagem</h2>
     
-        <div class="col">
-        <div class="col">
-            <form class="row g-3 justify-content-center" action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+       
+            <form  action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+                <div class="row g-3 justify-content-center">
                 <div class="col-md-1">
-                    <label for="inputCod" class="form-label">Código</label>
-                    <input type="text" name="id" id="inputCod" class="form-control" value="<c:out value="${passagem.id}"/>" disabled >
+                    <label for="id" class="form-label">Código</label>
+                    <input type="text" name="id" id="id" class="form-control" value="<c:out value="${passagem.id}"/>" disabled >
                 </div>
                 
                 <div class="col-md-1">
                    
-                    <label for="inputPacote" class="form-label">Pacote</label>
+                    <label for="idPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
                         <option> <c:out value="${passagem.idPacote}"/> </option>
                         <c:forEach items="${pacotes}" var="pacote">
@@ -30,22 +30,24 @@
                </div>
                         
                 <div class="col-md-2">
-                    <label for="inputCompany" class="form-label">Empresa</label>
-                    <select id="inputCompany" class="form-select" name="nomeEmpresa">
+                    <label for="nomeEmpresa" class="form-label">Empresa</label>
+                    <select id="nomeEmpresa" class="form-select" name="nomeEmpresa">
                         <option selected><c:out value="${nomeEmpresa}"/></option>
                         <c:forEach items="${empresas}" var="empresa">
                            <option> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
                     </select>        
                 </div>
+                        
+                        
                 <div class="row g-3 justify-content-md-center">
                     <div class="col-md-2">
-                    <label for="inputOrigin" class="form-label">Origem</label>
-                    <input type="text" name="origin" id="inputOrigin" class="form-control" value="<c:out value="${passagem.origem}"/>"  >
+                    <label for="origem" class="form-label">Origem</label>
+                    <input type="text" name="origem" id="origem" class="form-control" value="<c:out value="${passagem.origem}"/>"  >
                 </div>
                 <div class="col-md-2">
-                    <label for="inputDestiny" class="form-label">Destino</label>
-                    <input type="text" name="destino" id="inputDestiny" class="form-control" value="<c:out value="${passagem.destino}"/>" >
+                    <label for="destino" class="form-label">Destino</label>
+                    <input type="text" name="destino" id="destino" class="form-control" value="<c:out value="${passagem.destino}"/>" >
                 </div>
                     
                     
@@ -53,25 +55,21 @@
                 <div class="row g-3 justify-content-md-center">
                 
                 <div class="col-md-2">
-                    <label for="inputDateGo" class="form-label">Data de Ida</label>
-                    <input type="text" class="form-control" name="dataIda" id="inputDateGo" value="<c:out value="${passagem.dataIda}"/>"  >
+                    <label for="dataIda" class="form-label">Data de Ida</label>
+                    <input type="text" class="form-control" name="dataIda" id="dataIda" value="<c:out value="${passagem.dataIda}"/>"  >
                 </div>
                 <div class="col-md-2">
-                    <label for="inputDateReturn" class="form-label">Data de Volta</label>
-                    <input type="text" class="form-control" name="dataVolta" id="inputDateReturn" value="<c:out value="${passagem.dataVolta}"/>" >
+                    <label for="dataVolta" class="form-label">Data de Volta</label>
+                    <input type="text" class="form-control" name="dataVolta" id="dataVolta" value="<c:out value="${passagem.dataVolta}"/>" >
                 </div>
                 </div>
+                
                 <div class="col-4">
                     <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
                 </div>
 
             </form>
-        </div>
-    </div>
-</div>
-</div>
-
-
+   
  <script src="./Scripts/main.js"></script>
 </body>
 </html>
