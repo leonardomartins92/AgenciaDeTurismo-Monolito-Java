@@ -14,6 +14,7 @@
 
         <%@ include file = "header.jsp" %>
 
+    <div class="container">
     <table class="table table-striped">
 
 
@@ -39,7 +40,7 @@
     </table>
     <div class="col-md-2 ">
         <div class="list-group">
-            <a href="ManterEmpresaController?acao=preparaOperacao&operacao=Adicionar" class="btn btn-success ">Adicionar</a>
+            <a href="ManterEmpresaController?acao=preparaOperacao&operacao=Adicionar" class="btn btn-success">Adicionar</a>
         </div>
     </div>
 </body>

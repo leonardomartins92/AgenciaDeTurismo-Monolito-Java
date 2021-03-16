@@ -13,7 +13,7 @@
 
         <%@ include file = "header.jsp" %>
 
- 
+ <div class="container">
     <table class="table table-striped">
         <thead>
             <tr>

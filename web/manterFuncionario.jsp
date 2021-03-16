@@ -75,7 +75,7 @@
           </div><br>
             <div class="col-4">
                 <div class="form-group"><script src="./Scripts/ViaCep.js"></script></div>
-                <button type="submit" class="btn btn-primary" >Salvar</button>
+                <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
             </div>
         </form>
     </div>
