@@ -8,6 +8,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,12 +32,15 @@ public class ManterEmpresaController extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
+     * @throws java.lang.ClassNotFoundException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         switch (acao) {
-            case "confirmarOperacao":
+            case "confirmaOperacao":
+                confirmarOperacao(request, response);
                 break;
             case "preparaOperacao":
                 prepararOperacao(request, response);
@@ -60,12 +65,46 @@ public class ManterEmpresaController extends HttpServlet {
             view.forward(request, response);
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
+        }   
+    }
+    
+    private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException, SQLException, ClassNotFoundException{
+        try{
+            String operacao = request.getParameter("operacao");
+            String cnpj = request.getParameter("cnpj");
+            String nome = request.getParameter("nome");
+            String email = request.getParameter("email");
+            String telefone = request.getParameter("telefone");
+            String logradouro = request.getParameter("logradouro");
+            String numero = request.getParameter("numero");
+            String complemento = request.getParameter("complemento");
+            String uf = request.getParameter("uf");
+            String localidade = request.getParameter("localidade");
+            String tipo = request.getParameter("tipo");
+            TipoEmpresa tipoEmpresa = TipoEmpresa.valueOf(tipo);
+            String cep = request.getParameter("cep");
+            
+            Empresa empresa = new Empresa(cnpj, nome, email, telefone, logradouro, numero, complemento, uf, localidade, tipoEmpresa, cep);
+            
+            switch(operacao){
+                case "Adicionar":
+                    Empresa.gravar(empresa);
+                case "Alterar":
+                    Empresa.alterar(empresa);
+                case "Excluir":
+                    cnpj = empresa.getCnpj();
+                    Empresa.deletarEmpresa(cnpj);
+            }
+            RequestDispatcher view = 
+                    request.getRequestDispatcher("/pesquisaEmpresa.jsp");
+            view.forward(request, response);
+        } catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
         }
-    
-    
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+ // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -104,4 +143,7 @@ public class ManterEmpresaController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
+
 }
+

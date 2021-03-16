@@ -11,34 +11,34 @@
             <div class="row g-3 justify-content-md-center">
             <div class="col-3">
                 <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="name" placeholder=""  value="${empresa.nome}">
+                <input type="text" class="form-control" id="name" name="name" placeholder=""  value="${empresa.nome}">
             </div>
             <div class="col-3">
                 <label for="cnpj" class="form-label">CNPJ</label>
-                <input type="text" class="form-control" id="cnpj" placeholder=""  value="${empresa.cnpj}">
+                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder=""  value="${empresa.cnpj}">
             </div>
 
             <div class="col-md-2 ">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4"  value="${empresa.email}">
+                <input type="email" class="form-control" id="inputEmail4" name="email"  value="${empresa.email}">
             </div>
             </div>
              <div class="row g-3 justify-content-md-center">
             <div class="col-md-3">
                 <label for="inputTelefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="inputTelefone"  value="${empresa.telefone}">
+                <input type="text" class="form-control" id="inputTelefone" name="telefone"  value="${empresa.telefone}">
             </div>
             <div class="col-md-2">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" maxlength="9"  value="${empresa.cep}">
+                <input type="text" class="form-control" id="cep" name="cep" maxlength="9"  value="${empresa.cep}">
             </div>
             <div class="col-md-1">
                 <label for="uf" class="form-label">UF</label>
-                <input type="text" class="form-control" name="uf" id="uf"  value="${empresa.uf}">
+                <input type="text" class="form-control" id="uf" name="uf" value="${empresa.uf}">
             </div>
             <div class="col-md-2">
                 <label for="inputType" class="form-label">Tipo</label>
-                <select id="inputType" class="form-select">
+                <select id="inputType" name="tipo" class="form-select">
                 <c:forEach items="${tipos}" var="tipo">
                     <option <c:if test = "${empresa.tipo == tipo}">selected</c:if>><c:out value="${tipo}" /></option>
                 </c:forEach>
@@ -50,20 +50,20 @@
             
             <div class="col-md-2">
                 <label for="localidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="localidade"  value="${empresa.localidade}">
+                <input type="text" class="form-control" id="localidade" name="localidade" value="${empresa.localidade}">
             </div>
 
             <div class="col-md-3">
                 <label for="logradouro" class="form-label">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro" placeholder=""  value="${empresa.logradouro}">
+                <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder=""  value="${empresa.logradouro}">
             </div>
             <div class="col-md-1">
                 <label for="numero" class="form-label">Número</label>
-                <input type="text" class="form-control" id="numero" placeholder=""  value="${empresa.numero}">
+                <input type="text" class="form-control" id="numero" name="numero" placeholder=""  value="${empresa.numero}">
             </div>
             <div class="col-2">
                 <label for="numero2" class="form-label">Complemento</label>
-                <input type="text" class="form-control" id="numero2" placeholder=""  value="${empresa.complemento}">
+                <input type="text" class="form-control" id="numero2" name="complemento" placeholder=""  value="${empresa.complemento}">
             </div>
 
              </div><br>
