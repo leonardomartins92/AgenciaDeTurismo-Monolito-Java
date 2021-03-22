@@ -10,7 +10,7 @@ import java.util.List;
 import model.Cliente;
 
 public class ClienteDAO extends DAO{
-    private static ClienteDAO instancia = new ClienteDAO();
+    private static final ClienteDAO instancia = new ClienteDAO();
     public static ClienteDAO getInstancia(){
         return instancia;
     }
@@ -22,9 +22,9 @@ public class ClienteDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "insert into cliente (nome, telefone, email, "
-                   + "cpf, logradouro, numero,"
-            + " complemento, uf, localidade, cep) values(?,?,?,?,?,?,?,?,?,?)"
+           "INSERT INTO `cliente` (`nome`, `telefone`, `email`, "
+                   + "`cpf`, `logradouro`, `numero`,"
+            + " `complemento`, `uf`, `localidade`, `cep`) VALUES (?,?,?,?,?,?,?,?,?,?)"
            );
            comando.setString(1, cliente.getName());
            comando.setString(2, cliente.getTelefone());

@@ -90,12 +90,17 @@ public class ManterEmpresaController extends HttpServlet {
             switch(operacao){
                 case "Adicionar":
                     Empresa.gravar(empresa);
+                    break;
                 case "Edita":
                     Empresa.alterar(empresa);
+                    break;
                 case "Excluir":
                     cnpj = empresa.getCnpj();
                     Empresa.deletarEmpresa(cnpj);
+                    break;
             }
+            
+            
             RequestDispatcher view = 
                     request.getRequestDispatcher("/pesquisaEmpresa.jsp");
             view.forward(request, response);

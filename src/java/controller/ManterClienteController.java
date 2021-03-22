@@ -6,8 +6,9 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,10 +33,11 @@ public class ManterClienteController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         switch (acao) {
-            case "confirmarOperacao":
+            case "confirmaOperacao":
+                confirmarOperacao(request, response);
                 break;
             case "preparaOperacao":
                 prepararOperacao(request, response);
@@ -64,8 +66,45 @@ public class ManterClienteController extends HttpServlet {
     
     }
     
+    private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException, SQLException, ClassNotFoundException{
+        try{
+            String operacao = request.getParameter("operacao");
+            String nome = request.getParameter("nome");
+            String cpf = request.getParameter("cpf");            
+            String email = request.getParameter("email");
+            String telefone = request.getParameter("telefone");
+            String cep = request.getParameter("cep");
+            String uf = request.getParameter("uf");
+            String localidade = request.getParameter("localidade");
+            String logradouro = request.getParameter("logradouro");
+            String numero = request.getParameter("numero");
+            String complemento = request.getParameter("complemento");
+                        
+            Cliente cliente = new Cliente(nome,telefone, email, cpf, logradouro, numero, complemento, uf, localidade, cep);
+            
+            switch(operacao){
+                case "Adicionar":
+                    Cliente.gravar(cliente);
+                    break;
+                case "Editar":
+                    Cliente.alterar(cliente);
+                    break;
+                case "Excluir":
+                    cpf = cliente.getCpf();
+                    Cliente.deletarCliente(cpf);
+                    break;
+            }
+            RequestDispatcher view = 
+                    request.getRequestDispatcher("/pesquisaCliente.jsp");
+            view.forward(request, response);
+        } catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
+        }
+    }
     
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    
+  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -77,7 +116,11 @@ public class ManterClienteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(ManterEmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -91,7 +134,11 @@ public class ManterClienteController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(ManterEmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -103,5 +150,7 @@ public class ManterClienteController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    
 
 }
