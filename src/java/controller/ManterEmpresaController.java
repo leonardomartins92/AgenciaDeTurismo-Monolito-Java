@@ -102,7 +102,7 @@ public class ManterEmpresaController extends HttpServlet {
             
             
             RequestDispatcher view = 
-                    request.getRequestDispatcher("/pesquisaEmpresa.jsp");
+                    request.getRequestDispatcher("/PesquisaEmpresaController");
             view.forward(request, response);
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);

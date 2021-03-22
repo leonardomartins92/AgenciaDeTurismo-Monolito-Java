@@ -96,7 +96,7 @@ public class ManterClienteController extends HttpServlet {
                     break;
             }
             RequestDispatcher view = 
-                    request.getRequestDispatcher("/pesquisaCliente.jsp");
+                    request.getRequestDispatcher("/PesquisaClienteController");
             view.forward(request, response);
         } catch (ClassNotFoundException | SQLException e){
             throw new ServletException(e);
