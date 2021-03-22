@@ -13,7 +13,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
 import model.Destino;
+import model.Funcionario;
 import model.Pacote;
 
 
@@ -45,7 +47,7 @@ public class ManterPacoteController extends HttpServlet {
         
     }
 
-     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+    public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     try{
         
@@ -58,7 +60,6 @@ public class ManterPacoteController extends HttpServlet {
                 request.setAttribute("pacote", Pacote.obterPacote(id));
                 request.setAttribute("nomeCliente",Pacote.nomeCliente(Pacote.obterPacote(id).getCpfCliente()));
                 request.setAttribute("nomeFuncionario",Pacote.nomeFuncionario(Pacote.obterPacote(id).getCpfFuncionario()));
-                request.setAttribute("destinos",Destino.destinosPacote(id));
             }
             
             RequestDispatcher view = 
@@ -72,6 +73,29 @@ public class ManterPacoteController extends HttpServlet {
     
     
     }
+    
+    public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
+        int id=0;
+        String operacao = request.getParameter("operacao");
+        String cpfCliente = request.getParameter("cpfCliente");
+        String cpfFuncionario = request.getParameter("cpfFuncionario");
+        
+        Pacote pacote = new Pacote(1, Cliente.obterCliente(cpfCliente), Funcionario.obterFuncionario(cpfFuncionario));
+        
+        switch(operacao){
+                case "Adicionar":
+                    Pacote.gravar(pacote);
+                case "Edita":
+                    Pacote.alterar(pacote);
+                case "Excluir":
+                    id = pacote.getId();
+                    Pacote.deletarPacote(id);
+            }
+        RequestDispatcher view = request.getRequestDispatcher("/pesquisaPacote.jsp");
+            view.forward(request, response);
+        
+    }
+     
      
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
