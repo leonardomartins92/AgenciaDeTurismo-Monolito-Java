@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Destino;
+import model.Empresa;
+import model.Pacote;
 
 
 /**
@@ -74,6 +76,31 @@ public class ManterDestinoController extends HttpServlet {
          
     
     
+    }
+     
+     public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
+        int id=0;
+        String operacao = request.getParameter("operacao");
+        int idPacote = Integer.parseInt(request.getParameter("idPacote"));
+        String dataInicial = request.getParameter("dataInicial");
+        String dataFinal = request.getParameter("dataFinal");
+        String cnpj = request.getParameter("cnpj");
+        
+        
+        Destino destino = new Destino(1, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
+        
+        switch(operacao){
+                case "Adicionar":
+                    Destino.gravar(destino);
+                case "Edita":
+                    Destino.alterar(destino);
+                case "Excluir":
+                    id = destino.getId();
+                    Destino.deletarDestino(id);
+            }
+        RequestDispatcher view = request.getRequestDispatcher("/pesquisaDestino.jsp");
+            view.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
