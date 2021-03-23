@@ -21,7 +21,7 @@
             <label for="inputCliente" class="form-label">Cliente</label>
             <select id="inputCliente" class="form-select" name="cpfCliente">
                 <c:forEach items="${clientes}" var="cliente">
-                    <option <c:if test = "${cpfCliente == cliente.cpf}">selected</c:if>> <c:out value="${cliente.cpf}"/> </option> 
+                    <option <c:if test = "${pacote.cpfCliente == cliente.cpf}">selected</c:if>> <c:out value="${cliente.cpf}"/> </option> 
                 </c:forEach>
             </select>
         </div>
@@ -30,7 +30,7 @@
             <label for="inputFuncionario" class="form-label">Funcionários</label>
             <select id="inputFuncionario" class="form-select" name="cpfFuncionario">
                 <c:forEach items="${funcionarios}" var="funcionario">
-                    <option <c:if test = "${cpfFuncionario == funcionario.cpf}">selected</c:if>> <c:out value="${funcionario.cpf}"/> </option> 
+                    <option <c:if test = "${pacote.cpfFuncionario == funcionario.cpf}">selected</c:if>> <c:out value="${funcionario.cpf}"/> </option> 
                 </c:forEach>
             </select>
         </div>
