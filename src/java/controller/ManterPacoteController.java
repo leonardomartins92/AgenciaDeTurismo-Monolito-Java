@@ -35,10 +35,11 @@ public class ManterPacoteController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         switch (acao) {
             case "confirmarOperacao":
+                 confirmarOperacao(request, response);
                 break;
             case "preparaOperacao":
                 prepararOperacao(request, response);
@@ -76,26 +77,29 @@ public class ManterPacoteController extends HttpServlet {
     }
     
     public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
-        int id=0;
+        int id;
         String operacao = request.getParameter("operacao");
         String cpfCliente = request.getParameter("cpfCliente");
         String cpfFuncionario = request.getParameter("cpfFuncionario");
         
-        Pacote pacote = new Pacote(1, Cliente.obterCliente(cpfCliente), Funcionario.obterFuncionario(cpfFuncionario));
+        Pacote pacote; 
         
         switch(operacao){
                 case "Adicionar":
+                    pacote = new Pacote(1, Cliente.obterCliente(cpfCliente), Funcionario.obterFuncionario(cpfFuncionario));
                     Pacote.gravar(pacote);
                     break;
                 case "Editar":
+                    id = Integer.parseInt(request.getParameter("cod"));
+                    pacote = new Pacote(id, Cliente.obterCliente(cpfCliente), Funcionario.obterFuncionario(cpfFuncionario));
                     Pacote.alterar(pacote);
                     break;
                 case "Excluir":
-                    id = pacote.getId();
+                    id = Integer.parseInt(request.getParameter("cod"));
                     Pacote.deletarPacote(id);
                     break;
             }
-        RequestDispatcher view = request.getRequestDispatcher("/pesquisaPacote.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("PesquisaPacoteController");
             view.forward(request, response);
         
     }
