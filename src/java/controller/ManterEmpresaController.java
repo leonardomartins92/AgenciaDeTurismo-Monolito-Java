@@ -71,33 +71,34 @@ public class ManterEmpresaController extends HttpServlet {
     private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException, ClassNotFoundException{
         try{
-            String operacao = request.getParameter("operacao");
             String cnpj = request.getParameter("cnpj");
-            String nome = request.getParameter("nome");
-            String email = request.getParameter("email");
-            String telefone = request.getParameter("telefone");
-            String logradouro = request.getParameter("logradouro");
-            String numero = request.getParameter("numero");
-            String complemento = request.getParameter("complemento");
-            String uf = request.getParameter("uf");
-            String localidade = request.getParameter("localidade");
-            String tipo = request.getParameter("tipo");
-            TipoEmpresa tipoEmpresa = TipoEmpresa.valueOf(tipo);
-            String cep = request.getParameter("cep");
-                        
-            Empresa empresa = new Empresa(cnpj, nome, email, telefone, logradouro, numero, complemento, uf, localidade, tipoEmpresa, cep);
+            String operacao = request.getParameter("operacao");
+
+            if("Excluir".equals(operacao)){
+                Empresa.deletarEmpresa(cnpj);   
+            }
             
-            switch(operacao){
-                case "Adicionar":
-                    Empresa.gravar(empresa);
-                    break;
-                case "Editar":
-                    Empresa.alterar(empresa);
-                    break;
-                case "Excluir":
-                    cnpj = empresa.getCnpj();
-                    Empresa.deletarEmpresa(cnpj);
-                    break;
+            else{
+                String nome = request.getParameter("nome");
+                String email = request.getParameter("email");
+                String telefone = request.getParameter("telefone");
+                String logradouro = request.getParameter("logradouro");
+                String numero = request.getParameter("numero");
+                String complemento = request.getParameter("complemento");
+                String uf = request.getParameter("uf");
+                String localidade = request.getParameter("localidade");
+                String tipo = request.getParameter("tipo");
+                TipoEmpresa tipoEmpresa = TipoEmpresa.valueOf(tipo);
+                String cep = request.getParameter("cep"); 
+                Empresa empresa = new Empresa(cnpj, nome, email, telefone, logradouro, numero, complemento, uf, localidade, tipoEmpresa, cep);
+                
+                 if("Adicionar".equals(operacao)){
+                     Empresa.gravar(empresa);
+                 }    
+                     
+                 if("Editar".equals(operacao)){
+                     Empresa.alterar(empresa);
+                 }    
             }
             
             

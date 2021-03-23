@@ -69,32 +69,35 @@ public class ManterClienteController extends HttpServlet {
     private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException, ClassNotFoundException{
         try{
-            String operacao = request.getParameter("operacao");
-            String nome = request.getParameter("nome");
-            String cpf = request.getParameter("cpf");            
-            String email = request.getParameter("email");
-            String telefone = request.getParameter("telefone");
-            String cep = request.getParameter("cep");
-            String uf = request.getParameter("uf");
-            String localidade = request.getParameter("localidade");
-            String logradouro = request.getParameter("logradouro");
-            String numero = request.getParameter("numero");
-            String complemento = request.getParameter("complemento");
-                        
-            Cliente cliente = new Cliente(nome,telefone, email, cpf, logradouro, numero, complemento, uf, localidade, cep);
             
-            switch(operacao){
-                case "Adicionar":
-                    Cliente.gravar(cliente);
-                    break;
-                case "Editar":
-                    Cliente.alterar(cliente);
-                    break;
-                case "Excluir":
-                    cpf = cliente.getCpf();
-                    Cliente.deletarCliente(cpf);
-                    break;
+            String cpf = request.getParameter("cpf");
+            String operacao = request.getParameter("operacao");
+
+            if("Excluir".equals(operacao)){
+                Cliente.deletarCliente(cpf);  
             }
+            
+            else{
+                String nome = request.getParameter("nome");           
+                String email = request.getParameter("email");
+                String telefone = request.getParameter("telefone");
+                String cep = request.getParameter("cep");
+                String uf = request.getParameter("uf");
+                String localidade = request.getParameter("localidade");
+                String logradouro = request.getParameter("logradouro");
+                String numero = request.getParameter("numero");
+                String complemento = request.getParameter("complemento");
+                Cliente cliente = new Cliente(nome,telefone, email, cpf, logradouro, numero, complemento, uf, localidade, cep);
+                
+                 if("Adicionar".equals(operacao)){
+                     Cliente.gravar(cliente);
+                 }    
+                     
+                 if("Editar".equals(operacao)){
+                     Cliente.alterar(cliente);
+                 }    
+            }
+
             RequestDispatcher view = 
                     request.getRequestDispatcher("/PesquisaClienteController");
             view.forward(request, response);
