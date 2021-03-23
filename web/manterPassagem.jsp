@@ -13,8 +13,8 @@
             <form  action="ManterPassagemController?acao=confirmaOperacao&operacao=${operacao}" method="post">
                 <div class="row g-3 justify-content-center">
                 <div class="col-md-1">
-                    <label for="id" class="form-label">Código</label>
-                    <input type="text" name="id" id="id" class="form-control" value="<c:out value="${passagem.id}"/>" disabled >
+                    <label for="cod" class="form-label">Código</label>
+                    <input type="text" name="cod" id="cod" class="form-control" value="<c:out value="${passagem.id}"/>" readonly>
                 </div>
                 
                 <div class="col-md-1">
@@ -30,11 +30,11 @@
                </div>
                         
                 <div class="col-md-2">
-                    <label for="nomeEmpresa" class="form-label">Empresa</label>
-                    <select id="nomeEmpresa" class="form-select" name="nomeEmpresa">
-                        <option selected><c:out value="${nomeEmpresa}"/></option>
+                    <label for="cnpjEmpresa" class="form-label">Empresa</label>
+                    <select id="cnpjEmpresa" class="form-select" name="cnpjEmpresa">
+                        <option value="${passagem.cnpjEmpresa}"  selected><c:out value="${nomeEmpresa}"/></option>
                         <c:forEach items="${empresas}" var="empresa">
-                           <option> <c:out value="${empresa.nome}"/> </option> 
+                           <option value="${empresa.cnpj}"> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
                     </select>        
                 </div>
@@ -65,11 +65,11 @@
                 </div>
                 
                 <div class="col-4">
-                    <button type="submit" class="btn btn-primary" id="botaoSubmit">Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="botaoSubmit">Confirmar</button>
                 </div>
 
             </form>
-   
- <script src="./Scripts/main.js"></script>
+   <script src="./Scripts/main.js"></script>
+ 
 </body>
 </html>

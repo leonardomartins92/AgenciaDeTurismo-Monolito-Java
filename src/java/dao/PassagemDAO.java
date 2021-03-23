@@ -59,9 +59,9 @@ public class PassagemDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "update passagem set (origem, destino, dataIda, "
-                   + "dataVolta, pacote_idPacote, Empresa_cnpj)"
-            + "values(?,?,?,?,?,?) where idPassagem = ?"
+           "update passagem set origem=?, destino=?, dataIda=?, "
+                   + "dataVolta=?, pacote_idPacote=?, Empresa_cnpj=?"
+            + "where idPassagem = ?"
            );
            comando.setString(1, passagem.getOrigem());
            comando.setString(2, passagem.getDestino());

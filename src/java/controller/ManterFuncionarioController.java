@@ -71,7 +71,57 @@ public class ManterFuncionarioController extends HttpServlet {
      public void confirmaOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-    
+        String nome = request.getParameter("nome");
+        String cpf = request.getParameter("cpf");
+        String email = request.getParameter("email");
+        String telefone = request.getParameter("telefone");
+        String cep = request.getParameter("cep");
+        String uf = request.getParameter("uf");
+        String cidade = request.getParameter("localidade");
+        String logradouro = request.getParameter("logradouro");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String senha = request.getParameter("senha");   
+        String funcao = request.getParameter("funcao");
+        
+        TipoFuncionario tipo;
+        if(funcao =="VENDEDOR"){
+           tipo = TipoFuncionario.VENDEDOR;
+        }
+        else{
+            tipo = TipoFuncionario.GERENTE;
+        }
+                     
+        Funcionario f = new Funcionario(senha, tipo, nome, telefone, email, cpf, 
+                          logradouro, numero, complemento, uf, cidade, cep);
+        
+        
+        String operacao = request.getParameter("operacao");
+       
+        try{
+          switch(operacao){
+              case("Adicionar"):
+                  Funcionario.gravar(f);
+                  break;
+             
+              case("Editar"):
+                  Funcionario.alterar(f);
+                  break;
+              
+              case("Excluir"):
+                  Funcionario.deletarFuncionario(cpf);
+                  break;
+            }
+          
+           RequestDispatcher view = 
+                    request.getRequestDispatcher("PesquisaFuncionarioController");
+            view.forward(request, response);
+          
+        }
+        
+       catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
+        }  
     
     }
     

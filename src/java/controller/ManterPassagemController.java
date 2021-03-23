@@ -75,6 +75,51 @@ public class ManterPassagemController extends HttpServlet {
     
     public void confirmaOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        try{
+            
+            int  id; 
+            Passagem p;
+            String operacao = request.getParameter("operacao");
+            
+            
+            if("Excluir".equals(operacao)){
+                id = Integer.parseInt(request.getParameter("cod"));
+                Passagem.deletarPassagem(id);
+                
+            }
+            
+            else{
+                int idPacote = Integer.parseInt(request.getParameter("idPacote"));
+                String cnpjEmpresa = request.getParameter("cnpjEmpresa");
+                String origem = request.getParameter("origem");
+                String destino = request.getParameter("destino");
+                String dataIda = request.getParameter("dataIda");
+                String dataVolta = request.getParameter("dataVolta");
+                Pacote pacote = Pacote.obterPacote(idPacote);
+                Empresa empresa = Empresa.obterEmpresa(cnpjEmpresa);
+                
+                 if("Adicionar".equals(operacao)){
+                     p = new Passagem(0, origem, destino, dataIda, dataVolta, pacote, empresa);
+                     Passagem.gravar(p);
+                 }    
+                     
+                 if("Editar".equals(operacao)){
+                     id = Integer.parseInt(request.getParameter("cod"));
+                     p = new Passagem(id, origem, destino, dataIda, dataVolta, pacote, empresa);
+                     Passagem.alterar(p);
+                 }    
+            }
+                     
+            RequestDispatcher view = 
+                    request.getRequestDispatcher("PesquisaPassagemController");
+            view.forward(request, response);
+          
+        }
+        
+       catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
+        }  
     
            
     }

@@ -53,10 +53,10 @@ public class FuncionarioDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "update funcionario set (nome, telefone, email, "
-                   + "logradouro, numero,"
-            + " complemento, uf, localidade, cep, senha, tipo) "
-                   + "values(?,?,?,?,?,?,?,?,?,?,?) where cpf = ?"
+           "update funcionario set nome = ?, telefone=?, email=?, "
+                   + "logradouro=?, numero=?,"
+            + " complemento=?, uf=?, localidade=?, cep=?, senha=?, tipo=? "
+                   + "where cpf = ?"
            );
            comando.setString(1, funcionario.getName());
            comando.setString(2, funcionario.getTelefone());

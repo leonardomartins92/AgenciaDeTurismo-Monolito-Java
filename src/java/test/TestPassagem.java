@@ -29,12 +29,13 @@ public class TestPassagem {
     Funcionario funcionario = new Funcionario("12345",TipoFuncionario.VENDEDOR,"Mario","123","leo@","1012","R ABC", "100","nada","MG","JF","a");
     Pacote pacote = new Pacote(9,cliente,funcionario); 
     PacoteDAO.getInstancia().gravar(pacote);
-    Passagem passagem = new Passagem(50,"Mexico","Barcelona","janeiro","fevereiro",pacote,empresa);
+    Passagem passagem = new Passagem(10,"Mexico","Barcelona","janeiro","fevereiro",pacote,empresa);
      
-   PassagemDAO.getInstancia().gravar(passagem);
-    System.out.println(PassagemDAO.getInstancia().obterPassagens());
+   // PassagemDAO.getInstancia().gravar(passagem);
+   // PassagemDAO.getInstancia().alterar(passagem);
+    //System.out.println(PassagemDAO.getInstancia().obterPassagens());
     //System.out.println(PassagemDAO.getInstancia().obterPassagem(1));
-   // PassagemDAO.getInstancia().deletarPassagem(1);
+    PassagemDAO.getInstancia().deletarPassagem(6);
     
        
     }
