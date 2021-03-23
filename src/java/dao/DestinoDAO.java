@@ -140,7 +140,7 @@ public class DestinoDAO extends DAO {
             
             try {
                 conexao = BD.getInstancia().getConexao();
-                comando = (PreparedStatement) conexao.prepareStatement("delete from pacote where idDestino = ?");
+                comando = (PreparedStatement) conexao.prepareStatement("delete from destino where idDestino = ?");
                 comando.setInt(1, id); 
                 comando.executeUpdate();
             } finally{

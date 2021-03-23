@@ -81,31 +81,48 @@ public class ManterDestinoController extends HttpServlet {
     }
      
      public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
-        int id = Integer.parseInt(request.getParameter("cod"));
-        
-        
-        String operacao = request.getParameter("operacao");
-        int idPacote = Integer.parseInt(request.getParameter("idPacote"));
-        String dataInicial = request.getParameter("dataInicial");
-        String dataFinal = request.getParameter("dataFinal");
-        String cnpj = request.getParameter("cnpjEmpresa");        
-        
-        Destino destino = new Destino(id, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
-        
-        switch(operacao){
-                case "Adicionar":
-                    Destino.gravar(destino);
-                    break;
-                case "Editar":
-                    Destino.alterar(destino);
-                    break;
-                case "Excluir":
-                    Destino.deletarDestino(id);
-                    break;
+        try{
+            
+            int  id; 
+            Destino d;
+            String operacao = request.getParameter("operacao");
+            
+            
+            if("Excluir".equals(operacao)){
+                id = Integer.parseInt(request.getParameter("cod"));
+                Destino.deletarDestino(id);
+                
             }
-        RequestDispatcher view = request.getRequestDispatcher("PesquisaDestinoController");
+            
+            else{
+                int idPacote = Integer.parseInt(request.getParameter("idPacote"));
+                String dataInicial = request.getParameter("dataInicial");
+                String dataFinal = request.getParameter("dataFinal");
+                String cnpj = request.getParameter("cnpjEmpresa");  
+                
+                 if("Adicionar".equals(operacao)){
+                     d = new Destino(0, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
+                     Destino.gravar(d);
+                 }    
+                     
+                 if("Editar".equals(operacao)){
+                     id = Integer.parseInt(request.getParameter("cod"));
+                     d = new Destino(id, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
+                     Destino.alterar(d);
+                 }    
+            }
+                     
+            RequestDispatcher view = 
+                    request.getRequestDispatcher("PesquisaDestinoController");
             view.forward(request, response);
+          
+        }
         
+       catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
+        }  
+    
+           
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
