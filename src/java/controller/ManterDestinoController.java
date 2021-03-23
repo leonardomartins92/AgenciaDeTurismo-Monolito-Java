@@ -82,6 +82,8 @@ public class ManterDestinoController extends HttpServlet {
      
      public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
         int id = Integer.parseInt(request.getParameter("cod"));
+        
+        
         String operacao = request.getParameter("operacao");
         int idPacote = Integer.parseInt(request.getParameter("idPacote"));
         String dataInicial = request.getParameter("dataInicial");
@@ -98,7 +100,6 @@ public class ManterDestinoController extends HttpServlet {
                     Destino.alterar(destino);
                     break;
                 case "Excluir":
-                    id = destino.getId();
                     Destino.deletarDestino(id);
                     break;
             }

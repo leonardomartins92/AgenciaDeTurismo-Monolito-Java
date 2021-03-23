@@ -22,7 +22,7 @@
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
                         <c:forEach items="${pacotes}" var="pacote">
-                           <option> <c:if test = "${pacote.id == idPacote}">selected</c:if> <c:out value="${pacote.id}"/> </option> 
+                           <option <c:if test = "${pacote.id == destino.idPacote}">selected</c:if>> <c:out value="${pacote.id}"/> </option> 
                         </c:forEach>
                     </select>   
                 </div>
@@ -43,7 +43,7 @@
                     <select id="inputCompany" class="form-select" name="cnpjEmpresa">
                         
                         <c:forEach items="${empresas}" var="empresa">
-                           <option value="${empresa.cnpj}" <c:if test = "${cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
+                           <option value="${empresa.cnpj}" <c:if test = "${destino.cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
                     </select>
                 </div>
