@@ -14,7 +14,7 @@
         
         <div class="col-md-4">
             <label for="inputCliente" class="form-label">Cliente</label>
-            <select id="inputCliente" class="form-select" name="inputCliente">
+            <select id="inputCliente" class="form-select" name="cpfCliente">
                 <option selected><c:out value="${pacote.cpfCliente}"/> </option>
                 <c:forEach items="${clientes}" var="cliente">
                     <option> <c:out value="${cliente.cpf}"/> </option> 
@@ -24,9 +24,9 @@
 
         <div class="col-md-4">
             <label for="inputFuncionario" class="form-label">Funcionários</label>
-            <select id="inputFuncionario" class="form-select" name="inputFuncionario">
+            <select id="inputFuncionario" class="form-select" name="cpfFuncionario">
                 <option> <c:out value="${pacote.cpfFuncionario}"/> </option>
-                <c:forEach items="${funcionarios}" var="funcioanrio">
+                <c:forEach items="${funcionarios}" var="funcionario">
                     <option> <c:out value="${funcionario.cpf}"/> </option> 
                 </c:forEach>
             </select>
