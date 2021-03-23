@@ -12,7 +12,12 @@
         <div class="col">
             <form  action="ManterDestinoController?acao=confirmaOperacao&operacao=${operacao}" method="post">
                <div class="row g-3 justify-content-md-center">
-                <div class="col-md-3">
+                <div class="col-md-1">
+                    <label for="cod" class="form-label">Código</label>
+                    <input type="text" name="cod" id="cod" class="form-control" value="<c:out value="${destino.id}"/>" readonly>
+                </div>
+                   
+                   <div class="col-md-2">
                     
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
@@ -38,7 +43,7 @@
                     <select id="inputCompany" class="form-select" name="cnpjEmpresa">
                         
                         <c:forEach items="${empresas}" var="empresa">
-                           <option <c:if test = "${cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.cnpj}"/> </option> 
+                           <option value="${empresa.cnpj} <c:if test = "${cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
                     </select>
                 </div>
