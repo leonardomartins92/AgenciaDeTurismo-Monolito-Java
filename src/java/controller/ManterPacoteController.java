@@ -86,7 +86,7 @@ public class ManterPacoteController extends HttpServlet {
         switch(operacao){
                 case "Adicionar":
                     Pacote.gravar(pacote);
-                case "Edita":
+                case "Editar":
                     Pacote.alterar(pacote);
                 case "Excluir":
                     id = pacote.getId();

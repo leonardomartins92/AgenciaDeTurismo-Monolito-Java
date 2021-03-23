@@ -37,14 +37,14 @@ public class ManterDestinoController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
             
             if(acao.equals("preparaOperacao")){
             prepararOperacao(request,response);
             }
             else if(acao.equals("confirmaOperacao")){
-            prepararOperacao(request,response);
+            confirmarOperacao(request,response);
             }
         
     }
@@ -95,7 +95,7 @@ public class ManterDestinoController extends HttpServlet {
                 case "Adicionar":
                     Destino.gravar(destino);
                     break;
-                case "Edita":
+                case "Editar":
                     Destino.alterar(destino);
                     break;
                 case "Excluir":
@@ -120,7 +120,13 @@ public class ManterDestinoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterDestinoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterDestinoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -134,7 +140,13 @@ public class ManterDestinoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterDestinoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterDestinoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
