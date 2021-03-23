@@ -129,8 +129,13 @@
         <error-code>404</error-code>
         <location>/TratamentoExcecao</location>
     </error-page>
+<<<<<<< HEAD
     <error-page>
+=======
+    <error-page> 
+>>>>>>> e5616fd6b03d35c4f20477fe28b7bda4f48fe762
         <exception-type>java.lang.Exception</exception-type>
         <location>/TratamentoExcecao</location>
     </error-page>
 </web-app>
+    
