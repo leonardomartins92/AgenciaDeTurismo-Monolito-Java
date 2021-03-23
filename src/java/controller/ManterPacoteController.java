@@ -79,7 +79,9 @@ public class ManterPacoteController extends HttpServlet {
     
     }
     
-    public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
+    public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) 
+            throws SQLException, ClassNotFoundException, ServletException, IOException{
+       try{
         int id;
         String operacao = request.getParameter("operacao");
         String cpfCliente = request.getParameter("cpfCliente");
@@ -105,9 +107,10 @@ public class ManterPacoteController extends HttpServlet {
         RequestDispatcher view = request.getRequestDispatcher("PesquisaPacoteController");
             view.forward(request, response);
         
+    }catch (ClassNotFoundException | SQLException e){
+            throw new ServletException(e);
+        }
     }
-     
-     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
