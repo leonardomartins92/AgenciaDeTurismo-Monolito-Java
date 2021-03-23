@@ -56,11 +56,11 @@
                 
                 <div class="col-md-2">
                     <label for="dataIda" class="form-label">Data de Ida</label>
-                    <input type="text" class="form-control" name="dataIda" id="dataIda" value="<c:out value="${passagem.dataIda}"/>"  >
+                    <input type="date" class="form-control" name="dataIda" id="dataIda" value="<c:out value="${passagem.dataIda}"/>"  >
                 </div>
                 <div class="col-md-2">
                     <label for="dataVolta" class="form-label">Data de Volta</label>
-                    <input type="text" class="form-control" name="dataVolta" id="dataVolta" value="<c:out value="${passagem.dataVolta}"/>" >
+                    <input type="date" class="form-control" name="dataVolta" id="dataVolta" value="<c:out value="${passagem.dataVolta}"/>" >
                 </div>
                 </div>
                 

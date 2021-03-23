@@ -24,21 +24,21 @@
                         
                 <div class="col-md-3">
                     <label for="inputOrigin" class="form-label">Data Inicial</label>
-                    <input type="text" name="origin" id="inputOrigin" class="form-control" value="<c:out value="${destino.dataInicial}"/>"  >
+                    <input type="date" name="dataInicial" id="inputOrigin" class="form-control" value="<c:out value="${destino.dataInicial}"/>"  >
                 </div>
                </div>
                 <div class="row g-3 justify-content-md-center">
                 <div class="col-md-3">
                     <label for="inputDestiny" class="form-label">Data Final</label>
-                    <input type="text" name="destino" id="inputDestiny" class="form-control" value="<c:out value="${destino.dataFinal}"/>" >
+                    <input type="date" name="dataFinal" id="inputDestiny" class="form-control" value="<c:out value="${destino.dataFinal}"/>" >
                 </div>
                 
                 <div class="col-md-3">
                     <label for="inputCompany" class="form-label">Empresa</label>
-                    <select id="inputCompany" class="form-select" name="nomeEmpresa">
+                    <select id="inputCompany" class="form-select" name="cnpjEmpresa">
                         
                         <c:forEach items="${empresas}" var="empresa">
-                           <option <c:if test = "${nomeEmpresa == empresa}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
+                           <option <c:if test = "${cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.cnpj}"/> </option> 
                         </c:forEach>
                     </select>
                 </div>

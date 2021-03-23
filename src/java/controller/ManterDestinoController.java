@@ -86,8 +86,7 @@ public class ManterDestinoController extends HttpServlet {
         int idPacote = Integer.parseInt(request.getParameter("idPacote"));
         String dataInicial = request.getParameter("dataInicial");
         String dataFinal = request.getParameter("dataFinal");
-        String cnpj = request.getParameter("cnpj");
-        
+        String cnpj = request.getParameter("cnpjEmpresa");        
         
         Destino destino = new Destino(1, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
         
