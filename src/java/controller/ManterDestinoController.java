@@ -55,6 +55,8 @@ public class ManterDestinoController extends HttpServlet {
     
          String operacao = request.getParameter("operacao");
          request.setAttribute("operacao", operacao);
+         request.setAttribute("empresas", Empresa.obterEmpresas());
+         request.setAttribute("pacotes", Pacote.obterPacotes());
         
          
          if(!operacao.equals("Adicionar")){          
@@ -92,13 +94,16 @@ public class ManterDestinoController extends HttpServlet {
         switch(operacao){
                 case "Adicionar":
                     Destino.gravar(destino);
+                    break;
                 case "Edita":
                     Destino.alterar(destino);
+                    break;
                 case "Excluir":
                     id = destino.getId();
                     Destino.deletarDestino(id);
+                    break;
             }
-        RequestDispatcher view = request.getRequestDispatcher("/pesquisaDestino.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("PesquisaDestinoController");
             view.forward(request, response);
         
     }

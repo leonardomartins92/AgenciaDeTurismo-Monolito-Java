@@ -16,9 +16,8 @@
                     
                     <label for="inputPacote" class="form-label">Pacote</label>
                     <select class="form-select" name="idPacote" id="idPacote">
-                        <option> <c:out value="${destino.idPacote}"/> </option>
                         <c:forEach items="${pacotes}" var="pacote">
-                           <option> <c:out value="${pacote.id}"/> </option> 
+                           <option> <c:if test = "${pacote.id == idPacote}">selected</c:if> <c:out value="${pacote.id}"/> </option> 
                         </c:forEach>
                     </select>   
                 </div>
