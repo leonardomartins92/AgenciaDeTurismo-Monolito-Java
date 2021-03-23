@@ -49,8 +49,8 @@ public class DestinoDAO extends DAO {
         try {
             conexao = BD.getInstancia().getConexao();
             comando = (PreparedStatement) conexao.prepareStatement(
-                   "update destino set (dataInicial, dataFinal, Pacote_idPacote, Empresa_cnpj)"
-                    + "values (?, ?, ?, ?) where idDestino = ?"
+                   "update destino set dataInicial=?, dataFinal=?, Pacote_idPacote=?, Empresa_cnpj=?"
+                    + " where idDestino = ?"
            );
             comando.setString(1, destino.getDataInicial());
             comando.setString(2, destino.getDataFinal());

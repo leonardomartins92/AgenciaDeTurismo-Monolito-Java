@@ -86,11 +86,14 @@ public class ManterPacoteController extends HttpServlet {
         switch(operacao){
                 case "Adicionar":
                     Pacote.gravar(pacote);
+                    break;
                 case "Editar":
                     Pacote.alterar(pacote);
+                    break;
                 case "Excluir":
                     id = pacote.getId();
                     Pacote.deletarPacote(id);
+                    break;
             }
         RequestDispatcher view = request.getRequestDispatcher("/pesquisaPacote.jsp");
             view.forward(request, response);
