@@ -10,11 +10,12 @@
 
 
         <h2>Inicial do Gerente</h2>
-        <a href="PesquisaClienteController">Cadastro de Clientes</a><br>
-        <a href="PesquisaEmpresaController">Cadastro de Empresas</a><br>
-        <a href="PesquisaFuncionarioController">Cadastro de Funcionários</a><br>
-        <a href="PesquisaPassagemController">Cadastro de Passagem</a><br>
-        <a href="PesquisaPacoteController">Cadastro de Pacote</a><br>
+        <a href="PesquisaClienteController">Clientes</a><br>
+        <a href="PesquisaEmpresaController">Empresas</a><br>
+        <a href="PesquisaFuncionarioController">Funcionários</a><br>
+        <a href="PesquisaPassagemController">Passagem</a><br>
+        <a href="PesquisaPacoteController">Pacote</a><br>
+        <a href="PesquisaDestinoController">Destino</a><br>
 
 
     </div>
