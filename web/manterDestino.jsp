@@ -43,7 +43,7 @@
                     <select id="inputCompany" class="form-select" name="cnpjEmpresa">
                         
                         <c:forEach items="${empresas}" var="empresa">
-                           <option value="${empresa.cnpj} <c:if test = "${cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
+                           <option value="${empresa.cnpj}" <c:if test = "${cnpjEmpresa == empresa.cnpj}">selected</c:if>> <c:out value="${empresa.nome}"/> </option> 
                         </c:forEach>
                     </select>
                 </div>
