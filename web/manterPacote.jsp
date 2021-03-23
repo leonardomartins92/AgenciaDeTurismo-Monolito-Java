@@ -12,6 +12,11 @@
     <form action="ManterPacoteController?acao=confirmaOperacao&operacao=${operacao}&cod=${idPacote}" method="post">
         <div class="row g-3 justify-content-md-center">
         
+        <div class="col-md-1">
+                    <label for="cod" class="form-label">Código</label>
+                    <input type="text" name="cod" id="cod" class="form-control" value="<c:out value="${pacote.id}"/>" readonly>
+        </div>
+             
         <div class="col-md-4">
             <label for="inputCliente" class="form-label">Cliente</label>
             <select id="inputCliente" class="form-select" name="cpfCliente">
