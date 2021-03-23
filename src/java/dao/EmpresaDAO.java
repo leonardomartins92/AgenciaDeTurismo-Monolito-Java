@@ -51,9 +51,9 @@ public class EmpresaDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "update empresa set ((nome, telefone, email, tipo, cep, uf,"
-                   + "localidade, logradouro, numero, complemento)"
-                   + "values(?,?,?,?,?,?,?,?,?,?,?) where cnpj = ?"
+           "update empresa set nome=?, telefone=?, email=?, tipo=?, cep=?, uf=?,"
+                   + "localidade=?, logradouro=?, numero=?, complemento=?"
+                   + " where cnpj = ?"
            );
            comando.setString(1, empresa.getNome());
            comando.setString(2, empresa.getTelefone());
@@ -65,6 +65,7 @@ public class EmpresaDAO extends DAO{
            comando.setString(8, empresa.getLogradouro());
            comando.setString(9, empresa.getNumero());
            comando.setString(10, empresa.getComplemento());
+           comando.setString(11, empresa.getCnpj());
            
            comando.executeUpdate();
        } finally{

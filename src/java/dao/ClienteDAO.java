@@ -49,10 +49,10 @@ public class ClienteDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-           "update cliente set (nome, telefone, email, "
-                   + "logradouro, numero,"
-            + " complemento, uf, localidade) "
-                   + "values(?,?,?,?,?,?,?,?) where cpf = ?"
+           "update cliente set nome=?, telefone=?, email=?, "
+                   + "logradouro=?, numero=?,"
+                   + " complemento=?, uf=?, localidade=? "
+                   + "where cpf = ?"
            );
            comando.setString(1, cliente.getName());
            comando.setString(2, cliente.getTelefone());

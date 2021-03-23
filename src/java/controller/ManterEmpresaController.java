@@ -91,7 +91,7 @@ public class ManterEmpresaController extends HttpServlet {
                 case "Adicionar":
                     Empresa.gravar(empresa);
                     break;
-                case "Edita":
+                case "Editar":
                     Empresa.alterar(empresa);
                     break;
                 case "Excluir":
