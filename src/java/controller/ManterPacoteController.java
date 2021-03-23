@@ -8,6 +8,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +40,7 @@ public class ManterPacoteController extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         switch (acao) {
-            case "confirmarOperacao":
+            case "confirmaOperacao":
                  confirmarOperacao(request, response);
                 break;
             case "preparaOperacao":
@@ -59,6 +61,7 @@ public class ManterPacoteController extends HttpServlet {
                         
             if(!operacao.equals("Adicionar")){
                 int id = Integer.parseInt(request.getParameter("cod"));
+                request.setAttribute("idPacote", request.getParameter("cod"));
                 request.setAttribute("pacote", Pacote.obterPacote(id));
                 request.setAttribute("nomeCliente",Pacote.nomeCliente(Pacote.obterPacote(id).getCpfCliente()));
                 request.setAttribute("nomeFuncionario",Pacote.nomeFuncionario(Pacote.obterPacote(id).getCpfFuncionario()));
@@ -117,7 +120,13 @@ public class ManterPacoteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPacoteController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterPacoteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -131,7 +140,13 @@ public class ManterPacoteController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPacoteController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterPacoteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
