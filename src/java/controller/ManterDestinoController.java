@@ -81,14 +81,14 @@ public class ManterDestinoController extends HttpServlet {
     }
      
      public void confirmarOperacao (HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException{
-        int id=0;
+        int id = Integer.parseInt(request.getParameter("cod"));
         String operacao = request.getParameter("operacao");
         int idPacote = Integer.parseInt(request.getParameter("idPacote"));
         String dataInicial = request.getParameter("dataInicial");
         String dataFinal = request.getParameter("dataFinal");
         String cnpj = request.getParameter("cnpjEmpresa");        
         
-        Destino destino = new Destino(1, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
+        Destino destino = new Destino(id, dataInicial, dataFinal, Pacote.obterPacote(idPacote), Empresa.obterEmpresa(cnpj));
         
         switch(operacao){
                 case "Adicionar":
