@@ -48,7 +48,7 @@ public class PacoteDAO extends DAO{
        try {
            conexao = BD.getInstancia().getConexao();
            comando = (PreparedStatement) conexao.prepareStatement(
-                   "update passagem set Cliente_cpf=?, Funcionario_cpf=?"
+                   "update pacote set Cliente_cpf=?, Funcionario_cpf=?"
                     + " where idPacote = ?"
            );
            

@@ -57,7 +57,7 @@ public class DestinoDAO extends DAO {
             comando.setInt(3, destino.getPacote().getId());
             comando.setString(4, destino.getEmpresa().getCnpj());
             
-            comando.setInt(3, destino.getId());
+            comando.setInt(5, destino.getId());
             
             comando.executeUpdate();
             
