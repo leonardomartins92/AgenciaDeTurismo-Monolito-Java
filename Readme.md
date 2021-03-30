@@ -6,4 +6,5 @@ Criação de um Sistema Gerencial para Agências de Turismo:
 -[Diagramas de Classe](https://github.com/leonardomartins92/Curso-Java-2/blob/develop/documentos/DiagramaDeClasse.png)<br>
 -[Diagramas de Caso de Uso](https://github.com/leonardomartins92/Curso-Java-2/blob/develop/documentos/Casos%20de%20Uso.png)<br>
 -[Modelagem e desenvolvimento do Banco de dados](https://github.com/leonardomartins92/Curso-Java-2/blob/develop/documentos/BancoDeDados.png)<br>
+-[Script Banco de dados MySQL]()<br>
 -Criação de Telas de Cadastro, Pesquisa e Remoção de Dados.
