@@ -1,6 +1,5 @@
 ## Trabalho desenvolvido no Curso de Linguagem de Programação 2 do Bacharelado em Sistemas de Informação:
 
-ATUALIZAÇÃO: [UTILIZANDO SPRING BOOT](https://github.com/leonardomartins92/VLPT-SPRINGBOOT)<br>
 
 Criação de um Sistema Gerencial para Agências de Turismo:
 
